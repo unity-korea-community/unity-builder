@@ -1,0 +1,8 @@
+﻿Library
+Temp
+*.csproj
+*.sln
+ProjectSettings
+UserSettings
+.vscode
+Packages/packages-lock.json
