@@ -30,8 +30,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        unityVersion:
-          - 2018.4.22f1
         testMode:
           - playmode
           - editmode
@@ -51,13 +49,19 @@ jobs:
           restore-keys: |
             Library-
 
-      # Test
       - name: Run tests
         id: tests
         uses: game-ci/unity-test-runner@v1.7 # https://github.com/marketplace/actions/unity-test-runner
         with:
-          unityVersion: ${{ matrix.unityVersion }}
+          projectPath: /
           testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
 
   deploy:
     needs: testAllModes
