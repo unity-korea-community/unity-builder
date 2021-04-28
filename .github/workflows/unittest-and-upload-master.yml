@@ -18,7 +18,7 @@ on:
 env:
   # Require unity test
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-  packagePath: Assets/unity-cmd/
+  WORK_ROOT: Assets/unity-cmd/
 
   # Deploy to this Github master branch
   this_GithubRepo: unity-korea-community/unity-cmd
@@ -54,6 +54,7 @@ jobs:
         uses: game-ci/unity-test-runner@v1.7 # https://github.com/marketplace/actions/unity-test-runner
         with:
           # projectPath: /
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
           testMode: ${{ matrix.testMode }}
           artifactsPath: ${{ matrix.testMode }}-artifacts
 
@@ -75,14 +76,14 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: Package
-          path: ${{ env.packagePath }}
+          path: ${{ env.WORK_ROOT }}
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.1 # https://github.com/JamesIves/github-pages-deploy-action
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: main
-          FOLDER: ${{ env.packagePath }}
+          FOLDER: ${{ env.WORK_ROOT }}
           REPOSITORY_NAME: ${{ env.this_GithubRepo }}
           TARGET_FOLDER: /
           CLEAN: true
