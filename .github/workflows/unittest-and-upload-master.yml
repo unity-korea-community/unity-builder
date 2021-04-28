@@ -17,7 +17,7 @@ on:
 
 env:
   # Require unity test
-  UNITY_VERSION: 2019.2.11f1
+  UNITY_VERSION: 2019.3.8f1
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   WORK_ROOT: Assets/unity-cmd/
 
