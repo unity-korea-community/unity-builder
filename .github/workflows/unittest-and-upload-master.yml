@@ -42,11 +42,10 @@ jobs:
           ref: workspace
           lfs: true
 
-      - name: Cached
-        uses: actions/cache@v1.1.0
+      - uses: actions/cache@v1.1.0
         with:
-          path: Library
-          key: Library-${{ matrix.targetPlatform }}
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}
           restore-keys: |
             Library-
 
