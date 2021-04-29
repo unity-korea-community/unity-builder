@@ -51,8 +51,21 @@ jobs:
           restore-keys: |
             Library-
 
+      # WORK_PATH(=UnityPath)가 변경되면 테스트, 변경되지 않으면 테스트 안함
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v6 # https://github.com/tj-actions/verify-changed-files
+        id: verify_changed_files
+        with:
+          files: |
+            ${{ env.WORK_PATH }}
+      - name: Perform action when test_directory changes
+        if: contains(steps.verify_changed_files.outputs.changed_files, ${{ env.WORK_PATH }})
+        run: |
+          echo ${{ env.WORK_PATH }} + " has changed."
+
       # 예전 버전으로 하면 라이센스 인증이 안됨.. 그래서 동작하는 알파로 변경
       - uses: game-ci/unity-test-runner@v2.0-alpha-4 # https://github.com/marketplace/actions/unity-test-runner
+        if: contains(steps.verify_changed_files.outputs.changed_files, ${{ env.WORK_PATH }})
         id: tests
         with:
           # projectPath: /
@@ -62,7 +75,7 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
 
       - uses: actions/upload-artifact@v2
-        if: always()
+        if: contains(steps.verify_changed_files.outputs.changed_files, ${{ env.WORK_PATH }})
         with:
           name: Test results for ${{ matrix.testMode }}
           path: ${{ steps.tests.outputs.artifactsPath }}
