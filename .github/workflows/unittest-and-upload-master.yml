@@ -25,7 +25,7 @@ env:
   SRC_BRANCH: workspace
   DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
-  WORK_PATH: Assets/unity-cmd/.
+  WORK_PATH: Assets/unity-cmd/
 
 jobs:
   testAllModes:
@@ -100,7 +100,7 @@ jobs:
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }} #require
           src_branch: ${{ env.SRC_BRANCH }}
-          src_path: ${{ env.WORK_PATH }} #require
+          src_path: ${{ env.WORK_PATH }}. #require, .을 안붙이면 dst_path에 src_path 폴더채로 카피됨
           dst_owner: ${{ env.DEST_OWNER }} #require
           dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
