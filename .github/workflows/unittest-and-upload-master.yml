@@ -92,4 +92,4 @@ jobs:
           dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
           dest_path: /.
-          CLEAN: true
+          clean: true
