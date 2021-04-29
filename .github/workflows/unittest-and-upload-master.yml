@@ -86,9 +86,10 @@ jobs:
         uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }} #require
-          src_branch: ${{ env.SRC_BRANCH }
+          src_branch: ${{ env.SRC_BRANCH }}
           src_path: ${{ env.WORK_PATH }} #require
           dst_owner: ${{ env.DEST_OWNER }} #require
           dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
+          dest_path: /.
           CLEAN: true
