@@ -1,0 +1,95 @@
+# 이 워크플로는
+# 1. Unity-UnitTest 실행 후 결과에 따라
+# 1-1. 문제가 있으면 Artifact에 버그 리포트 및 중단,
+# 1-2. 문제가 없으면 2로 넘어갑니다.
+#
+# 2. Packages를 Artifacts에 Upload를 한 뒤 {this_GithubRepo}의 master brach에 push합니다.
+#
+# workflow syntax
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
+name: unittest and upload master
+
+on:
+  push:
+    branches:
+      - workspace # match env.SRC_BRANCH
+
+env:
+  # Require unity test
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_VERSION: 2019.3.8f1
+
+  # require Deploy
+  THIS_REPOSITORY: unity-cmd
+  SRC_BRANCH: workspace
+  DEST_OWNER: unity-korea-community
+  DEST_BRANCH: master
+  WORK_PATH: Assets/unity-cmd/
+
+jobs:
+  testAllModes:
+    name: Test in ${{ matrix.testMode }} on version ${{ matrix.unityVersion }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        testMode:
+          - playmode
+          - editmode
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.SRC_BRANCH }}
+          lfs: true
+
+      - uses: actions/cache@v1.1.0
+        with:
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}
+          restore-keys: |
+            Library-
+
+      # 예전 버전으로 하면 라이센스 인증이 안됨.. 그래서 동작하는 알파로 변경
+      - uses: game-ci/unity-test-runner@v2.0-alpha-4 # https://github.com/marketplace/actions/unity-test-runner
+        id: tests
+        with:
+          # projectPath: /
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+          unityVersion: ${{ env.UNITY_VERSION }}
+
+      - uses: actions/upload-artifact@v2
+        if: always()
+        with:
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
+
+  deploy:
+    needs: testAllModes
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2 # 새로운 job이기 때문에 다시 checkout을 해야 합니다.
+        with:
+          ref: ${{ env.DEST_BRANCH }}
+          lfs: true
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Package
+          path: ${{ env.WORK_PATH }}
+
+      - name: Deploy
+        uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }} #require
+          src_branch: ${{ env.SRC_BRANCH }}
+          src_path: ${{ env.WORK_PATH }} #require
+          dst_owner: ${{ env.DEST_OWNER }} #require
+          dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
+          dst_branch: ${{ env.DEST_BRANCH }}
+          dest_path: /.
+          clean: true
