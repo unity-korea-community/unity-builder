@@ -91,5 +91,5 @@ jobs:
           dst_owner: ${{ env.DEST_OWNER }} #require
           dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
-          dest_path: /.
+          dst_path: /.
           clean: true
