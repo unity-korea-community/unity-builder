@@ -25,7 +25,7 @@ env:
   SRC_BRANCH: workspace
   DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
-  WORK_PATH: Assets/unity-cmd/
+  WORK_PATH: Assets/unity-cmd/.
 
 jobs:
   testAllModes:

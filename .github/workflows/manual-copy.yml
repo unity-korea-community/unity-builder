@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       SRC_PATH:
-        default: Assets/unity-cmd/
+        default: Assets/unity-cmd/.
         description: copy to dstPath
         required: true
       DST_PATH:
