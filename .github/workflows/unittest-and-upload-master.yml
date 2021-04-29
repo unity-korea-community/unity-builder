@@ -21,9 +21,9 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-korea-community/unity-cmd
+  THIS_REPOSITORY: unity-cmd
   SRC_BRANCH: workspace
-  DEST_OWNER: korstrix
+  DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
   WORK_PATH: Assets/unity-cmd/
 
