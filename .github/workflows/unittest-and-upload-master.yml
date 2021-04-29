@@ -17,12 +17,12 @@ on:
 
 env:
   # Require unity test
-  UNITY_VERSION: 2019.3.8f1
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_VERSION: 2019.3.8f1
   WORK_ROOT: Assets/unity-cmd/
 
   # Deploy to this Github master branch
-  this_GithubRepo: unity-korea-community/unity-cmd
+  THIS_REPOSITORY: unity-korea-community/unity-cmd
 
 jobs:
   testAllModes:
@@ -36,8 +36,7 @@ jobs:
           - editmode
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           ref: workspace
           lfs: true
@@ -49,9 +48,9 @@ jobs:
           restore-keys: |
             Library-
 
-      - name: Run tests
+      # 예전 버전으로 하면 라이센스 인증이 안됨.. 그래서 동작하는 알파로 변경
+      - uses: game-ci/unity-test-runner@v2.0-alpha-4 # https://github.com/marketplace/actions/unity-test-runner
         id: tests
-        uses: game-ci/unity-test-runner@v2.0-alpha-4 # https://github.com/marketplace/actions/unity-test-runner
         with:
           # projectPath: /
           githubToken: ${{ secrets.GITHUB_TOKEN }}
@@ -70,11 +69,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout # 새로운 job이기 때문에 다시 checkout을 해야 합니다.
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2 # 새로운 job이기 때문에 다시 checkout을 해야 합니다.
+        with:
+          lfs: true
 
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v1
+      - uses: actions/upload-artifact@v2
         with:
           name: Package
           path: ${{ env.WORK_ROOT }}
@@ -85,6 +84,6 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: main
           FOLDER: ${{ env.WORK_ROOT }}
-          REPOSITORY_NAME: ${{ env.this_GithubRepo }}
+          REPOSITORY_NAME: ${{ env.THIS_REPOSITORY }}
           TARGET_FOLDER: /
           CLEAN: true
