@@ -87,7 +87,7 @@ jobs:
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }} #require
           src_branch: ${{ env.SRC_BRANCH }}
-          src_path: ${{ env.WORK_PATH }} #require
+          src_path: ${{ env.WORK_PATH }}/. #require
           dst_owner: ${{ env.DEST_OWNER }} #require
           dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
