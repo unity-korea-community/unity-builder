@@ -23,6 +23,7 @@ env:
 
   # Deploy to this Github master branch
   THIS_REPOSITORY: unity-korea-community/unity-cmd
+  BRANCH: master
 
 jobs:
   testAllModes:
@@ -82,7 +83,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.1 # https://github.com/JamesIves/github-pages-deploy-action
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
+          BRANCH: ${{ env.BRANCH }}
           FOLDER: ${{ env.WORK_ROOT }}
           REPOSITORY_NAME: ${{ env.THIS_REPOSITORY }}
           TARGET_FOLDER: /
