@@ -25,7 +25,7 @@ env:
   SRC_BRANCH: workspace
   DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
-  WORK_PATH: Assets/unity-cmd/
+  WORK_PATH: Assets/unity-cmd
 
 jobs:
   testAllModes:
@@ -93,7 +93,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: ${{ env.WORK_PATH }}
+          path: ${{ env.WORK_PATH }}/
 
       - name: Deploy
         uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
