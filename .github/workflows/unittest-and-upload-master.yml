@@ -13,17 +13,19 @@ name: unittest and upload master
 on:
   push:
     branches:
-      - workspace
+      - workspace # match env.SRC_BRANCH
 
 env:
   # Require unity test
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
   UNITY_VERSION: 2019.3.8f1
-  WORK_ROOT: Assets/unity-cmd/
 
-  # Deploy to this Github master branch
+  # require Deploy
   THIS_REPOSITORY: unity-korea-community/unity-cmd
-  BRANCH: master
+  SRC_BRANCH: workspace
+  DEST_OWNER: korstrix
+  DEST_BRANCH: master
+  WORK_PATH: Assets/unity-cmd/
 
 jobs:
   testAllModes:
@@ -39,7 +41,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: workspace
+          ref: ${{ env.SRC_BRANCH }}
           lfs: true
 
       - uses: actions/cache@v1.1.0
@@ -72,19 +74,21 @@ jobs:
     steps:
       - uses: actions/checkout@v2 # 새로운 job이기 때문에 다시 checkout을 해야 합니다.
         with:
+          ref: ${{ env.DEST_BRANCH }}
           lfs: true
 
       - uses: actions/upload-artifact@v2
         with:
           name: Package
-          path: ${{ env.WORK_ROOT }}
+          path: ${{ env.WORK_PATH }}
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1 # https://github.com/JamesIves/github-pages-deploy-action
+        uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
         with:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: ${{ env.BRANCH }}
-          FOLDER: ${{ env.WORK_ROOT }}
-          REPOSITORY_NAME: ${{ env.THIS_REPOSITORY }}
-          TARGET_FOLDER: /
+          personal_token: ${{ secrets.ACCESS_TOKEN }} #require
+          src_branch: ${{ env.SRC_BRANCH }
+          src_path: ${{ env.WORK_PATH }} #require
+          dst_owner: ${{ env.DEST_OWNER }} #require
+          dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
+          dst_branch: ${{ env.DEST_BRANCH }}
           CLEAN: true
