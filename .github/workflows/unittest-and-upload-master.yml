@@ -52,7 +52,7 @@ jobs:
             Library-
 
       # WORK_PATH(=UnityPath)가 변경되면 테스트, 변경되지 않으면 테스트 안함
-      - uses: technote-space/get-diff-action@v4
+      - uses: technote-space/get-diff-action@v4.0.1
         with:
           PATTERNS: |
             ${{ env.WORK_PATH }}/**/*.cs
