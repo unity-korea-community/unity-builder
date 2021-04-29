@@ -51,7 +51,7 @@ jobs:
 
       - name: Run tests
         id: tests
-        uses: game-ci/unity-test-runner@v1.7 # https://github.com/marketplace/actions/unity-test-runner
+        uses: game-ci/unity-test-runner@v2.0-alpha-4 # https://github.com/marketplace/actions/unity-test-runner
         with:
           # projectPath: /
           githubToken: ${{ secrets.GITHUB_TOKEN }}
