@@ -7,3 +7,4 @@ UserSettings
 .vscode
 Packages/packages-lock.json
 obj
+Logs
