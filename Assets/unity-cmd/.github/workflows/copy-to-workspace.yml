@@ -16,12 +16,12 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-cmd
+  THIS_REPOSITORY: unity-cli
   DEST_OWNER: unity-korea-community
   SRC_BRANCH: master
   WORK_PATH: /.
   DEST_BRANCH: workspace
-  DEST_PATH: Assets/unity-cmd/
+  DEST_PATH: Assets/unity-cli/
 
 jobs:
   copy:

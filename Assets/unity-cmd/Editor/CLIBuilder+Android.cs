@@ -17,9 +17,9 @@ using System;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace Unity_CMD
+namespace Unity_CLI
 {
-    public partial class CMDBuilder
+    public partial class CLIBuilder
     {
         [MenuItem(const_prefix_EditorContextMenu + "Build Test - Android")]
         public static void Build_Test_Android()
@@ -48,13 +48,13 @@ namespace Unity_CMD
             PlayerSettings.Android.keystoreName = Application.dataPath + setting.keystore_relativePath;
             PlayerSettings.Android.keystorePass = setting.keystore_password;
 
-            string bundleVersionCode_FromCommandLine = GetCommandLineArg(commandLine[ECommandLineList.android_bundle_versioncode]);
+            string bundleVersionCode_FromCommandLine = GetCommandLineArg(commandLine[ECommandLine.android_bundle_versioncode]);
             if (int.TryParse(bundleVersionCode_FromCommandLine, out int iBundleVersionCode))
                 PlayerSettings.Android.bundleVersionCode = iBundleVersionCode;
             else
                 PlayerSettings.Android.bundleVersionCode = setting.bundleversioncode;
 
-            string versionCode_FromCommandLine = GetCommandLineArg(commandLine[ECommandLineList.android_version]);
+            string versionCode_FromCommandLine = GetCommandLineArg(commandLine[ECommandLine.android_version]);
             if (string.IsNullOrEmpty(versionCode_FromCommandLine) == false)
                 PlayerSettings.bundleVersion = versionCode_FromCommandLine;
             else

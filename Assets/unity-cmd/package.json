@@ -1,7 +1,7 @@
 {
-  "name": "com.unko.unity-cmd",
+  "name": "com.unko.unity-cli",
   "version": "0.0.1",
-  "displayName": "Unity CMD",
+  "displayName": "Unity CLI",
   "description": "This is an example package",
   "unity": "2019.1",
   "author": {

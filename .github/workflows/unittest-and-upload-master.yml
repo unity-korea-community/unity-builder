@@ -21,11 +21,11 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-cmd
+  THIS_REPOSITORY: unity-cli
   SRC_BRANCH: workspace
   DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
-  WORK_PATH: Assets/unity-cmd
+  WORK_PATH: Assets/unity-cli
 
 jobs:
   testAllModes:

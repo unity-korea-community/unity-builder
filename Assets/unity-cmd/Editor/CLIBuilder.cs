@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
-namespace Unity_CMD
+namespace Unity_CLI
 {
     /// <summary>
     /// 에디터 플레이어 빌드 전 세팅 (빌드 후 되돌리기용)
@@ -48,11 +48,11 @@ namespace Unity_CMD
     }
 
     /// <summary>
-    /// CMD 빌드를 위한 스크립트입니다.
+    /// CLI 빌드를 위한 스크립트입니다.
     /// </summary>
-    public partial class CMDBuilder
+    public partial class CLIBuilder
     {
-        public const string const_prefix_EditorContextMenu = "Tools/Strix/CMD Build/";
+        public const string const_prefix_EditorContextMenu = "Tools/UNKO/CLI Build/";
         const string const_prefix_ForLog = "!@#$";
 
         public enum ECommandLine
@@ -105,7 +105,7 @@ namespace Unity_CMD
                 {ECommandLine.ios_version, $"{nameof(ECommandLine.ios_version)}"}
             };
 
-        public static string GetCommandLineString(ECommandLine commandLine) => CMDBuilder.commandLine[commandLine];
+        public static string GetCommandLineString(ECommandLine commandLine) => CLIBuilder.commandLine[commandLine];
 
         private static BuildConfig s_lastConfig;
 
