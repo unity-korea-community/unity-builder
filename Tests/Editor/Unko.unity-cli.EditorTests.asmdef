@@ -1,5 +1,5 @@
 {
-    "name": "com.unko.unity-cmd.editortest",
+    "name": "com.unko.unity-cli.editortest",
     "references": [
         "GUID:3a53f68e0674d9745aa875e76efaeda3"
     ],
@@ -14,4 +14,4 @@
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
-}
+} 

@@ -28,7 +28,7 @@ using System.IO;
 using UnityEditor.iOS.Xcode;
 #endif
 
-namespace Unity_CMD
+namespace Unity_CLI
 {
     public partial class BuildConfig
     {
@@ -117,7 +117,7 @@ namespace Unity_CMD
         public iOSSetting iOSSetting_;
     }
 
-    public partial class CMDBuilder
+    public partial class CLIBuilder
     {
         public const int const_PostBuildCallbackOrder = 777;
 
@@ -343,14 +343,14 @@ namespace Unity_CMD
             if (string.IsNullOrEmpty(pSetting.strBundle_Identifier) == false)
                 PlayerSettings.applicationIdentifier = pSetting.strBundle_Identifier;
 
-            string strVersion_FromCommandLine = GetCommandLineArg(commandLine[ECommandLineList.ios_version]);
+            string strVersion_FromCommandLine = GetCommandLineArg(commandLine[ECommandLine.ios_version]);
             if (string.IsNullOrEmpty(strVersion_FromCommandLine) == false)
                 PlayerSettings.bundleVersion = strVersion_FromCommandLine;
             else if (string.IsNullOrEmpty(pSetting.strBuildVersion) == false)
                 PlayerSettings.bundleVersion = pSetting.strBuildVersion;
 
 
-            string strBuildNumber_FromCommandLine = GetCommandLineArg(commandLine[ECommandLineList.ios_buildnumber]);
+            string strBuildNumber_FromCommandLine = GetCommandLineArg(commandLine[ECommandLine.ios_buildnumber]);
             if (string.IsNullOrEmpty(strBuildNumber_FromCommandLine) == false)
                 PlayerSettings.iOS.buildNumber = strBuildNumber_FromCommandLine;
             else if (string.IsNullOrEmpty(pSetting.strBuildNumber) == false)

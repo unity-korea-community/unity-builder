@@ -1,5 +1,5 @@
 {
-    "name": "com.unko.unity-cmd.editor",
+    "name": "com.unko.unity-cli.editor",
     "references": [],
     "includePlatforms": [
         "Editor"

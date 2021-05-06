@@ -17,12 +17,12 @@ using System;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace Unity_CMD
+namespace Unity_CLI
 {
     /// <summary>
-    /// <see cref="CMDBuilder"/>>를 유니티 에디터에서 제어하는 스크립트입니다.
+    /// <see cref="CLIBuilder"/>>를 유니티 에디터에서 제어하는 스크립트입니다.
     /// </summary>
-    public class CMDBuilderWindow : EditorWindow
+    public class CLIBuilderWindow : EditorWindow
     {
         private const string gitHubURL = "https://github.com/KorStrix/Unity_JenkinsBuilder";
         BuildConfig _buildConfig;
@@ -30,10 +30,10 @@ namespace Unity_CMD
         string _configPath;
         string _buildPath;
 
-        [MenuItem(CMDBuilder.const_prefix_EditorContextMenu + "Show Builder Window", priority = -10000)]
-        public static void DoShow_CMDBuilder()
+        [MenuItem(CLIBuilder.const_prefix_EditorContextMenu + "Show Builder Window", priority = -10000)]
+        public static void Show_CLIBuilder()
         {
-            CMDBuilderWindow window = (CMDBuilderWindow)GetWindow(typeof(CMDBuilderWindow), false);
+            CLIBuilderWindow window = (CLIBuilderWindow)GetWindow(typeof(CLIBuilderWindow), false);
 
             window.minSize = new Vector2(600, 200);
             window.Show();
@@ -41,8 +41,8 @@ namespace Unity_CMD
 
         private void OnEnable()
         {
-            _configPath = EditorPrefs.GetString($"{nameof(CMDBuilderWindow)}_{nameof(_configPath)}");
-            _buildPath = EditorPrefs.GetString($"{nameof(CMDBuilderWindow)}_{nameof(_buildPath)}");
+            _configPath = EditorPrefs.GetString($"{nameof(CLIBuilderWindow)}_{nameof(_configPath)}");
+            _buildPath = EditorPrefs.GetString($"{nameof(CLIBuilderWindow)}_{nameof(_buildPath)}");
 
             CheckConfigPath();
         }
@@ -67,14 +67,14 @@ namespace Unity_CMD
 
             EditorGUI.BeginChangeCheck();
             DrawPath_File("Config Json File", ref _configPath,
-                (strPath) => EditorPrefs.SetString($"{nameof(CMDBuilderWindow)}_{nameof(_configPath)}", strPath));
+                (strPath) => EditorPrefs.SetString($"{nameof(CLIBuilderWindow)}_{nameof(_configPath)}", strPath));
             if (EditorGUI.EndChangeCheck())
             {
                 CheckConfigPath();
             }
 
             DrawPath_Folder("Build", ref _buildPath,
-                (strPath) => EditorPrefs.SetString($"{nameof(CMDBuilderWindow)}_{nameof(_buildPath)}", strPath));
+                (strPath) => EditorPrefs.SetString($"{nameof(CLIBuilderWindow)}_{nameof(_buildPath)}", strPath));
             GUILayout.Space(10f);
 
             bool bConfigIsNotNull = _buildConfig != null;
@@ -84,12 +84,12 @@ namespace Unity_CMD
             {
                 if (GUILayout.Button("Android Build!", GUILayout.Height(40f)))
                 {
-                    CMDBuilder.Build(_buildConfig, _buildPath, _buildConfig.filename, BuildTarget.Android);
+                    CLIBuilder.Build(_buildConfig, _buildPath, _buildConfig.filename, BuildTarget.Android);
                 }
 
                 if (GUILayout.Button("iOS Build!", GUILayout.Height(40f)))
                 {
-                    CMDBuilder.Build(_buildConfig, _buildPath, _buildConfig.filename, BuildTarget.iOS);
+                    CLIBuilder.Build(_buildConfig, _buildPath, _buildConfig.filename, BuildTarget.iOS);
                 }
             }
             GUILayout.EndHorizontal();
@@ -146,7 +146,7 @@ namespace Unity_CMD
             if (string.IsNullOrEmpty(_configPath))
                 return;
 
-            Exception exception = CMDBuilder.DoTryParsing_JsonFileSO(_configPath, out _buildConfig);
+            Exception exception = CLIBuilder.DoTryParsing_JsonFileSO(_configPath, out _buildConfig);
             if (exception != null)
             {
                 _configPath = "!! Error !!" + _configPath;

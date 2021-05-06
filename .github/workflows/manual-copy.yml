@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       SRC_PATH:
-        default: Assets/unity-cmd/
+        default: Assets/unity-cli/
         description: copy to dstPath
         required: true
       DST_PATH:
@@ -23,7 +23,7 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-cmd
+  THIS_REPOSITORY: unity-cli
   SRC_BRANCH: workspace
   DST_OWNER: unity-korea-community
   DST_BRANCH: master

@@ -15,13 +15,13 @@ using System;
 using UnityEngine;
 using UnityEditor;
 
-namespace Unity_CMD
+namespace Unity_CLI
 {
     [Serializable]
     public partial class BuildConfig : ScriptableObject
     {
         /// <summary>
-        /// 출력할 파일 명, cmd에서 -filename (filename:string) 로 설정가능
+        /// 출력할 파일 명, cli에서 -filename (filename:string) 로 설정가능
         /// </summary>
         public string filename = "Build";
 
@@ -61,7 +61,7 @@ namespace Unity_CMD
             BuildConfig config = ScriptableObject.CreateInstance<BuildConfig>();
 
             config.productname = PlayerSettings.productName;
-            config.buildscenenames = CMDBuilder.GetEnabled_EditorScenes();
+            config.buildscenenames = CLIBuilder.GetEnabled_EditorScenes();
 
             config.buildoutputFolder_absolutepath = Application.dataPath.Replace("/Assets", "") + "/Build";
             config.usedatetimesuffix = true;
