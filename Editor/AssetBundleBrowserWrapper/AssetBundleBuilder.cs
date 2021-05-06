@@ -10,7 +10,7 @@
 
 using UnityEditor;
 
-namespace CMD
+namespace Unity_CMD
 {
     /// <summary>
     /// 

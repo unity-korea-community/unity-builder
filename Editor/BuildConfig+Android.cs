@@ -16,7 +16,7 @@ using System;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace CMD
+namespace Unity_CMD
 {
     public partial class BuildConfig
     {

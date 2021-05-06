@@ -17,7 +17,7 @@ using System;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace CMD
+namespace Unity_CMD
 {
     /// <summary>
     /// <see cref="CMDBuilder"/>>를 유니티 에디터에서 제어하는 스크립트입니다.
