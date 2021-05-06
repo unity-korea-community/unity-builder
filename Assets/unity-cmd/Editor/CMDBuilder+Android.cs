@@ -17,7 +17,7 @@ using System;
 #if UNITY_EDITOR
 using UnityEditor;
 
-namespace CMD
+namespace Unity_CMD
 {
     public partial class CMDBuilder
     {
@@ -60,10 +60,10 @@ namespace CMD
             else
                 PlayerSettings.bundleVersion = setting.version;
 
-            // if (pAndroidSetting.bUse_IL_TO_CPP_Build)
-            //     PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
-            // else
-            //     PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
+            if (setting.usecppbuild)
+                PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.IL2CPP);
+            else
+                PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
 
             Debug.LogFormat(const_prefix_ForLog + " Build Setting [Android]\n" +
                             "strPackageName : {0}\n" +

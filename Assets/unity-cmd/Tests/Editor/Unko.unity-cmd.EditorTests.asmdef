@@ -1,6 +1,8 @@
 {
-    "name": "com.unko.unity-cmd.editor",
-    "references": [],
+    "name": "com.unko.unity-cmd.editortest",
+    "references": [
+        "GUID:3a53f68e0674d9745aa875e76efaeda3"
+    ],
     "includePlatforms": [
         "Editor"
     ],

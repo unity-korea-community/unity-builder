@@ -15,7 +15,7 @@ using System;
 using UnityEngine;
 using UnityEditor;
 
-namespace CMD
+namespace Unity_CMD
 {
     [Serializable]
     public partial class BuildConfig : ScriptableObject

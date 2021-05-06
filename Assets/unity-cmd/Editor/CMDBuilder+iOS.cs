@@ -28,7 +28,7 @@ using System.IO;
 using UnityEditor.iOS.Xcode;
 #endif
 
-namespace CMD
+namespace Unity_CMD
 {
     public partial class BuildConfig
     {

@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
-namespace CMD
+namespace Unity_CMD
 {
     /// <summary>
     /// 에디터 플레이어 빌드 전 세팅 (빌드 후 되돌리기용)
@@ -55,7 +55,7 @@ namespace CMD
         public const string const_prefix_EditorContextMenu = "Tools/Strix/CMD Build/";
         const string const_prefix_ForLog = "!@#$";
 
-        public enum ECommandLineList
+        public enum ECommandLine
         {
             /// <summary>
             /// 결과물이 나오는 파일 명
@@ -93,21 +93,21 @@ namespace CMD
             ios_version,
         }
 
-        static readonly IReadOnlyDictionary<ECommandLineList, string> commandLine =
-            new Dictionary<ECommandLineList, string>()
+        static readonly IReadOnlyDictionary<ECommandLine, string> commandLine =
+            new Dictionary<ECommandLine, string>()
             {
-                {ECommandLineList.filename, $"{nameof(ECommandLineList.filename)}"},
-                {ECommandLineList.config_path, $"{nameof(ECommandLineList.config_path)}"},
-                {ECommandLineList.output_path, $"{nameof(ECommandLineList.output_path)}"},
-                {ECommandLineList.android_bundle_versioncode, $"{nameof(ECommandLineList.android_bundle_versioncode)}"},
-                {ECommandLineList.android_version, $"{nameof(ECommandLineList.android_version)}"},
-                {ECommandLineList.ios_buildnumber, $"{nameof(ECommandLineList.ios_buildnumber)}"},
-                {ECommandLineList.ios_version, $"{nameof(ECommandLineList.ios_version)}"}
+                {ECommandLine.filename, $"{nameof(ECommandLine.filename)}"},
+                {ECommandLine.config_path, $"{nameof(ECommandLine.config_path)}"},
+                {ECommandLine.output_path, $"{nameof(ECommandLine.output_path)}"},
+                {ECommandLine.android_bundle_versioncode, $"{nameof(ECommandLine.android_bundle_versioncode)}"},
+                {ECommandLine.android_version, $"{nameof(ECommandLine.android_version)}"},
+                {ECommandLine.ios_buildnumber, $"{nameof(ECommandLine.ios_buildnumber)}"},
+                {ECommandLine.ios_version, $"{nameof(ECommandLine.ios_version)}"}
             };
 
-        public static string GetCommandLineString(ECommandLineList commandLine) => CMDBuilder.commandLine[commandLine];
+        public static string GetCommandLineString(ECommandLine commandLine) => CMDBuilder.commandLine[commandLine];
 
-        private static BuildConfig g_lastConfig;
+        private static BuildConfig s_lastConfig;
 
 
         [MenuItem(const_prefix_EditorContextMenu + "Create BuildConfig Example Json File")]
@@ -184,8 +184,8 @@ namespace CMD
         public static void GetAppFilePath_FromConfig(BuildConfig config, out string buildOutputFolderPath,
             out string fileName)
         {
-            string buildOutputFolderPath_CommandLine = GetCommandLineArg(commandLine[ECommandLineList.output_path]);
-            string fileName_CommandLine = GetCommandLineArg(commandLine[ECommandLineList.filename]);
+            string buildOutputFolderPath_CommandLine = GetCommandLineArg(commandLine[ECommandLine.output_path]);
+            string fileName_CommandLine = GetCommandLineArg(commandLine[ECommandLine.filename]);
 
             buildOutputFolderPath = string.IsNullOrEmpty(buildOutputFolderPath_CommandLine)
                 ? config.buildoutputFolder_absolutepath
@@ -252,7 +252,7 @@ namespace CMD
         public static void Build(BuildConfig buildConfig, string buildOutputFolderAbsolutePath,
             string fileName, BuildTarget buildTarget)
         {
-            g_lastConfig = buildConfig;
+            s_lastConfig = buildConfig;
 
             OnPreBuild(buildConfig, buildOutputFolderAbsolutePath, fileName, buildTarget, out var buildTargetGroup, out var buildPath);
 
@@ -300,7 +300,7 @@ namespace CMD
         /// </summary>
         public static void Build_Android()
         {
-            if (GetFileFromCommandLineSO(commandLine[ECommandLineList.config_path], out BuildConfig config))
+            if (GetFileFromCommandLineSO(commandLine[ECommandLine.config_path], out BuildConfig config))
             {
                 GetAppFilePath_FromConfig(config, out string buildOutputFolderPath, out string fileName);
                 Build(config, buildOutputFolderPath, fileName, BuildTarget.Android);
@@ -313,7 +313,7 @@ namespace CMD
         /// </summary>
         public static void Build_IOS()
         {
-            if (GetFileFromCommandLineSO(commandLine[ECommandLineList.config_path], out BuildConfig config))
+            if (GetFileFromCommandLineSO(commandLine[ECommandLine.config_path], out BuildConfig config))
             {
                 GetAppFilePath_FromConfig(config, out string buildOutputFolderPath, out string fileName);
                 Build(config, buildOutputFolderPath, fileName, BuildTarget.iOS);
