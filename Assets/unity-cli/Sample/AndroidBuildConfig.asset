@@ -18,7 +18,7 @@ MonoBehaviour:
   buildSceneNames:
   - Assets/SampleScene
   bundleVersion: 1.0
-  buildPath: C:/Users/user/Desktop/Project/unity-cmd/Builds/unity-cli_0508_{HH}58
+  buildPath: C:/Users/user/Desktop/Project/unity-cmd/Builds/{productName}_{MM}{dd}_{hh}{mm}
   keyalias_name: 
   keyalias_password: 
   keystore_relativePath: 

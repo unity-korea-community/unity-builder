@@ -23,12 +23,13 @@ namespace Unity_CLI
         /// 예시) com.CompanyName.ProductName  
         /// </summary>
         public string applicationIdentifier;
-        public string defineSymbol;
 
         /// <summary>
         /// 설치한 디바이스에 표기될 이름
         /// </summary>
         public string productName;
+
+        public string defineSymbol;
 
         /// <summary>
         /// 빌드에 포함할 씬들, 확장자는 안쓰셔도 됩니다.
@@ -51,7 +52,7 @@ namespace Unity_CLI
         public virtual string GetBuildPath()
         {
             DateTime now = DateTime.Now;
-            buildPath = buildPath
+            string newBuildPath = buildPath
                 .Replace("{productName}", productName)
                 .Replace("{yyyy}", now.ToString("yyyy"))
                 .Replace("{yy}", now.ToString("yy"))
@@ -61,7 +62,7 @@ namespace Unity_CLI
                 .Replace("{mm}", now.ToString("mm"))
                 ;
 
-            return buildPath;
+            return newBuildPath;
         }
 
         public virtual void ResetSetting()
