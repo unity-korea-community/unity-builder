@@ -8,7 +8,6 @@ namespace Unity_CLI
     public interface IBuildConfig
     {
         BuildTarget buildTarget { get; }
-        Texture icon { get; }
 
         void ResetSetting();
         void OnPreBuild(IDictionary<string, string> commandLine);
@@ -18,7 +17,6 @@ namespace Unity_CLI
     public abstract class BuildConfigBase : ScriptableObject, IBuildConfig
     {
         public abstract BuildTarget buildTarget { get; }
-        public virtual Texture icon => EditorGUIUtility.FindTexture("BuildSettings.Editor.Small");
 
         /// <summary>
         /// 예시) com.CompanyName.ProductName  
