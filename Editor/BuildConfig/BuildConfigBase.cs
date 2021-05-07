@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 
-namespace Unity_CLI
+namespace Unity_Builder
 {
     public interface IBuildConfig
     {
