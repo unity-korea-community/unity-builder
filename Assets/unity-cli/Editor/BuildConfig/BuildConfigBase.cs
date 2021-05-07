@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using System.Collections.Generic;
+using System;
 
 namespace Unity_CLI
 {
@@ -22,12 +23,6 @@ namespace Unity_CLI
         /// 예시) com.CompanyName.ProductName  
         /// </summary>
         public string applicationIdentifier;
-
-        /// <summary>
-        /// 출력할 파일 명, cli에서 -filename (filename:string) 로 설정가능
-        /// </summary>
-        public string filename = "Build";
-
         public string defineSymbol;
 
         /// <summary>
@@ -55,6 +50,17 @@ namespace Unity_CLI
 
         public virtual string GetBuildPath()
         {
+            DateTime now = DateTime.Now;
+            buildPath = buildPath
+                .Replace("{productName}", productName)
+                .Replace("{yyyy}", now.ToString("yyyy"))
+                .Replace("{yy}", now.ToString("yy"))
+                .Replace("{MM}", now.ToString("MM"))
+                .Replace("{dd}", now.ToString("dd"))
+                .Replace("{hh}", now.ToString("hh"))
+                .Replace("{mm}", now.ToString("mm"))
+                ;
+
             return buildPath;
         }
 
@@ -66,7 +72,7 @@ namespace Unity_CLI
             productName = PlayerSettings.productName;
             defineSymbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
             buildSceneNames = GetEnabled_EditorScenes();
-            buildPath = Application.dataPath.Replace("/Assets", "") + "/Builds";
+            buildPath = Application.dataPath.Replace("/Assets", "") + "/Builds/{productName}_{MM}{dd}_{hh}{mm}";
             bundleVersion = PlayerSettings.bundleVersion;
         }
 
@@ -76,7 +82,6 @@ namespace Unity_CLI
                 PlayerSettings.applicationIdentifier = applicationIdentifier;
 
             PlayerSettings.bundleVersion = bundleVersion;
-
         }
 
         public abstract void OnPostBuild(IDictionary<string, string> commandLine);

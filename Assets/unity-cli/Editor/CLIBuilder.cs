@@ -37,10 +37,6 @@ namespace Unity_CLI
     /// </summary>
     public partial class CLIBuilder
     {
-        private static BuildConfigBase s_lastConfig;
-
-        #region public
-
         public static void Build()
         {
             if (GetSO_FromCommandLine("configpath", out BuildConfigBase config))
@@ -55,20 +51,18 @@ namespace Unity_CLI
 
         public static void Build(BuildConfigBase buildConfig)
         {
-            s_lastConfig = buildConfig;
-
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(buildConfig.buildTarget);
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
             PlayerSetting_Backup editorSetting_Backup = SettingBuildConfig_To_EditorSetting(buildConfig, buildTargetGroup);
 
             Dictionary<string, string> commandLine = new Dictionary<string, string>();
-
             try
             {
                 buildConfig.OnPreBuild(commandLine);
                 BuildReport report = UnityEditor.BuildPipeline.BuildPlayer(buildPlayerOptions);
-                PrintBuildResult(buildConfig.buildPath, report, report.summary);
                 buildConfig.OnPostBuild(commandLine);
+
+                PrintBuildResult(buildConfig.GetBuildPath(), report);
             }
             catch (Exception e)
             {
@@ -79,8 +73,6 @@ namespace Unity_CLI
             {
                 editorSetting_Backup.Restore();
             }
-
-
             Debug.LogFormat("After Build DefineSymbol Current {0}", PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup));
 
             // 2018.4 에서 프로젝트 전체 리임포팅 하는 이슈 대응
@@ -99,18 +91,16 @@ namespace Unity_CLI
             return outFile != null;
         }
 
-        #endregion public
-
         // ==============================================================================================
 
-
         #region private
+
         private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfigBase buildConfig)
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = buildConfig.buildSceneNames.Select(p => p += ".unity").ToArray(),
-                locationPathName = buildConfig.buildPath,
+                locationPathName = buildConfig.GetBuildPath(),
                 target = buildConfig.buildTarget,
                 options = BuildOptions.None
             };
@@ -130,9 +120,11 @@ namespace Unity_CLI
             return new PlayerSetting_Backup(buildTargetGroup, defineSymbol_Backup, productName_Backup);
         }
 
-        private static void PrintBuildResult(string path, BuildReport report, BuildSummary summary)
+        private static void PrintBuildResult(string path, BuildReport report)
         {
+            BuildSummary summary = report.summary;
             Debug.Log($"Build Result:{summary.result}, Path:{path}");
+
             if (summary.result == BuildResult.Failed)
             {
                 int errorIndex = 1;
