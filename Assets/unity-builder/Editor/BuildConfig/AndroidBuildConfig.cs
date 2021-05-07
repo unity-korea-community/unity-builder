@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Unity_CLI
+namespace Unity_Builder
 {
-    [CreateAssetMenu(fileName = "AndroidBuildConfig", menuName = Unity_CLIString.CreateAssetMenu_Prefix + "/AndroidBuildConfig")]
+    [CreateAssetMenu(fileName = "AndroidBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/AndroidBuildConfig")]
     public class AndroidBuildConfig : BuildConfigBase
     {
         public override BuildTarget buildTarget => BuildTarget.Android;
@@ -83,7 +83,7 @@ namespace Unity_CLI
             AndroidBuildConfig config = target as AndroidBuildConfig;
             if (GUILayout.Button("Build!"))
             {
-                CLIBuilder.Build(config);
+                UnityBuilder.Build(config);
             }
 
             _commandLine = EditorGUILayout.TextField("commandLine", _commandLine);
@@ -103,7 +103,7 @@ namespace Unity_CLI
                     }
                 }
 
-                CLIBuilder.Build();
+                UnityBuilder.Build();
             }
         }
     }

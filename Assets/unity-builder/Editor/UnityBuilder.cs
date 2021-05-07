@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
-namespace Unity_CLI
+namespace Unity_Builder
 {
     /// <summary>
     /// 빌드 전 세팅 (빌드 후 되돌리기용)
@@ -32,10 +32,7 @@ namespace Unity_CLI
         }
     }
 
-    /// <summary>
-    /// CLI 빌드를 위한 스크립트입니다.
-    /// </summary>
-    public partial class CLIBuilder
+    public class UnityBuilder
     {
         public static void Build()
         {

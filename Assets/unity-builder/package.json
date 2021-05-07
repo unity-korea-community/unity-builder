@@ -1,5 +1,5 @@
 {
-  "name": "com.unko.unity-cli",
+  "name": "com.unko.unity-builder",
   "version": "0.0.1",
   "displayName": "Unity CLI",
   "description": "This is an example package",
