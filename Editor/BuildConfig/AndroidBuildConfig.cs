@@ -52,13 +52,10 @@ namespace Unity_CLI
             // else
             //     PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, ScriptingImplementation.Mono2x);
 
-            Debug.LogFormat("ApplySetting [Android]\n" +
-                            "PackageName : {0}\n" +
-                            "keyaliasName : {1}, keyaliasPass : {2}\n" +
-                            "keystoreName : {3}, keystorePass : {4}\n" +
-                PlayerSettings.applicationIdentifier,
-                PlayerSettings.Android.keyaliasName, PlayerSettings.Android.keyaliasPass,
-                PlayerSettings.Android.keystoreName, PlayerSettings.Android.keystorePass);
+            Debug.LogFormat($"OnPreBuild [Android]\n" +
+                            $"PackageName : {PlayerSettings.applicationIdentifier}\n" +
+                            $"keyaliasName : {PlayerSettings.Android.keyaliasName}, keyaliasPass : {PlayerSettings.Android.keyaliasPass}\n" +
+                            $"keystoreName : {PlayerSettings.Android.keystoreName}, keystorePass : {PlayerSettings.Android.keystorePass}\n");
         }
 
         public override void OnPostBuild(IDictionary<string, string> commandLine)
