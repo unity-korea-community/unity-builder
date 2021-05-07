@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEditor;
-using System.Collections.ObjectModel;
-using static Unity_CLI.CLIBuilder;
+using System.Collections.Generic;
 
 namespace Unity_CLI
 {
@@ -39,7 +38,7 @@ namespace Unity_CLI
             bundleVersionCode = PlayerSettings.Android.bundleVersionCode;
         }
 
-        public override void OnPreBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine)
+        public override void OnPreBuild(IDictionary<string, string> commandLine)
         {
             PlayerSettings.Android.keyaliasName = keyalias_name;
             PlayerSettings.Android.keyaliasPass = keyalias_password;
@@ -62,7 +61,7 @@ namespace Unity_CLI
                 PlayerSettings.Android.keystoreName, PlayerSettings.Android.keystorePass);
         }
 
-        public override void OnPostBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine)
+        public override void OnPostBuild(IDictionary<string, string> commandLine)
         {
         }
 
@@ -75,14 +74,39 @@ namespace Unity_CLI
     [CustomEditor(typeof(AndroidBuildConfig))]
     public class AndroidBuildConfig_Inspector : Editor
     {
+        string _commandLine;
+
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
+
+            EditorGUILayout.Space();
+            EditorGUILayout.Space();
 
             AndroidBuildConfig config = target as AndroidBuildConfig;
             if (GUILayout.Button("Build!"))
             {
                 CLIBuilder.Build(config);
+            }
+
+            _commandLine = EditorGUILayout.TextField("commandLine", _commandLine);
+            if (GUILayout.Button($"Build with \'{_commandLine}\'"))
+            {
+                string[] commands = _commandLine.Split(' ');
+                for (int i = 0; i < commands.Length; i++)
+                {
+                    string command = commands[i];
+                    bool hasNextCommand = i + 1 < commands.Length;
+                    if (command.StartsWith("-"))
+                    {
+                        if (hasNextCommand)
+                            Environment.SetEnvironmentVariable(command, commands[i + 1]);
+                        else
+                            Environment.SetEnvironmentVariable(command, "");
+                    }
+                }
+
+                CLIBuilder.Build();
             }
         }
     }
