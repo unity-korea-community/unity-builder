@@ -1,24 +1,22 @@
-using System;
 using UnityEngine;
 using UnityEditor;
-using System.Collections.ObjectModel;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace Unity_CLI
 {
     public interface IBuildConfig
     {
         BuildTarget buildTarget { get; }
-        Texture icon { get; }
 
         void ResetSetting();
-        void OnPreBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine);
-        void OnPostBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine);
+        void OnPreBuild(IDictionary<string, string> commandLine);
+        void OnPostBuild(IDictionary<string, string> commandLine);
     }
 
     public abstract class BuildConfigBase : ScriptableObject, IBuildConfig
     {
         public abstract BuildTarget buildTarget { get; }
-        public virtual Texture icon => EditorGUIUtility.FindTexture("BuildSettings.Editor.Small");
 
         /// <summary>
         /// 예시) com.CompanyName.ProductName  
@@ -67,12 +65,12 @@ namespace Unity_CLI
             applicationIdentifier = PlayerSettings.applicationIdentifier;
             productName = PlayerSettings.productName;
             defineSymbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
-            buildSceneNames = CLIBuilder.GetEnabled_EditorScenes();
+            buildSceneNames = GetEnabled_EditorScenes();
             buildPath = Application.dataPath.Replace("/Assets", "") + "/Builds";
             bundleVersion = PlayerSettings.bundleVersion;
         }
 
-        public virtual void OnPreBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine)
+        public virtual void OnPreBuild(IDictionary<string, string> commandLine)
         {
             if (string.IsNullOrEmpty(applicationIdentifier) == false)
                 PlayerSettings.applicationIdentifier = applicationIdentifier;
@@ -80,6 +78,17 @@ namespace Unity_CLI
             PlayerSettings.bundleVersion = bundleVersion;
 
         }
-        public abstract void OnPostBuild(CLIBuilder builder, ReadOnlyDictionary<string, string> commandLine);
+
+        public abstract void OnPostBuild(IDictionary<string, string> commandLine);
+
+
+        public static string[] GetEnabled_EditorScenes()
+        {
+            return EditorBuildSettings.scenes
+                .Where(p => p.enabled)
+                .Select(p => p.path.Replace(".unity", ""))
+                .ToArray();
+        }
+
     }
 }

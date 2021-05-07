@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.IO;
@@ -40,60 +41,17 @@ namespace Unity_CLI
 
         #region public
 
-        public static string GetCommandLineArg(string name)
+        public static void Build()
         {
-            string[] arguments = Environment.GetCommandLineArgs();
-            for (int i = 0; i < arguments.Length; ++i)
+            if (GetSO_FromCommandLine("configpath", out BuildConfigBase config))
             {
-                if (arguments[i] == name && arguments.Length > i + 1)
-                    return arguments[i + 1];
+                Build(config);
             }
-
-            return "";
-        }
-
-        public static bool GetSOFromCommandLine<T>(string commandLine, out T outFile)
-            where T : ScriptableObject
-        {
-            string path = GetCommandLineArg(commandLine);
-            Exception exception = DoTryParsing_JsonSOFile(path, out outFile);
-            if (exception != null)
+            else
             {
-                Debug.LogErrorFormat("Error - FilePath : {0}, FilePath : {1}\n" +
-                                "Error : {2}", commandLine, path, exception);
-                return false;
+                Debug.LogError("require -configpath");
             }
-
-            return true;
         }
-
-        public static Exception DoTryParsing_JsonSOFile<T>(string jsonFilePath, out T outFile)
-            where T : ScriptableObject
-        {
-            outFile = ScriptableObject.CreateInstance<T>();
-
-            try
-            {
-                string configJson = File.ReadAllText(jsonFilePath);
-                JsonUtility.FromJsonOverwrite(configJson, outFile);
-            }
-            catch (Exception exception)
-            {
-                outFile = null;
-                return exception;
-            }
-
-            return null;
-        }
-
-        public static string[] GetEnabled_EditorScenes()
-        {
-            return EditorBuildSettings.scenes.
-                Where(p => p.enabled).
-                Select(p => p.path.Replace(".unity", "")).
-                ToArray();
-        }
-
 
         public static void Build(BuildConfigBase buildConfig)
         {
@@ -103,18 +61,25 @@ namespace Unity_CLI
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
             PlayerSetting_Backup editorSetting_Backup = SettingBuildConfig_To_EditorSetting(buildConfig, buildTargetGroup);
 
+            Dictionary<string, string> commandLine = new Dictionary<string, string>();
+
             try
             {
+                buildConfig.OnPreBuild(commandLine);
                 BuildReport report = UnityEditor.BuildPipeline.BuildPlayer(buildPlayerOptions);
                 PrintBuildResult(buildConfig.buildPath, report, report.summary);
+                buildConfig.OnPostBuild(commandLine);
             }
             catch (Exception e)
             {
                 Debug.Log("Error - " + e);
                 throw;
             }
+            finally
+            {
+                editorSetting_Backup.Restore();
+            }
 
-            editorSetting_Backup.Restore();
 
             Debug.LogFormat("After Build DefineSymbol Current {0}", PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup));
 
@@ -123,6 +88,15 @@ namespace Unity_CLI
 #if UNITY_EDITOR
             AssetDatabase.Refresh();
 #endif
+        }
+
+        public static bool GetSO_FromCommandLine<T>(string commandLine, out T outFile)
+            where T : ScriptableObject
+        {
+            string path = Environment.GetEnvironmentVariable(commandLine);
+            outFile = AssetDatabase.LoadAssetAtPath<T>(path);
+
+            return outFile != null;
         }
 
         #endregion public
