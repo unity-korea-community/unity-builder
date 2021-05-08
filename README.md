@@ -24,14 +24,21 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.
   * **ex.** 
   * `-ovewrite {"product": "원하는값", "bundleVersionCode": "1"}`
 
+## 설치
+
+Unity Editor/상단 Window 탭/Package Manager/+ 버튼/
+
+Add package from git URL 클릭 후
+
+이 저장소의 URL 입력
+
+[`https://github.com/unity-korea-community/unity-builder.git`](https://github.com/unity-korea-community/unity-builder.git)\`\`
+
 ## CLI 명령어
 
 유니티 CLI Arg에 있는 `-executeMethod`를 이용합니다.
 
 ### 반드시 필요한 명령어
-
-* **-configpath** UnityProject/하위 기준 로컬경로
-  * Editor 내 SO를 선택 후 오른쪽 마우스 -&gt; CopyPath 값
 
 | 인 | 설명 | 예시 |
 | :--- | :--- | :--- |
@@ -69,15 +76,15 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.
 
 ## 참고한 링크
 
-* **과거의 내가 작성한 Jenkins 빌**
+* **korstrix/Unity\_JenkinsBuilder**
   * [https://github.com/KorStrix/Unity\_JenkinsBuilder](https://github.com/KorStrix/Unity_JenkinsBuilder) 
-* **mob-sakai의 ProjectBuilder**
+* **mob-sakai/ProjectBuilder**
   * [https://github.com/mob-sakai/ProjectBuilder](https://github.com/mob-sakai/ProjectBuilder) 
-* **mob-sakai의 SimpleBuildInterface**
+* **mob-sakai/SimpleBuildInterface**
 
   * [https://github.com/mob-sakai/SimpleBuildInterface](https://github.com/mob-sakai/SimpleBuildInterface)
 
-* **superunitybuild의 buildtool**
+* **superunitybuild/buildtool**
   * [https://github.com/superunitybuild/buildtool](https://github.com/superunitybuild/buildtool)  
 
 
