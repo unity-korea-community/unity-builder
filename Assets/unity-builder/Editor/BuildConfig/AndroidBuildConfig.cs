@@ -23,7 +23,6 @@ namespace Unity_Builder
 
         /// <summary>
         /// CPP 빌드를 할지 체크, CPP빌드는 오래 걸리므로 Test빌드가 아닌 Alpha 빌드부터 하는걸 권장
-        /// 아직 미지원
         /// </summary>
         public ScriptingImplementation scriptingBackEnd;
 

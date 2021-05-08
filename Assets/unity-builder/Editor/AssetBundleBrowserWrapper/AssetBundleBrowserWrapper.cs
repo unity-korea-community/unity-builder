@@ -1,12 +1,3 @@
-#region Header
-/*	============================================
- *	Author   			    : Strix
- *	Initial Creation Date 	: 2020-04-10
- *	Summary 		        : 
- *  Template 		        : For Unity Editor V1
-   ============================================ */
-#endregion Header
-
 using UnityEngine;
 using System.Reflection;
 using UnityEditor;
@@ -15,44 +6,42 @@ using UnityEditor;
 using AssetBundleBrowser;
 #endif
 
-
-/// <summary>
-/// 
-/// </summary>
-public class AssetBundleBrowserWrapper
+namespace Unity_Builder
 {
-    /* const & readonly declaration             */
+    public class AssetBundleBrowserWrapper
+    {
+        /* const & readonly declaration             */
 
-    const string const_prefix_ForLog = "!@#$";
+        const string const_prefix_ForLog = "!@#$";
 
-    /* enum & struct declaration                */
+        /* enum & struct declaration                */
 
-    /* public - Field declaration               */
+        /* public - Field declaration               */
 
 
-    /* protected & private - Field declaration  */
+        /* protected & private - Field declaration  */
 
 #if ASSET_BUNDLE_BROWSER
 	AssetBundleBrowserMain _bundleBrowser;
 #endif
 
-    System.Type browserType;
+        System.Type browserType;
 
-    FieldInfo _buildtabField;
-    FieldInfo _buildtabField_UserData;
-    FieldInfo _buildtabField_UserData_BuildTarget;
+        FieldInfo _buildtabField;
+        FieldInfo _buildtabField_UserData;
+        FieldInfo _buildtabField_UserData_BuildTarget;
 
-    private object _buildTabInstance;
-    private object _userDataInstance;
+        private object _buildTabInstance;
+        private object _userDataInstance;
 
-    MethodInfo _buildMethod;
+        MethodInfo _buildMethod;
 
-    // ========================================================================== //
+        // ========================================================================== //
 
-    /* public - [Do~Something] Function 	        */
+        /* public - [Do~Something] Function 	        */
 
-    public AssetBundleBrowserWrapper()
-    {
+        public AssetBundleBrowserWrapper()
+        {
 #if ASSET_BUNDLE_BROWSER
 		_bundleBrowser = AssetBundleBrowserMain.GetWindow<AssetBundleBrowserMain>();
 		browserType = _bundleBrowser.GetType();
@@ -67,36 +56,37 @@ public class AssetBundleBrowserWrapper
 		
 		_pMethod_Build = _buildtabField.FieldType.GetMethod("ExecuteBuild", BindingFlags.NonPublic | BindingFlags.Instance);
 #endif
-    }
+        }
 
-    public void BuildBundle(BuildTarget eBuildTarget)
-    {
-        _buildtabField_UserData_BuildTarget.SetValue(_userDataInstance, (int)eBuildTarget);
+        public void BuildBundle(BuildTarget eBuildTarget)
+        {
+            _buildtabField_UserData_BuildTarget.SetValue(_userDataInstance, (int)eBuildTarget);
 
-        UnityEngine.Debug.Log($"{const_prefix_ForLog} Start Build Bundle \n" +
-                              $"Current Platform : {Application.platform} Target : {_buildtabField_UserData_BuildTarget.GetValue(_userDataInstance)} \n" +
-                              $"Symbol : {PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup)} \n");
+            UnityEngine.Debug.Log($"{const_prefix_ForLog} Start Build Bundle \n" +
+                                  $"Current Platform : {Application.platform} Target : {_buildtabField_UserData_BuildTarget.GetValue(_userDataInstance)} \n" +
+                                  $"Symbol : {PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup)} \n");
 
 #if ASSET_BUNDLE_BROWSER
 		_pMethod_Build?.Invoke(_buildtabField.GetValue(_pBrowser), null);
 		_bundleBrowser.Close();
 #else
-        UnityEngine.Debug.Log($"{const_prefix_ForLog} Use Define Symbol ASSET_BUNDLE_BROWSER");
+            UnityEngine.Debug.Log($"{const_prefix_ForLog} Use Define Symbol ASSET_BUNDLE_BROWSER");
 #endif
-        UnityEngine.Debug.Log($"{const_prefix_ForLog} Finish Build");
+            UnityEngine.Debug.Log($"{const_prefix_ForLog} Finish Build");
+        }
+
+        // ========================================================================== //
+
+        /* protected - [Override & Unity API]       */
+
+
+        /* protected - [abstract & virtual]         */
+
+
+        // ========================================================================== //
+
+        #region Private
+
+        #endregion Private
     }
-
-    // ========================================================================== //
-
-    /* protected - [Override & Unity API]       */
-
-
-    /* protected - [abstract & virtual]         */
-
-
-    // ========================================================================== //
-
-    #region Private
-
-    #endregion Private
 }
