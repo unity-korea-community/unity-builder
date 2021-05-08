@@ -18,7 +18,13 @@ MonoBehaviour:
   buildSceneNames:
   - Assets/SampleScene
   bundleVersion: 1.0
-  buildPath: Builds/{productName}_{MM}{dd}_{hh}{mm}_{scriptingBackEnd}
+  buildPath: 'Builds/{productName}
+
+    _{MM}{dd}_{hh}{mm}
+
+    _{bundleVersion}.{bundleVersionCode}
+
+    _{scriptingBackEnd}'
   keyaliasName: 
   keyaliasPassword: 
   keystorePath: 

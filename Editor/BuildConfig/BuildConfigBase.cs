@@ -43,6 +43,7 @@ namespace Unity_Builder
         // IL2CPP의 경우 같은 장소에 빌드해놓으면 더 빠르다는 메뉴얼로 인해 일단 보류
         // https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html
         [Tooltip("relative Path - UnityProject/Assets/")]
+        [Multiline]
         public string buildPath;
 
         void Reset()
@@ -55,6 +56,7 @@ namespace Unity_Builder
             DateTime now = DateTime.Now;
 
             string newBuildPath = Application.dataPath.Replace("/Assets", "/") + buildPath
+                .Replace("\n", "")
                 .Replace("{applicationIdentifier}", applicationIdentifier)
                 .Replace("{productName}", productName)
                 .Replace("{bundleVersion}", bundleVersion)
@@ -79,7 +81,7 @@ namespace Unity_Builder
             defineSymbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
             buildSceneNames = GetEnabled_EditorScenes();
             bundleVersion = PlayerSettings.bundleVersion;
-            buildPath = "Builds/{productName}_{MM}{dd}_{hh}{mm}";
+            buildPath = "Builds/{productName}\n_{MM}{dd}_{hh}{mm}";
         }
 
         public virtual void OnPreBuild(IDictionary<string, string> commandLine)

@@ -77,7 +77,7 @@ namespace Unity_Builder
             {
                 editorSetting_Backup.Restore();
             }
-            Debug.LogFormat("After Build DefineSymbol Current {0}", PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup));
+            Debug.Log($"After Build DefineSymbol Current {PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup)}");
 
             // 2018.4 에서 프로젝트 전체 리임포팅 하는 이슈 대응
             // https://issuetracker.unity3d.com/issues/osx-batchmode-build-hangs-at-refresh-detecting-if-any-assets-need-to-be-imported-or-removed
