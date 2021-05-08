@@ -1,6 +1,6 @@
 using System;
 
-namespace Unity_CLI
+namespace Unity_Builder
 {
     /// <summary>
     /// 유니티 -> XCode Export -> XCode ArchiveBuildConfig -> .ipa 에 필요한 모든 설정

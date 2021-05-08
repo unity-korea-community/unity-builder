@@ -94,7 +94,6 @@ namespace Unity_Builder
 
         public abstract void OnPostBuild(IDictionary<string, string> commandLine);
 
-
         public static string[] GetEnabled_EditorScenes()
         {
             return EditorBuildSettings.scenes
