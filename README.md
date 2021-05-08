@@ -76,7 +76,7 @@ Add package from git URL 클릭 후
 
 ## 참고한 링크
 
-* **korstrix/Unity\_JenkinsBuilder**
+* **KorStrix/Unity\_JenkinsBuilder**
   * [https://github.com/KorStrix/Unity\_JenkinsBuilder](https://github.com/KorStrix/Unity_JenkinsBuilder) 
 * **mob-sakai/ProjectBuilder**
   * [https://github.com/mob-sakai/ProjectBuilder](https://github.com/mob-sakai/ProjectBuilder) 
