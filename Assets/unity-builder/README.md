@@ -2,6 +2,8 @@
 
 ## 소개
 
+![](.gitbook/assets/unity-builder%20%281%29.gif)
+
 프로젝트에 목적에 따른 빌드마다\(**ex.** 개발버전, 치트버전, 스토어버전 등\)
 
 다르게 해야 할 세팅들을 Unity-ScriptableObject로 저장하고,
