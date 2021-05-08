@@ -36,7 +36,9 @@ namespace Unity_Builder
             BuildTargetGroup targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             scriptingBackEnd = PlayerSettings.GetScriptingBackend(targetGroup);
             bundleVersionCode = PlayerSettings.Android.bundleVersionCode;
-            buildPath += "_{scriptingBackEnd}";
+            buildPath +=
+                "\n_{bundleVersion}.{bundleVersionCode}" +
+                "\n_{scriptingBackEnd}";
         }
 
         public override void OnPreBuild(IDictionary<string, string> commandLine)
