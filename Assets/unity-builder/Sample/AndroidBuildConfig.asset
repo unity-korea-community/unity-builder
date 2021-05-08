@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: AndroidBuildConfig
   m_EditorClassIdentifier: 
   applicationIdentifier: com.UNKO.unitycli
-  defineSymbol: android
   productName: unity-cli
+  defineSymbol: android
   buildSceneNames:
   - Assets/SampleScene
   bundleVersion: 1.0
-  buildPath: C:/Users/user/Desktop/Project/unity-cmd/Builds/{productName}_{MM}{dd}_{hh}{mm}
-  keyalias_name: 
-  keyalias_password: 
-  keystore_relativePath: 
-  keystore_password: 
+  buildPath: Builds/{productName}_{MM}{dd}_{hh}{mm}_{scriptingBackEnd}
+  keyaliasName: 
+  keyaliasPassword: 
+  keystorePath: 
+  keystorePassword: 
   scriptingBackEnd: 0
   bundleVersionCode: 1
