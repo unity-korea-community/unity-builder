@@ -12,7 +12,7 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.
 
 ## 주요 기능
 
-![](.gitbook/assets/image%20%283%29.png)
+![](.gitbook/assets/image%20%283%29%20%281%29.png)
 
 * Editor Setting을 SO값으로 세팅 및 빌드
 * 빌드 결과물 경로에 주요 변수 **문자열 보간**
@@ -31,13 +31,11 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.
 * **-configpath** UnityProject/하위 기준 로컬경로
   * Editor 내 SO를 선택 후 오른쪽 마우스 -&gt; CopyPath 값
 
-|  | 설명 | 예시 |
+| 인 | 설명 | 예시 |
 | :--- | :--- | :--- |
 | `-configpath` |  UnityProject/하위 기준 로컬경로 | Assets/unity-builder/Sample/AndroidBuildConfig.asset |
 
 ### 옵션 명령어
-
-* -overwrite  
 
 <table>
   <thead>
@@ -63,9 +61,7 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.
 
 ### Full Command Line Example
 
--quit -batchmode -executeMethod UnityBuilder.Build -
-
-
+`-quit -batchmode -executeMethod UnityBuilder.Build -configpath Assets/unity-builder/Sample/AndroidBuildConfig.asset`
 
 ### CommandLineArguments - 유니티 메뉴얼 [https://docs.unity3d.com/Manual/CommandLineArguments.html](https://docs.unity3d.com/Manual/CommandLineArguments.html)
 
