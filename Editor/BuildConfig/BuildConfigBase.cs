@@ -42,6 +42,7 @@ namespace Unity_Builder
         // 출력할 폴더 및 파일은 Jenkins에서 처리할 예정이였으나,
         // IL2CPP의 경우 같은 장소에 빌드해놓으면 더 빠르다는 메뉴얼로 인해 일단 보류
         // https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html
+        [Tooltip("relative Path - UnityProject/Assets/")]
         public string buildPath;
 
         void Reset()
@@ -52,15 +53,19 @@ namespace Unity_Builder
         public virtual string GetBuildPath()
         {
             DateTime now = DateTime.Now;
-            string newBuildPath = buildPath
+
+            string newBuildPath = Application.dataPath.Replace("/Assets", "/") + buildPath
+                .Replace("{applicationIdentifier}", applicationIdentifier)
                 .Replace("{productName}", productName)
+                .Replace("{bundleVersion}", bundleVersion)
+
                 .Replace("{yyyy}", now.ToString("yyyy"))
                 .Replace("{yy}", now.ToString("yy"))
                 .Replace("{MM}", now.ToString("MM"))
                 .Replace("{dd}", now.ToString("dd"))
                 .Replace("{hh}", now.ToString("hh"))
                 .Replace("{mm}", now.ToString("mm"))
-                ;
+            ;
 
             return newBuildPath;
         }
@@ -73,8 +78,8 @@ namespace Unity_Builder
             productName = PlayerSettings.productName;
             defineSymbol = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
             buildSceneNames = GetEnabled_EditorScenes();
-            buildPath = Application.dataPath.Replace("/Assets", "") + "/Builds/{productName}_{MM}{dd}_{hh}{mm}";
             bundleVersion = PlayerSettings.bundleVersion;
+            buildPath = "Builds/{productName}_{MM}{dd}_{hh}{mm}";
         }
 
         public virtual void OnPreBuild(IDictionary<string, string> commandLine)

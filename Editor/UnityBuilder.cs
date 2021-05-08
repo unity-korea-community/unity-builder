@@ -52,6 +52,13 @@ namespace Unity_Builder
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
             PlayerSetting_Backup editorSetting_Backup = SettingBuildConfig_To_EditorSetting(buildConfig, buildTargetGroup);
 
+            string overwriteConfigJson = Environment.GetEnvironmentVariable("overwrite");
+            if (string.IsNullOrEmpty(overwriteConfigJson) == false)
+            {
+                Debug.Log($"overwrite config : {overwriteConfigJson}");
+                JsonUtility.FromJsonOverwrite(overwriteConfigJson, buildConfig);
+            }
+
             Dictionary<string, string> commandLine = new Dictionary<string, string>();
             try
             {
@@ -82,9 +89,15 @@ namespace Unity_Builder
         public static bool GetSO_FromCommandLine<T>(string commandLine, out T outFile)
             where T : ScriptableObject
         {
+            outFile = null;
             string path = Environment.GetEnvironmentVariable(commandLine);
-            outFile = AssetDatabase.LoadAssetAtPath<T>(path);
+            if (string.IsNullOrEmpty(path))
+            {
+                Debug.LogError($"environment variable {commandLine} is null or empty");
+                return false;
+            }
 
+            outFile = AssetDatabase.LoadAssetAtPath<T>(path);
             return outFile != null;
         }
 
