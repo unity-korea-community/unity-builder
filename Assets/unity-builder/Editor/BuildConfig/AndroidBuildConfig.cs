@@ -85,6 +85,11 @@ namespace Unity_Builder
             EditorGUILayout.Space();
 
             AndroidBuildConfig config = target as AndroidBuildConfig;
+            if (GUILayout.Button("Reset to Current EditorSetting"))
+            {
+                config.ResetSetting();
+            }
+
             if (GUILayout.Button("Build!"))
             {
                 UnityBuilder.Build(config);
