@@ -49,11 +49,9 @@ namespace UNKO.Localize.Sample
         private void Awake()
         {
             CSVData[] data = ParsingCSVData(_csvData.text);
-            ILocalizeManager manager = GetComponent<LocalizeManagerComponent>()
+            LocalizeManagerComponentSingleton.instance
                 .AddData(data)
                 .ChangeLanguage(SystemLanguage.Korean);
-
-            LocalizeComponentBase.Init(manager);
 
             // For FontInitializer.Awake()
             Invoke(nameof(InitLanguage), 0.1f);

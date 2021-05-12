@@ -15,19 +15,15 @@ public class ParameterFormatExample : MonoBehaviour
     [SerializeField]
     LocalizeText resultText;
 
-    LocalizeManagerComponent _localizeManager;
-
     private void Awake()
     {
-        _localizeManager = FindObjectOfType<LocalizeManagerComponent>();
-
         // 바로 시작하면 manager가 set이 안되서 에러
         Invoke(nameof(ExampleSetup), 0.1f);
     }
 
     private void ExampleSetup()
     {
-        _localizeManager.OnChangeLanguage += (language) => OnUpdate();
+        LocalizeManagerComponentSingleton.instance.OnChangeLanguage += (language) => OnUpdate();
 
         input1.text = "one";
         input1.onValueChanged.AddListener((value) => OnUpdate());
@@ -40,10 +36,10 @@ public class ParameterFormatExample : MonoBehaviour
 
     void OnUpdate()
     {
-        if (_localizeManager.TryGetLocalizeText(input1.text, out string variable1) == false)
+        if (LocalizeManagerComponentSingleton.instance.TryGetLocalizeText(input1.text, out string variable1) == false)
             variable1 = input1.text;
 
-        if (_localizeManager.TryGetLocalizeText(input2.text, out string variable2) == false)
+        if (LocalizeManagerComponentSingleton.instance.TryGetLocalizeText(input2.text, out string variable2) == false)
             variable2 = input2.text;
 
         resultText.SetLanguageKeyWithParam("0is1", variable1, variable2);
