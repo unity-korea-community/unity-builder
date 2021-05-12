@@ -21,11 +21,11 @@ public class ChangeLanguageButton : MonoBehaviour
         switch (language)
         {
             case UNKO.Localize.Sample.CSVLocalizeInitializer.SupportLanguage.kor:
-                FindObjectOfType<LocalizeManagerComponent>().ChangeLanguage(SystemLanguage.Korean);
+                LocalizeManagerComponentSingleton.instance.ChangeLanguage(SystemLanguage.Korean);
                 break;
 
             case UNKO.Localize.Sample.CSVLocalizeInitializer.SupportLanguage.eng:
-                FindObjectOfType<LocalizeManagerComponent>().ChangeLanguage(SystemLanguage.English);
+                LocalizeManagerComponentSingleton.instance.ChangeLanguage(SystemLanguage.English);
                 break;
         }
     }
