@@ -28,15 +28,13 @@ Inspector, CLI 등으로 빌드할 수 있게 해줍니다.‌
 
 ## 설치 <a id="undefined-2"></a>
 
-‌
-
 Unity Editor/상단 Window 탭/Package Manager/+ 버튼/‌
 
 Add package from git URL 클릭 후‌
 
 이 저장소의 URL 입력‌
 
-​[`https://github.com/unity-korea-community/unity-builder.git`](https://github.com/unity-korea-community/unity-builder.git)`​`‌
+​[`https://github.com/unity-korea-community/unity-builder.git`](https://github.com/unity-korea-community/unity-builder.git)
 
 ## CLI 명령어 <a id="cli"></a>
 
