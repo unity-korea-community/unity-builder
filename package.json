@@ -1,7 +1,7 @@
 {
-  "name": "com.unko.unity-builder",
+  "name": "com.unko.unity-package-template",
   "version": "0.0.1",
-  "displayName": "Unity_Builder",
+  "displayName": "unity-package-template",
   "description": "This is an example package",
   "unity": "2019.1",
   "author": {
