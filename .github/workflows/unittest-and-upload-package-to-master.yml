@@ -1,19 +1,21 @@
 # 이 워크플로는
-# 1. Unity-UnitTest 실행 후 결과에 따라
-# 1-1. 문제가 있으면 Artifact에 버그 리포트 및 중단,
-# 1-2. 문제가 없으면 2로 넘어갑니다.
+# 1. UnityProject/Assets/Package(=env.WORK_PATH)를 UnityProject/Packages(=env.PACKAGES_PATH)로 Move
 #
-# 2. Packages를 Artifacts에 Upload를 한 뒤 {this_GithubRepo}의 master brach에 push합니다.
+# 2. Local Package인 채로 Unity-UnitTest 실행
+# 2-1. 문제가 있으면 Artifact에 버그 리포트 및 중단,
+# 2-2. 문제가 없으면 2로 넘어갑니다.
+#
+# 3. UnityProject/Packages를 Artifacts에 Upload를 한 뒤 {this_GithubRepository}의 master brach에 push합니다.
 #
 # workflow syntax
 # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
 
-name: unittest and upload master
+name: unittest and upload package to master
 
 on:
   push:
     branches:
-      - workspace # match env.SRC_BRANCH
+      - workspace
 
 env:
   # Require unity test
@@ -21,11 +23,11 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-builder
   SRC_BRANCH: workspace
   DEST_OWNER: unity-korea-community
   DEST_BRANCH: master
-  WORK_PATH: Assets/unity-builder
+  WORK_PATH: Packages/${{ github.event.repository.name }}
+  PACKAGES_PATH: Packages
 
 jobs:
   testAllModes:
@@ -62,7 +64,6 @@ jobs:
         if: env.GIT_DIFF
         id: tests
         with:
-          # projectPath: /
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           testMode: ${{ matrix.testMode }}
           artifactsPath: ${{ matrix.testMode }}-artifacts
@@ -89,14 +90,13 @@ jobs:
           name: Package
           path: ${{ env.WORK_PATH }}/
 
-      - name: Deploy
-        uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
+      - uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
         with:
           personal_token: ${{ secrets.ACCESS_TOKEN }} #require
           src_branch: ${{ env.SRC_BRANCH }}
           src_path: ${{ env.WORK_PATH }}/. #require, .을 안붙이면 dst_path에 src_path 폴더채로 카피됨
           dst_owner: ${{ env.DEST_OWNER }} #require
-          dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
+          dst_repo_name: ${{ github.event.repository.name }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
           dst_path: /.
           clean: true
