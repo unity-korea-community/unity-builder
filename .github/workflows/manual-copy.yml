@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       SRC_PATH:
-        default: Assets/unity-builder/
+        default: Packages/${{ github.event.repository.name }}/
         description: copy to dstPath
         required: true
       DST_PATH:
@@ -23,7 +23,6 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-builder
   SRC_BRANCH: workspace
   DST_OWNER: unity-korea-community
   DST_BRANCH: master
@@ -45,7 +44,7 @@ jobs:
           src_branch: ${{ env.SRC_BRANCH }}
           src_path: ${{ github.event.inputs.SRC_PATH }} #require
           dst_owner: ${{ env.DST_OWNER }} #require
-          dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
+          dst_repo_name: ${{ github.event.repository.name }} #require
           dst_branch: ${{ env.DST_BRANCH }}
           dst_path: ${{ github.event.inputs.DST_PATH }}
           clean: true

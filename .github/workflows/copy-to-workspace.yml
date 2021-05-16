@@ -16,12 +16,11 @@ env:
   UNITY_VERSION: 2019.3.8f1
 
   # require Deploy
-  THIS_REPOSITORY: unity-builder
   DEST_OWNER: unity-korea-community
   SRC_BRANCH: master
   WORK_PATH: /.
   DEST_BRANCH: workspace
-  DEST_PATH: Assets/unity-builder/
+  DEST_PATH: Packages/${{ github.event.repository.name }}/
 
 jobs:
   copy:
@@ -40,7 +39,7 @@ jobs:
           src_branch: ${{ env.SRC_BRANCH }}
           src_path: ${{ env.WORK_PATH }} #require
           dst_owner: ${{ env.DEST_OWNER }} #require
-          dst_repo_name: ${{ env.THIS_REPOSITORY }} #require
+          dst_repo_name: ${{ github.event.repository.name }} #require
           dst_branch: ${{ env.DEST_BRANCH }}
           dst_path: ${{ env.DEST_PATH }}
           clean: true
