@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Unity_Builder
 {
     [CreateAssetMenu(fileName = "AndroidBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/AndroidBuildConfig")]
-    public class AndroidBuildConfig : BuildConfigBase
+    public class AndroidBuildConfig : BuildConfig
     {
         public override BuildTarget buildTarget => BuildTarget.Android;
 
@@ -28,20 +28,22 @@ namespace Unity_Builder
 
         public int bundleVersionCode;
 
-        public override void ResetSetting()
+        public override void ResetSetting(BuildConfig buildConfig)
         {
-            base.ResetSetting();
+            base.ResetSetting(buildConfig);
 
             BuildTargetGroup targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             scriptingBackEnd = PlayerSettings.GetScriptingBackend(targetGroup);
             bundleVersionCode = PlayerSettings.Android.bundleVersionCode;
-            buildPath +=
+            buildConfig.buildPath +=
                 "\n_{bundleVersion}.{bundleVersionCode}" +
                 "\n_{scriptingBackEnd}";
         }
 
-        public override void OnPreBuild(IDictionary<string, string> commandLine)
+        public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
         {
+            base.OnPreBuild(commandLine, ref buildPlayerOptions);
+
             PlayerSettings.Android.keyaliasName = keyaliasName;
             PlayerSettings.Android.keyaliasPass = keyaliasPassword;
 
@@ -57,16 +59,11 @@ namespace Unity_Builder
                             $"keystoreName : {PlayerSettings.Android.keystoreName}, keystorePass : {PlayerSettings.Android.keystorePass}\n");
         }
 
-        public override void OnPostBuild(IDictionary<string, string> commandLine)
-        {
-        }
-
         public override string GetBuildPath()
         {
             return base.GetBuildPath()
                 .Replace("{scriptingBackEnd}", scriptingBackEnd.ToString())
                 .Replace("{bundleVersionCode}", bundleVersionCode.ToString())
-
                 + ".apk";
         }
     }
@@ -86,7 +83,7 @@ namespace Unity_Builder
             AndroidBuildConfig config = target as AndroidBuildConfig;
             if (GUILayout.Button("Reset to Current EditorSetting"))
             {
-                config.ResetSetting();
+                config.ResetSetting(config);
             }
 
             if (GUILayout.Button("Build!"))

@@ -12,7 +12,7 @@ namespace Tests
         public void OverwriteTest()
         {
             AndroidBuildConfig buildConfig = AndroidBuildConfig.CreateInstance<AndroidBuildConfig>();
-            buildConfig.ResetSetting();
+            buildConfig.ResetSetting(buildConfig);
 
             string productName = buildConfig.productName;
             string testProductName = "product_" + Random.Range(1, 100).ToString();

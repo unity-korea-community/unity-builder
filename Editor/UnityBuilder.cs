@@ -36,7 +36,7 @@ namespace Unity_Builder
     {
         public static void Build()
         {
-            if (GetSO_FromCommandLine("configpath", out BuildConfigBase config))
+            if (GetSO_FromCommandLine("configpath", out BuildConfig config))
             {
                 Build(config);
             }
@@ -46,7 +46,7 @@ namespace Unity_Builder
             }
         }
 
-        public static void Build(BuildConfigBase buildConfig)
+        public static void Build(BuildConfig buildConfig)
         {
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(buildConfig.buildTarget);
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
@@ -62,7 +62,7 @@ namespace Unity_Builder
             Dictionary<string, string> commandLine = new Dictionary<string, string>();
             try
             {
-                buildConfig.OnPreBuild(commandLine);
+                buildConfig.OnPreBuild(commandLine, ref buildPlayerOptions);
                 BuildReport report = UnityEditor.BuildPipeline.BuildPlayer(buildPlayerOptions);
                 buildConfig.OnPostBuild(commandLine);
 
@@ -105,7 +105,7 @@ namespace Unity_Builder
 
         #region private
 
-        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfigBase buildConfig)
+        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig buildConfig)
         {
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
@@ -119,7 +119,7 @@ namespace Unity_Builder
         }
 
 
-        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfigBase buildConfig, BuildTargetGroup buildTargetGroup)
+        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfig buildConfig, BuildTargetGroup buildTargetGroup)
         {
             string defineSymbol_Backup = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
             PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, buildConfig.defineSymbol);
