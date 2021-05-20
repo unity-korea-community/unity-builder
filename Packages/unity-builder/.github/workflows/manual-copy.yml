@@ -1,0 +1,50 @@
+# 이 워크플로는 파일을 카피합니다.
+#
+# workflow syntax
+# https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
+name: manual copy
+
+on:
+  workflow_dispatch:
+    inputs:
+      SRC_PATH:
+        default: Packages/${{ github.event.repository.name }}/
+        description: copy to dstPath
+        required: true
+      DST_PATH:
+        default: /.
+        description: copy to dstPath
+        required: true
+
+env:
+  # Require unity test
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+  UNITY_VERSION: 2019.3.8f1
+
+  # require Deploy
+  SRC_BRANCH: workspace
+  DST_OWNER: unity-korea-community
+  DST_BRANCH: master
+
+jobs:
+  copy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ env.SRC_BRANCH }}
+          lfs: true
+
+      - name: Deploy
+        uses: andstor/copycat-action@v3.2.3 # https://github.com/marketplace/actions/copycat-action
+        with:
+          personal_token: ${{ secrets.ACCESS_TOKEN }} #require
+          src_branch: ${{ env.SRC_BRANCH }}
+          src_path: ${{ github.event.inputs.SRC_PATH }} #require
+          dst_owner: ${{ env.DST_OWNER }} #require
+          dst_repo_name: ${{ github.event.repository.name }} #require
+          dst_branch: ${{ env.DST_BRANCH }}
+          dst_path: ${{ github.event.inputs.DST_PATH }}
+          clean: true
