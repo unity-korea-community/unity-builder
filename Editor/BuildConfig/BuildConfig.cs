@@ -63,7 +63,7 @@ namespace Unity_Builder
                 .Replace("{yy}", now.ToString("yy"))
                 .Replace("{MM}", now.ToString("MM"))
                 .Replace("{dd}", now.ToString("dd"))
-                .Replace("{hh}", now.ToString("hh"))
+                .Replace("{hh}", now.ToString("HH"))
                 .Replace("{mm}", now.ToString("mm"))
             ;
 
