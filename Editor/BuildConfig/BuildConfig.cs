@@ -85,15 +85,21 @@ namespace UNKO.Unity_Builder
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
         {
             if (string.IsNullOrEmpty(applicationIdentifier) == false)
+            {
                 PlayerSettings.applicationIdentifier = applicationIdentifier;
+            }
             PlayerSettings.bundleVersion = bundleVersion;
 
             var options = buildPlayerOptions.options;
             if (developmentBuild)
+            {
                 options |= BuildOptions.Development;
+            }
 
             if (autoRunPlayer)
+            {
                 options |= BuildOptions.AutoRunPlayer;
+            }
 
             buildPlayerOptions.options = options;
         }
@@ -102,8 +108,8 @@ namespace UNKO.Unity_Builder
         {
             if (openBuildFolder)
             {
-                string buildPath = GetBuildPath();
-                string buildFolderPath = Path.GetDirectoryName(buildPath);
+                string newBuildPath = GetBuildPath();
+                string buildFolderPath = Path.GetDirectoryName(newBuildPath);
                 Process.Start(buildFolderPath);
             }
         }
