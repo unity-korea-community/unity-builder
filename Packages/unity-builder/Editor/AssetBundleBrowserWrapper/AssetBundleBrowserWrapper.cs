@@ -6,7 +6,7 @@ using UnityEditor;
 using AssetBundleBrowser;
 #endif
 
-namespace Unity_Builder
+namespace UNKO.Unity_Builder
 {
     public class AssetBundleBrowserWrapper
     {

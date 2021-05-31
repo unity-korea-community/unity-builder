@@ -1,6 +1,5 @@
 {
     "name": "unko.unity-builder.editor",
-    "rootNamespace": "",
     "references": [],
     "includePlatforms": [
         "Editor"
