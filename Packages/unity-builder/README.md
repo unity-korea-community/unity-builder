@@ -1,5 +1,7 @@
 # Unity-Builder
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/b660c22a8710466cb44271b33b8fc92d)](https://app.codacy.com/gh/unity-korea-community/unity-builder?utm_source=github.com&utm_medium=referral&utm_content=unity-korea-community/unity-builder&utm_campaign=Badge_Grade_Settings)
+
 ## 소개
 
 ![](.gitbook/assets/unity-builder%20%281%29.gif)
