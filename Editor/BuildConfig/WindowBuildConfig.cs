@@ -7,6 +7,7 @@ using System.Collections.Generic;
 namespace UNKO.Unity_Builder
 {
     [CreateAssetMenu(fileName = "WindowBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/WindowBuildConfig")]
+    [StructLayout(LayoutKind.Auto)] // ignore codacy
     public class WindowBuildConfig : BuildConfig
     {
         public override BuildTarget buildTarget => BuildTarget.StandaloneWindows64;
