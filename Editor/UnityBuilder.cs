@@ -32,11 +32,11 @@ namespace UNKO.Unity_Builder
         }
     }
 
-    public class UnityBuilder
+    public static class UnityBuilder
     {
         public static void Build()
         {
-            if (GetSO_FromCommandLine("configpath", out BuildConfig config))
+            if (TryGetSO_FromCommandLine("configpath", out BuildConfig config))
             {
                 Build(config);
             }
@@ -86,7 +86,7 @@ namespace UNKO.Unity_Builder
 #endif
         }
 
-        public static bool GetSO_FromCommandLine<T>(string commandLine, out T outFile)
+        public static bool TryGetSO_FromCommandLine<T>(string commandLine, out T outFile)
             where T : ScriptableObject
         {
             outFile = null;
@@ -108,7 +108,13 @@ namespace UNKO.Unity_Builder
         private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig config)
         {
             List<string> sceneNames = new List<string>(config.GetBuildSceneNames());
-            sceneNames.ForEach(sceneName => sceneName += ".unity");
+            for (int i = 0; i < sceneNames.Count; i++)
+            {
+                const string sceneExtension = ".unity";
+                string sceneName = sceneNames[i];
+                if (sceneName.EndsWith(sceneExtension))
+                    sceneNames[i] = sceneName + sceneExtension;
+            }
 
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
