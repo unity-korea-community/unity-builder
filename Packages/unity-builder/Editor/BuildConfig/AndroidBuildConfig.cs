@@ -28,14 +28,14 @@ namespace UNKO.Unity_Builder
 
         public int bundleVersionCode;
 
-        public override void ResetSetting(BuildConfig buildConfig)
+        public override void ResetSetting(BuildConfig config)
         {
-            base.ResetSetting(buildConfig);
+            base.ResetSetting(config);
 
             BuildTargetGroup targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             scriptingBackEnd = PlayerSettings.GetScriptingBackend(targetGroup);
             bundleVersionCode = PlayerSettings.Android.bundleVersionCode;
-            buildConfig.buildPath +=
+            config.buildPath +=
                 "\n_{bundleVersion}.{bundleVersionCode}" +
                 "\n_{scriptingBackEnd}";
         }

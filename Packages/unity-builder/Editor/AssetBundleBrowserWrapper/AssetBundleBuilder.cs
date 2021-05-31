@@ -1,3 +1,4 @@
+#if WIP
 using UnityEditor;
 
 namespace UNKO.Unity_Builder
@@ -48,8 +49,9 @@ namespace UNKO.Unity_Builder
 
         // ========================================================================== //
 
-        #region Private
+#region Private
 
-        #endregion Private
+#endregion Private
     }
 }
+#endif
