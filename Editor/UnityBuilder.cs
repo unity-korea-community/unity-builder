@@ -105,16 +105,16 @@ namespace UNKO.Unity_Builder
 
         #region private
 
-        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig buildConfig)
+        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig config)
         {
-            List<string> sceneNames = new List<string>(buildConfig.buildSceneNames);
+            List<string> sceneNames = new List<string>(config.GetBuildSceneNames());
             sceneNames.ForEach(sceneName => sceneName += ".unity");
 
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
                 scenes = sceneNames.ToArray(),
-                locationPathName = buildConfig.GetBuildPath(),
-                target = buildConfig.buildTarget,
+                locationPathName = config.GetBuildPath(),
+                target = config.buildTarget,
                 options = BuildOptions.None
             };
 
@@ -122,13 +122,13 @@ namespace UNKO.Unity_Builder
         }
 
 
-        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfig buildConfig, BuildTargetGroup buildTargetGroup)
+        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfig config, BuildTargetGroup buildTargetGroup)
         {
             string defineSymbol_Backup = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
-            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, buildConfig.defineSymbol);
+            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, config.GetDefineSymbol());
 
             string productName_Backup = PlayerSettings.productName;
-            PlayerSettings.productName = buildConfig.productName;
+            PlayerSettings.productName = config.GetProductName();
 
             return new PlayerSetting_Backup(buildTargetGroup, defineSymbol_Backup, productName_Backup);
         }

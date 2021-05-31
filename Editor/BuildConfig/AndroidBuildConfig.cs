@@ -12,23 +12,29 @@ namespace UNKO.Unity_Builder
     {
         public override BuildTarget buildTarget => BuildTarget.Android;
 
-        public string keyaliasName;
-        public string keyaliasPassword;
+        [SerializeField]
+        protected string keyaliasName;
+        [SerializeField]
+        protected string keyaliasPassword;
 
         /// <summary>
         /// Keystore 파일의 경로입니다. `파일경로/파일명.keystore` 까지 쓰셔야 합니다.
         /// <para>UnityProject/Asset/ 기준의 상대 경로입니다. </para>
         /// <para>예를들어 UnityProject/Asset 폴더 밑에 example.keystore가 있으면 "/example.keystore" 입니다.</para>
         /// </summary>
-        public string keystorePath;
-        public string keystorePassword;
+        [SerializeField]
+        protected string keystorePath;
+        [SerializeField]
+        protected string keystorePassword;
 
         /// <summary>
         /// CPP 빌드를 할지 체크, CPP빌드는 오래 걸리므로 Test빌드가 아닌 Alpha 빌드부터 하는걸 권장
         /// </summary>
-        public ScriptingImplementation scriptingBackEnd;
+        [SerializeField]
+        protected ScriptingImplementation scriptingBackEnd;
 
-        public int bundleVersionCode;
+        [SerializeField]
+        protected int bundleVersionCode;
 
         public override void ResetSetting(BuildConfig config)
         {
@@ -37,9 +43,9 @@ namespace UNKO.Unity_Builder
             BuildTargetGroup targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             scriptingBackEnd = PlayerSettings.GetScriptingBackend(targetGroup);
             bundleVersionCode = PlayerSettings.Android.bundleVersionCode;
-            config.buildPath +=
+            config.AddBuildPath(
                 "\n_{bundleVersion}.{bundleVersionCode}" +
-                "\n_{scriptingBackEnd}";
+                "\n_{scriptingBackEnd}");
         }
 
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
