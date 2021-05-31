@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System;
 using UnityEngine;
 using UnityEditor;
@@ -75,9 +76,13 @@ namespace UNKO.Unity_Builder
                     if (command.StartsWith("-"))
                     {
                         if (hasNextCommand)
+                        {
                             Environment.SetEnvironmentVariable(command, commands[i + 1]);
+                        }
                         else
+                        {
                             Environment.SetEnvironmentVariable(command, "");
+                        }
                     }
                 }
 
