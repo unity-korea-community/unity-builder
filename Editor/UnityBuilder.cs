@@ -113,7 +113,9 @@ namespace UNKO.Unity_Builder
                 const string sceneExtension = ".unity";
                 string sceneName = sceneNames[i];
                 if (sceneName.EndsWith(sceneExtension))
+                {
                     sceneNames[i] = sceneName + sceneExtension;
+                }
             }
 
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
