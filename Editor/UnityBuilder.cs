@@ -107,9 +107,12 @@ namespace UNKO.Unity_Builder
 
         private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig buildConfig)
         {
+            List<string> sceneNames = new List<string>(buildConfig.buildSceneNames);
+            sceneNames.ForEach(sceneName => sceneName += ".unity");
+
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
-                scenes = buildConfig.buildSceneNames.Select(p => p += ".unity").ToArray(),
+                scenes = sceneNames.ToArray(),
                 locationPathName = buildConfig.GetBuildPath(),
                 target = buildConfig.buildTarget,
                 options = BuildOptions.None
