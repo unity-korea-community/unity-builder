@@ -12,7 +12,7 @@ namespace UNKO.Unity_Builder
     {
         BuildTarget buildTarget { get; }
 
-        void ResetSetting(BuildConfig buildConfig);
+        void ResetSetting(BuildConfig config);
         string GetBuildPath();
 
         void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions);
@@ -26,7 +26,7 @@ namespace UNKO.Unity_Builder
     {
         public abstract BuildTarget buildTarget { get; }
 
-        public abstract void ResetSetting(BuildConfig buildConfig);
+        public abstract void ResetSetting(BuildConfig config);
         public abstract string GetBuildPath();
 
         public abstract void OnPostBuild(IDictionary<string, string> commandLine);
