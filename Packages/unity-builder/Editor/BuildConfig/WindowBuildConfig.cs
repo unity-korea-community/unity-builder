@@ -15,7 +15,8 @@ namespace UNKO.Unity_Builder
         /// <summary>
         /// CPP 빌드를 할지 체크, CPP빌드는 오래 걸리므로 Test빌드가 아닌 Alpha 빌드부터 하는걸 권장
         /// </summary>
-        public ScriptingImplementation scriptingBackEnd;
+        [SerializeField]
+        protected ScriptingImplementation scriptingBackEnd;
 
         public override void ResetSetting(BuildConfig config)
         {
@@ -23,9 +24,9 @@ namespace UNKO.Unity_Builder
 
             BuildTargetGroup targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             scriptingBackEnd = PlayerSettings.GetScriptingBackend(targetGroup);
-            config.buildPath +=
+            config.AddBuildPath(
                      "\n_{bundleVersion}.{bundleVersionCode}" +
-                     "\n_{scriptingBackEnd}";
+                     "\n_{scriptingBackEnd}");
         }
 
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
