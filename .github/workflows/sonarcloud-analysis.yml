@@ -3,8 +3,10 @@ name: CI
 #  pull_request: {}
 #  push: { branches: [master] }
 
-on: 
+on:
   push:
+    branches:
+      - workspace
     paths-ignore:
       - 'doc/**'
       - '*.md'
@@ -20,6 +22,15 @@ jobs:
       DOTNET_ROOT: '/opt/unity/Editor/Data/NetCore/Sdk-2.2.107'
 
     steps:
+- name: Activate unity
+        # exit code is 1 for manual activation
+        continue-on-error: true
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+        run: |          
+          echo "$UNITY_LICENSE" | tr -d '\r' > UnityLicenseFile.ulf
+          unity-editor -nographics -logFile /dev/stdout -manualLicenseFile UnityLicenseFile.ulf -quit 
+
       - name: Checkout repository
         uses: actions/checkout@v1
 
@@ -39,7 +50,7 @@ jobs:
       - name: Run editor Tests
         run: unity-editor -nographics -logFile /dev/stdout -runTests -testPlatform editmode -testResults Tests/editmode-results.xml -enableCodeCoverage -coverageResultsPath Tests
         timeout-minutes: 20
-        
+
       - name: Run play Tests
         run: unity-editor -nographics -logFile /dev/stdout -runTests -testPlatform playmode -testResults Tests/playmode-results.xml -enableCodeCoverage -coverageResultsPath Tests
         timeout-minutes: 20
@@ -55,9 +66,9 @@ jobs:
         uses: MirageNet/nunit-reporter@v1.0.11
         if: always()
         with:
-          path: "Tests/*.xml"
+          path: 'Tests/*.xml'
           access-token: ${{ secrets.GITHUB_TOKEN }}
-            
+
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
@@ -86,5 +97,3 @@ jobs:
             /d:sonar.cs.opencover.reportsPaths=Tests/Mirage-opencov/EditMode/TestCoverageResults_0000.xml,Tests/Mirage-opencov/PlayMode/TestCoverageResults_0000.xml
           $DOTNET_ROOT/dotnet build Mirage.sln
           ./dotnet-sonarscanner end /d:sonar.login=$SONAR_TOKEN
-
-            
