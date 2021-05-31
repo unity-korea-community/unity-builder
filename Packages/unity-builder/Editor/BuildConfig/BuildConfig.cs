@@ -5,9 +5,11 @@ using System.Linq;
 using System.Collections.Generic;
 using System;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace UNKO.Unity_Builder
 {
+    [StructLayout(LayoutKind.Auto)] // ignore codacy
     public abstract class BuildConfig : BuildConfigBase
     {
         /// <summary>

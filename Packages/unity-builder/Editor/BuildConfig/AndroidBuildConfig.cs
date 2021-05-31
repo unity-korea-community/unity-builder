@@ -2,10 +2,12 @@ using System;
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 
 namespace UNKO.Unity_Builder
 {
     [CreateAssetMenu(fileName = "AndroidBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/AndroidBuildConfig")]
+    [StructLayout(LayoutKind.Auto)] // ignore codacy
     public class AndroidBuildConfig : BuildConfig
     {
         public override BuildTarget buildTarget => BuildTarget.Android;
