@@ -1,4 +1,4 @@
-name: CI
+name: CI_SONAR_CLOUD
 #on:
 #  pull_request: {}
 #  push: { branches: [master] }
