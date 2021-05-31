@@ -90,12 +90,13 @@ jobs:
           ./dotnet-sonarscanner begin \
             /o:$ORGANIZATION \
             /k:$ORGANIZATION_$PROJECT_NAME \
+            /n:$PROJECT_NAME \
             /d:sonar.verbose=false \
             /d:sonar.login=$SONAR_TOKEN \
             /d:sonar.host.url=https://sonarcloud.io \
             /d:sonar.cpd.exclusions=Assets/Tests/** \
             /d:sonar.coverage.exclusions=Assets/Tests/** \
             ${{ steps.semantic.outputs.new_release_published == 'true' && format('/v:{0}',steps.semantic.outputs.new_release_version) || '' }} \
-            /d:sonar.cs.nunit.reportsPaths=Tests/editmode-results.xml,Tests/playmode-results.xml \
+            /d:sonar.cs.nunit.reportsPaths=Tests/editmode-results.xml,Tests/playmode-results.xml
           $DOTNET_ROOT/dotnet build $PROJECT_NAME.sln
           ./dotnet-sonarscanner end /d:sonar.login=$SONAR_TOKEN
