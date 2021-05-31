@@ -13,6 +13,8 @@ on:
 
 env:
   PROJECT_NAME: ${{ github.event.repository.name }}
+  ORGANIZATION: unity-korea-community
+  PROJECT_KEY: unity-korea-community_unity-builder
 
 jobs:
   CI:
@@ -77,7 +79,7 @@ jobs:
           node-version: '14'
 
       - name: Generate Solution
-        run: unity-editor -nographics -logFile /dev/stdout -customBuildName Mirage -projectPath . -executeMethod  UnityEditor.SyncVS.SyncSolution -quit
+        run: unity-editor -nographics -logFile /dev/stdout -customBuildName $PROJECT_NAME -projectPath . -executeMethod  UnityEditor.SyncVS.SyncSolution -quit
 
       - name: SonarQube analysis
         env:
@@ -87,9 +89,9 @@ jobs:
         run: |
           ls -l
           ./dotnet-sonarscanner begin \
-            /o:miragenet \
-            /k:MirageNet_Mirage \
-            /n:Mirage \
+            /o:$ORGANIZATION \
+            /k:$PROJECT_KEY \
+            /n:#PROJECT_NAME \
             /d:sonar.verbose=false \
             /d:sonar.login=$SONAR_TOKEN \
             /d:sonar.host.url=https://sonarcloud.io \
