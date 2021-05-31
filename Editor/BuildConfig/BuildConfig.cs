@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 
-namespace Unity_Builder
+namespace UNKO.Unity_Builder
 {
     public abstract class BuildConfig : BuildConfigBase
     {

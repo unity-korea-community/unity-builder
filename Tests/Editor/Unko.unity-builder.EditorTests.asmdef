@@ -1,17 +1,19 @@
 {
-    "name": "com.unko.unity-builder.editortest",
+    "name": "unko.unity-builder.editortest",
     "references": [
-        "GUID:3a53f68e0674d9745aa875e76efaeda3"
+        "unko.unity-builder.editor"
     ],
     "includePlatforms": [
         "Editor"
     ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
-    "overrideReferences": false,
-    "precompiledReferences": [],
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
     "autoReferenced": true,
     "defineConstraints": [],
     "versionDefines": [],
     "noEngineReferences": false
-} 
+}

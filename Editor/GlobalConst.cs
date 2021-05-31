@@ -1,4 +1,4 @@
-namespace Unity_Builder
+namespace UNKO.Unity_Builder
 {
     public static class GlobalConst
     {

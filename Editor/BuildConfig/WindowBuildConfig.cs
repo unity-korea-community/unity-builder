@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
 
-namespace Unity_Builder
+namespace UNKO.Unity_Builder
 {
     [CreateAssetMenu(fileName = "WindowBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/WindowBuildConfig")]
     public class WindowBuildConfig : BuildConfig

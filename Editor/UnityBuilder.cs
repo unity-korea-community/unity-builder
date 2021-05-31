@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 
-namespace Unity_Builder
+namespace UNKO.Unity_Builder
 {
     /// <summary>
     /// 빌드 전 세팅 (빌드 후 되돌리기용)
