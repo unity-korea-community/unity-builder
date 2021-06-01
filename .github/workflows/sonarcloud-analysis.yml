@@ -1,3 +1,8 @@
+# 유니티 테스트 후 sonarscanner로 sonar cloud에 전송합니다.
+# 사전에 sonar cloud에 프로젝트를 만드셔야 합니다.
+
+# unity test -> install sonar scanner -> generate solution -> scan sonar
+# 참고한 코드 출처: https://github.com/MirageNet/Mirage/blob/master/.github/workflows/main.yml
 name: CI_SONAR_CLOUD
 #on:
 #  pull_request: {}
