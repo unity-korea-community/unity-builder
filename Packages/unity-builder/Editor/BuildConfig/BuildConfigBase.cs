@@ -1,10 +1,10 @@
-using System.Diagnostics;
-using UnityEngine;
-using UnityEditor;
-using System.Linq;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using UnityEditor;
+using UnityEngine;
 
 namespace UNKO.Unity_Builder
 {
@@ -20,10 +20,13 @@ namespace UNKO.Unity_Builder
     }
 
     /// <summary>
-    /// Unity Inspector에 등록하기 위함..
+    /// Unity Inspector에 등록하기 위해 ScriptableObject를 상속
     /// </summary>
     public abstract class BuildConfigBase : ScriptableObject, IBuildConfig
     {
+        /// <summary>
+        /// 실행될 빌드 타겟
+        /// </summary>
         public abstract BuildTarget buildTarget { get; }
 
         public abstract void ResetSetting(BuildConfig config);
