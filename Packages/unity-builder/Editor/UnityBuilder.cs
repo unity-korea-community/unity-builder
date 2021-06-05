@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -7,61 +9,34 @@ using UnityEngine;
 namespace UNKO.Unity_Builder
 {
     /// <summary>
-    /// 유니티 프로젝트를 <see cref="BuildConfigBase"/>으로 빌드하는 static class
+    /// 빌드 전 세팅 (빌드 후 되돌리기용)
     /// </summary>
-    public static class UnityBuilder
+    public class PlayerSetting_Backup
     {
-        /// <summary>
-        /// 빌드 전 세팅 (빌드 후 되돌리기용)
-        /// </summary>
-        public class PlayerSetting_Backup
+        public string defineSymbol { get; private set; }
+        public string productName { get; private set; }
+
+        public BuildTargetGroup buildTargetGroup { get; private set; }
+
+        public PlayerSetting_Backup(BuildTargetGroup buildTargetGroup, string defineSymbol, string productName)
         {
-            /// <summary>
-            /// 백업할 script define symbol
-            /// </summary>
-            public string DefineSymbol { get; private set; }
-
-            /// <summary>
-            /// 백업할 product name
-            /// </summary>
-            /// <value></value>
-            public string ProductName { get; private set; }
-
-            /// <summary>
-            /// <see cref="PlayerSettings.SetScriptingDefineSymbolsForGroup"/>을 호출하기 위해 필요
-            /// </summary>
-            /// <value></value>
-            public BuildTargetGroup BuildTargetGroup { get; private set; }
-
-            /// <summary>
-            /// 생성자
-            /// </summary>
-            /// <param name="buildTargetGroup"><see cref="PlayerSettings.SetScriptingDefineSymbolsForGroup"/>을 호출하기 위해 필요</param>
-            /// <param name="defineSymbol">백업할 script define symbol</param>
-            /// <param name="productName">백업할 product name</param>
-            public PlayerSetting_Backup(BuildTargetGroup buildTargetGroup, string defineSymbol, string productName)
-            {
-                this.BuildTargetGroup = buildTargetGroup;
-                this.DefineSymbol = defineSymbol;
-                this.ProductName = productName;
-            }
-
-            /// <summary>
-            /// Player Setting에 복구
-            /// </summary>
-            public void Restore()
-            {
-                PlayerSettings.SetScriptingDefineSymbolsForGroup(BuildTargetGroup, DefineSymbol);
-                PlayerSettings.productName = ProductName;
-            }
+            this.buildTargetGroup = buildTargetGroup;
+            this.defineSymbol = defineSymbol;
+            this.productName = productName;
         }
 
-        /// <summary>
-        /// 커맨드라인의 configpath에서 <see cref="BuildConfigBase"/>를 얻은 뒤 해당 config로 빌드합니다.
-        /// </summary>
+        public void Restore()
+        {
+            PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, defineSymbol);
+            PlayerSettings.productName = productName;
+        }
+    }
+
+    public static class UnityBuilder
+    {
         public static void Build()
         {
-            if (TryGetSO_FromCommandLine("configpath", out BuildConfigBase config))
+            if (TryGetSO_FromCommandLine("configpath", out BuildConfig config))
             {
                 Build(config);
             }
@@ -71,11 +46,7 @@ namespace UNKO.Unity_Builder
             }
         }
 
-        /// <summary>
-        /// <see cref="BuildConfigBase"/>로 빌드합니다.
-        /// </summary>
-        /// <param name="buildConfig">빌드에 사용할 config</param>
-        public static void Build(BuildConfigBase buildConfig)
+        public static void Build(BuildConfig buildConfig)
         {
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(buildConfig.buildTarget);
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
@@ -115,13 +86,6 @@ namespace UNKO.Unity_Builder
 #endif
         }
 
-        /// <summary>
-        /// EnvironmentVariable에서 <see cref="ScriptableObject"/>를 얻습니다.
-        /// </summary>
-        /// <param name="commandLine">찾을 값</param>
-        /// <param name="outFile">성공시 얻는 so</param>
-        /// <typeparam name="T">scriptable object type</typeparam>
-        /// <returns>성공 유무</returns>
         public static bool TryGetSO_FromCommandLine<T>(string commandLine, out T outFile)
             where T : ScriptableObject
         {
@@ -141,7 +105,7 @@ namespace UNKO.Unity_Builder
 
         #region private
 
-        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfigBase config)
+        private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfig config)
         {
             List<string> sceneNames = new List<string>(config.GetBuildSceneNames());
             for (int i = 0; i < sceneNames.Count; i++)
@@ -165,7 +129,8 @@ namespace UNKO.Unity_Builder
             return buildPlayerOptions;
         }
 
-        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfigBase config, BuildTargetGroup buildTargetGroup)
+
+        private static PlayerSetting_Backup SettingBuildConfig_To_EditorSetting(BuildConfig config, BuildTargetGroup buildTargetGroup)
         {
             string defineSymbol_Backup = PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup);
             PlayerSettings.SetScriptingDefineSymbolsForGroup(buildTargetGroup, config.GetDefineSymbol());
@@ -201,3 +166,4 @@ namespace UNKO.Unity_Builder
         #endregion private
     }
 }
+

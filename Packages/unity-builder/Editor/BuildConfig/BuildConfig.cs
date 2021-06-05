@@ -9,11 +9,8 @@ using UnityEngine;
 
 namespace UNKO.Unity_Builder
 {
-    /// <summary>
-    /// 플랫폼 별 빌드 설정 부모 클래스 
-    /// </summary>
     [StructLayout(LayoutKind.Auto)] // ignore codacy
-    public abstract class BuildConfigBase : BuildConfigSO
+    public abstract class BuildConfig : BuildConfigBase
     {
         /// <summary>
         /// 예시) com.CompanyName.ProductName  
@@ -26,21 +23,10 @@ namespace UNKO.Unity_Builder
         /// </summary>
         [SerializeField]
         protected string productName;
-        /// <summary>
-        /// productName를 얻습니다.
-        /// </summary>
-        /// <returns>productName</returns>
         public string GetProductName() => productName;
 
-        /// <summary>
-        /// script define symbol입니다.
-        /// </summary>
         [SerializeField]
         protected string defineSymbol;
-        /// <summary>
-        /// script define을 얻습니다.
-        /// </summary>
-        /// <returns></returns>
         public string GetDefineSymbol() => defineSymbol;
 
         /// <summary>
@@ -49,45 +35,23 @@ namespace UNKO.Unity_Builder
         /// </summary>
         [SerializeField]
         protected string[] buildSceneNames;
-        /// <summary>
-        /// 빌드에 포함할 씬 이름들을 얻습니다.
-        /// </summary>
-        /// <returns>buildSceneNames</returns>
         public string[] GetBuildSceneNames() => buildSceneNames;
 
-        /// <summary>
-        /// 번들 버젼을 얻습니다.
-        /// </summary>
         [SerializeField]
         protected string bundleVersion;
 
-
-        /// <summary>
-        /// 출력할 빌드 경로, UnityProject/Assets/의 상대 경로입니다.
-        /// NOTE IL2CPP의 경우 같은 장소에 빌드해놓으면 더 빠르다는 메뉴얼
-        /// https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html
-        /// </summary>
+        // 출력할 폴더 및 파일은 Jenkins에서 처리할 예정이였으나,
+        // IL2CPP의 경우 같은 장소에 빌드해놓으면 더 빠르다는 메뉴얼로 인해 일단 보류
+        // https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html
         [Tooltip("relative Path - UnityProject/Assets/")]
         [Multiline]
         [SerializeField]
         protected string buildPath;
 
-        /// <summary>
-        /// buildsetting - developmentBuild 옵션
-        /// </summary>
         [SerializeField]
         protected bool developmentBuild;
-
-        /// <summary>
-        /// buildsetting - autoRunPlayer 옵션
-        /// TODO 아직 테스트가 제대로 안되있습니다.
-        /// </summary>
         [SerializeField]
         protected bool autoRunPlayer;
-
-        /// <summary>
-        /// buildsetting - autoRunPlayer 옵션, 아직 테스트가 제대로 안되있습니다.
-        /// </summary>
         [SerializeField]
         protected bool openBuildFolder;
 
@@ -98,16 +62,13 @@ namespace UNKO.Unity_Builder
             ResetSetting(this);
         }
 
-        /// <summary>
-        /// 빌드 경로에 라인을 추가합니다.
-        /// </summary>
-        /// <param name="addLine">빌드 경로에 추가할 라인</param>
         public void AddBuildPath(string addLine)
         {
             buildPath += addLine;
         }
 
-        ///<inheritdoc cref="IBuildConfig.GetBuildPath"/>
+
+
         public override string GetBuildPath()
         {
             DateTime now = DateTime.Now;
@@ -123,13 +84,13 @@ namespace UNKO.Unity_Builder
                 .Replace("{MM}", now.ToString("MM"))
                 .Replace("{dd}", now.ToString("dd"))
                 .Replace("{hh}", now.ToString("HH"))
-                .Replace("{mm}", now.ToString("mm"));
+                .Replace("{mm}", now.ToString("mm"))
+            ;
 
             return newBuildPath;
         }
 
-        ///<inheritdoc cref="IBuildConfig.ResetSetting"/>
-        public override void ResetSetting(BuildConfigBase config)
+        public override void ResetSetting(BuildConfig config)
         {
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
 
@@ -141,7 +102,6 @@ namespace UNKO.Unity_Builder
             buildPath = "Builds/{productName}\n_{MM}{dd}_{hh}{mm}";
         }
 
-        ///<inheritdoc cref="IBuildConfig.OnPreBuild"/>
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
         {
             if (string.IsNullOrEmpty(applicationIdentifier) == false)
@@ -164,7 +124,6 @@ namespace UNKO.Unity_Builder
             buildPlayerOptions.options = options;
         }
 
-        ///<inheritdoc cref="IBuildConfig.OnPostBuild"/>
         public override void OnPostBuild(IDictionary<string, string> commandLine)
         {
             if (openBuildFolder)
@@ -175,10 +134,6 @@ namespace UNKO.Unity_Builder
             }
         }
 
-        /// <summary>
-        /// 현재 Editor BuildSetting에서 빌드에 포함되는 씬 중에 활성화된 씬을 얻습니다.
-        /// </summary>
-        /// <returns>빌드에 포함되고 활성화 되있는 씬들</returns>
         public static string[] GetEnabled_EditorScenes()
         {
             return EditorBuildSettings.scenes

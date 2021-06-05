@@ -6,25 +6,14 @@ using UnityEngine;
 
 namespace UNKO.Unity_Builder
 {
-    /// <summary>
-    /// 안드로이드 빌드 설정
-    /// </summary>
     [CreateAssetMenu(fileName = "AndroidBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/AndroidBuildConfig")]
     [StructLayout(LayoutKind.Auto)] // ignore codacy
-    public class AndroidBuildConfig : BuildConfigBase
+    public class AndroidBuildConfig : BuildConfig
     {
-        ///<inheritdoc cref="IBuildConfig.buildTarget"/>
         public override BuildTarget buildTarget => BuildTarget.Android;
 
-        /// <summary>
-        /// 안드로이드 빌드에 사용할 keyaliasName
-        /// </summary>
         [SerializeField]
         protected string keyaliasName;
-
-        /// <summary>
-        /// 안드로이드 빌드에 사용할 keyaliasPassword
-        /// </summary>
         [SerializeField]
         protected string keyaliasPassword;
 
@@ -35,10 +24,6 @@ namespace UNKO.Unity_Builder
         /// </summary>
         [SerializeField]
         protected string keystorePath;
-
-        /// <summary>
-        /// 안드로이드 keystore password
-        /// </summary>
         [SerializeField]
         protected string keystorePassword;
 
@@ -48,14 +33,10 @@ namespace UNKO.Unity_Builder
         [SerializeField]
         protected ScriptingImplementation scriptingBackEnd;
 
-        /// <summary>
-        /// 안드로이드 빌드에 사용할 bundleVersionCode
-        /// </summary>
         [SerializeField]
         protected int bundleVersionCode;
 
-        ///<inheritdoc cref="IBuildConfig.ResetSetting"/>
-        public override void ResetSetting(BuildConfigBase config)
+        public override void ResetSetting(BuildConfig config)
         {
             base.ResetSetting(config);
 
@@ -67,7 +48,6 @@ namespace UNKO.Unity_Builder
                 "\n_{scriptingBackEnd}");
         }
 
-        ///<inheritdoc cref="IBuildConfig.OnPreBuild"/>
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
         {
             base.OnPreBuild(commandLine, ref buildPlayerOptions);
@@ -87,7 +67,6 @@ namespace UNKO.Unity_Builder
                             $"keystoreName : {PlayerSettings.Android.keystoreName}, keystorePass : {PlayerSettings.Android.keystorePass}\n");
         }
 
-        ///<inheritdoc cref="IBuildConfig.GetBuildPath"/>
         public override string GetBuildPath()
         {
             return base.GetBuildPath()
@@ -97,15 +76,11 @@ namespace UNKO.Unity_Builder
         }
     }
 
-    /// <summary>
-    /// <see cref="AndroidBuildConfig"/> 인스펙터
-    /// </summary>
     [CustomEditor(typeof(AndroidBuildConfig))]
     public class AndroidBuildConfig_Inspector : Editor
     {
         string _commandLine;
 
-        ///<inheritdoc cref="Editor.OnInspectorGUI"/>
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
