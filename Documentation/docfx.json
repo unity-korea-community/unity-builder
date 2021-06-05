@@ -31,12 +31,12 @@
     "globalMetadata": {
       "_gitContribute": {
         "repo": "https://github.com/unity-korea-community/unity-builder.git",
-        "branch": "master",
+        "branch": "workspace",
         "apiSpecFolder": "Documentation/apiSpec"
       },
 
       "newFileRepository": {
-        "branch": "master"
+        "branch": "workspace"
       },
 
       "_gitUrlPattern": "github",
@@ -50,12 +50,12 @@
       },
       {
         "src": "api",
-        "files": ["*.yml"],
+        "files": ["**.yml", "**.md"],
         "dest": "api"
       },
       {
         "src": "manual",
-        "files": ["toc.yml", "*.md"],
+        "files": ["toc.yml", "**.md"],
         "dest": "manual"
       }
     ],
@@ -64,6 +64,7 @@
         "files": ["resources/**/*"]
       }
     ],
+    "overwrite": "apiSpec/**.md",
     "template": ["default", "templates/unity_disqus"],
     "xref": ["https://normanderwan.github.io/UnityXrefMaps/xrefmap.yml"],
     "xrefService": ["https://xref.docs.microsoft.com/query?uid={uid}"],
