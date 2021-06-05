@@ -110,12 +110,12 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.AndroidBuildConfig.OnPreBuild
   nameWithType: AndroidBuildConfig.OnPreBuild
-- uid: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  name: ResetSetting(BuildConfig)
-  href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: AndroidBuildConfig.ResetSetting(BuildConfig)
+- uid: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  name: ResetSetting(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: AndroidBuildConfig.ResetSetting(BuildConfigBase)
 - uid: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting*
   name: ResetSetting
   href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ResetSetting_
@@ -148,208 +148,67 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.AndroidBuildConfig_Inspector.OnInspectorGUI
   nameWithType: AndroidBuildConfig_Inspector.OnInspectorGUI
-- uid: UNKO.Unity_Builder.BuildConfig
-  name: BuildConfig
-  href: api/UNKO.Unity_Builder.BuildConfig.html
-  commentId: T:UNKO.Unity_Builder.BuildConfig
-  fullName: UNKO.Unity_Builder.BuildConfig
-  nameWithType: BuildConfig
-- uid: UNKO.Unity_Builder.BuildConfig.AddBuildPath(System.String)
-  name: AddBuildPath(String)
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_AddBuildPath_System_String_
-  commentId: M:UNKO.Unity_Builder.BuildConfig.AddBuildPath(System.String)
-  fullName: UNKO.Unity_Builder.BuildConfig.AddBuildPath(System.String)
-  nameWithType: BuildConfig.AddBuildPath(String)
-- uid: UNKO.Unity_Builder.BuildConfig.AddBuildPath*
-  name: AddBuildPath
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_AddBuildPath_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.AddBuildPath
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.AddBuildPath
-  nameWithType: BuildConfig.AddBuildPath
-- uid: UNKO.Unity_Builder.BuildConfig.applicationIdentifier
-  name: applicationIdentifier
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_applicationIdentifier
-  commentId: F:UNKO.Unity_Builder.BuildConfig.applicationIdentifier
-  fullName: UNKO.Unity_Builder.BuildConfig.applicationIdentifier
-  nameWithType: BuildConfig.applicationIdentifier
-- uid: UNKO.Unity_Builder.BuildConfig.autoRunPlayer
-  name: autoRunPlayer
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_autoRunPlayer
-  commentId: F:UNKO.Unity_Builder.BuildConfig.autoRunPlayer
-  fullName: UNKO.Unity_Builder.BuildConfig.autoRunPlayer
-  nameWithType: BuildConfig.autoRunPlayer
-- uid: UNKO.Unity_Builder.BuildConfig.buildPath
-  name: buildPath
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_buildPath
-  commentId: F:UNKO.Unity_Builder.BuildConfig.buildPath
-  fullName: UNKO.Unity_Builder.BuildConfig.buildPath
-  nameWithType: BuildConfig.buildPath
-- uid: UNKO.Unity_Builder.BuildConfig.buildSceneNames
-  name: buildSceneNames
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_buildSceneNames
-  commentId: F:UNKO.Unity_Builder.BuildConfig.buildSceneNames
-  fullName: UNKO.Unity_Builder.BuildConfig.buildSceneNames
-  nameWithType: BuildConfig.buildSceneNames
-- uid: UNKO.Unity_Builder.BuildConfig.bundleVersion
-  name: bundleVersion
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_bundleVersion
-  commentId: F:UNKO.Unity_Builder.BuildConfig.bundleVersion
-  fullName: UNKO.Unity_Builder.BuildConfig.bundleVersion
-  nameWithType: BuildConfig.bundleVersion
-- uid: UNKO.Unity_Builder.BuildConfig.defineSymbol
-  name: defineSymbol
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_defineSymbol
-  commentId: F:UNKO.Unity_Builder.BuildConfig.defineSymbol
-  fullName: UNKO.Unity_Builder.BuildConfig.defineSymbol
-  nameWithType: BuildConfig.defineSymbol
-- uid: UNKO.Unity_Builder.BuildConfig.developmentBuild
-  name: developmentBuild
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_developmentBuild
-  commentId: F:UNKO.Unity_Builder.BuildConfig.developmentBuild
-  fullName: UNKO.Unity_Builder.BuildConfig.developmentBuild
-  nameWithType: BuildConfig.developmentBuild
-- uid: UNKO.Unity_Builder.BuildConfig.GetBuildPath
-  name: GetBuildPath()
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetBuildPath
-  commentId: M:UNKO.Unity_Builder.BuildConfig.GetBuildPath
-  fullName: UNKO.Unity_Builder.BuildConfig.GetBuildPath()
-  nameWithType: BuildConfig.GetBuildPath()
-- uid: UNKO.Unity_Builder.BuildConfig.GetBuildPath*
-  name: GetBuildPath
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetBuildPath_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.GetBuildPath
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.GetBuildPath
-  nameWithType: BuildConfig.GetBuildPath
-- uid: UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames
-  name: GetBuildSceneNames()
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetBuildSceneNames
-  commentId: M:UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames
-  fullName: UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames()
-  nameWithType: BuildConfig.GetBuildSceneNames()
-- uid: UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames*
-  name: GetBuildSceneNames
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetBuildSceneNames_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.GetBuildSceneNames
-  nameWithType: BuildConfig.GetBuildSceneNames
-- uid: UNKO.Unity_Builder.BuildConfig.GetDefineSymbol
-  name: GetDefineSymbol()
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetDefineSymbol
-  commentId: M:UNKO.Unity_Builder.BuildConfig.GetDefineSymbol
-  fullName: UNKO.Unity_Builder.BuildConfig.GetDefineSymbol()
-  nameWithType: BuildConfig.GetDefineSymbol()
-- uid: UNKO.Unity_Builder.BuildConfig.GetDefineSymbol*
-  name: GetDefineSymbol
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetDefineSymbol_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.GetDefineSymbol
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.GetDefineSymbol
-  nameWithType: BuildConfig.GetDefineSymbol
-- uid: UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes
-  name: GetEnabled_EditorScenes()
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetEnabled_EditorScenes
-  commentId: M:UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes
-  fullName: UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes()
-  nameWithType: BuildConfig.GetEnabled_EditorScenes()
-- uid: UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes*
-  name: GetEnabled_EditorScenes
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetEnabled_EditorScenes_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.GetEnabled_EditorScenes
-  nameWithType: BuildConfig.GetEnabled_EditorScenes
-- uid: UNKO.Unity_Builder.BuildConfig.GetProductName
-  name: GetProductName()
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetProductName
-  commentId: M:UNKO.Unity_Builder.BuildConfig.GetProductName
-  fullName: UNKO.Unity_Builder.BuildConfig.GetProductName()
-  nameWithType: BuildConfig.GetProductName()
-- uid: UNKO.Unity_Builder.BuildConfig.GetProductName*
-  name: GetProductName
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_GetProductName_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.GetProductName
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.GetProductName
-  nameWithType: BuildConfig.GetProductName
-- uid: UNKO.Unity_Builder.BuildConfig.OnPostBuild(IDictionary{System.String,System.String})
-  name: OnPostBuild(IDictionary<String, String>)
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_OnPostBuild_IDictionary_System_String_System_String__
-  commentId: M:UNKO.Unity_Builder.BuildConfig.OnPostBuild(IDictionary{System.String,System.String})
-  name.vb: OnPostBuild(IDictionary(Of String, String))
-  fullName: UNKO.Unity_Builder.BuildConfig.OnPostBuild(IDictionary<System.String, System.String>)
-  fullName.vb: UNKO.Unity_Builder.BuildConfig.OnPostBuild(IDictionary(Of System.String, System.String))
-  nameWithType: BuildConfig.OnPostBuild(IDictionary<String, String>)
-  nameWithType.vb: BuildConfig.OnPostBuild(IDictionary(Of String, String))
-- uid: UNKO.Unity_Builder.BuildConfig.OnPostBuild*
-  name: OnPostBuild
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_OnPostBuild_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.OnPostBuild
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.OnPostBuild
-  nameWithType: BuildConfig.OnPostBuild
-- uid: UNKO.Unity_Builder.BuildConfig.OnPreBuild(IDictionary{System.String,System.String},BuildPlayerOptions@)
-  name: OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_OnPreBuild_IDictionary_System_String_System_String__BuildPlayerOptions__
-  commentId: M:UNKO.Unity_Builder.BuildConfig.OnPreBuild(IDictionary{System.String,System.String},BuildPlayerOptions@)
-  name.vb: OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-  fullName: UNKO.Unity_Builder.BuildConfig.OnPreBuild(IDictionary<System.String, System.String>, ref BuildPlayerOptions)
-  fullName.vb: UNKO.Unity_Builder.BuildConfig.OnPreBuild(IDictionary(Of System.String, System.String), ByRef BuildPlayerOptions)
-  nameWithType: BuildConfig.OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  nameWithType.vb: BuildConfig.OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-- uid: UNKO.Unity_Builder.BuildConfig.OnPreBuild*
-  name: OnPreBuild
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_OnPreBuild_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.OnPreBuild
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.OnPreBuild
-  nameWithType: BuildConfig.OnPreBuild
-- uid: UNKO.Unity_Builder.BuildConfig.openBuildFolder
-  name: openBuildFolder
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_openBuildFolder
-  commentId: F:UNKO.Unity_Builder.BuildConfig.openBuildFolder
-  fullName: UNKO.Unity_Builder.BuildConfig.openBuildFolder
-  nameWithType: BuildConfig.openBuildFolder
-- uid: UNKO.Unity_Builder.BuildConfig.productName
-  name: productName
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_productName
-  commentId: F:UNKO.Unity_Builder.BuildConfig.productName
-  fullName: UNKO.Unity_Builder.BuildConfig.productName
-  nameWithType: BuildConfig.productName
-- uid: UNKO.Unity_Builder.BuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  name: ResetSetting(BuildConfig)
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.BuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.BuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: BuildConfig.ResetSetting(BuildConfig)
-- uid: UNKO.Unity_Builder.BuildConfig.ResetSetting*
-  name: ResetSetting
-  href: api/UNKO.Unity_Builder.BuildConfig.html#UNKO_Unity_Builder_BuildConfig_ResetSetting_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfig.ResetSetting
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfig.ResetSetting
-  nameWithType: BuildConfig.ResetSetting
 - uid: UNKO.Unity_Builder.BuildConfigBase
   name: BuildConfigBase
   href: api/UNKO.Unity_Builder.BuildConfigBase.html
   commentId: T:UNKO.Unity_Builder.BuildConfigBase
   fullName: UNKO.Unity_Builder.BuildConfigBase
   nameWithType: BuildConfigBase
-- uid: UNKO.Unity_Builder.BuildConfigBase.buildTarget
-  name: buildTarget
-  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_buildTarget
-  commentId: P:UNKO.Unity_Builder.BuildConfigBase.buildTarget
-  fullName: UNKO.Unity_Builder.BuildConfigBase.buildTarget
-  nameWithType: BuildConfigBase.buildTarget
-- uid: UNKO.Unity_Builder.BuildConfigBase.buildTarget*
-  name: buildTarget
-  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_buildTarget_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.buildTarget
+- uid: UNKO.Unity_Builder.BuildConfigBase.AddBuildPath(System.String)
+  name: AddBuildPath(String)
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_AddBuildPath_System_String_
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.AddBuildPath(System.String)
+  fullName: UNKO.Unity_Builder.BuildConfigBase.AddBuildPath(System.String)
+  nameWithType: BuildConfigBase.AddBuildPath(String)
+- uid: UNKO.Unity_Builder.BuildConfigBase.AddBuildPath*
+  name: AddBuildPath
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_AddBuildPath_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.AddBuildPath
   isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigBase.buildTarget
-  nameWithType: BuildConfigBase.buildTarget
+  fullName: UNKO.Unity_Builder.BuildConfigBase.AddBuildPath
+  nameWithType: BuildConfigBase.AddBuildPath
+- uid: UNKO.Unity_Builder.BuildConfigBase.applicationIdentifier
+  name: applicationIdentifier
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_applicationIdentifier
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.applicationIdentifier
+  fullName: UNKO.Unity_Builder.BuildConfigBase.applicationIdentifier
+  nameWithType: BuildConfigBase.applicationIdentifier
+- uid: UNKO.Unity_Builder.BuildConfigBase.autoRunPlayer
+  name: autoRunPlayer
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_autoRunPlayer
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.autoRunPlayer
+  fullName: UNKO.Unity_Builder.BuildConfigBase.autoRunPlayer
+  nameWithType: BuildConfigBase.autoRunPlayer
+- uid: UNKO.Unity_Builder.BuildConfigBase.buildPath
+  name: buildPath
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_buildPath
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.buildPath
+  fullName: UNKO.Unity_Builder.BuildConfigBase.buildPath
+  nameWithType: BuildConfigBase.buildPath
+- uid: UNKO.Unity_Builder.BuildConfigBase.buildSceneNames
+  name: buildSceneNames
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_buildSceneNames
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.buildSceneNames
+  fullName: UNKO.Unity_Builder.BuildConfigBase.buildSceneNames
+  nameWithType: BuildConfigBase.buildSceneNames
+- uid: UNKO.Unity_Builder.BuildConfigBase.bundleVersion
+  name: bundleVersion
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_bundleVersion
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.bundleVersion
+  fullName: UNKO.Unity_Builder.BuildConfigBase.bundleVersion
+  nameWithType: BuildConfigBase.bundleVersion
+- uid: UNKO.Unity_Builder.BuildConfigBase.defineSymbol
+  name: defineSymbol
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_defineSymbol
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.defineSymbol
+  fullName: UNKO.Unity_Builder.BuildConfigBase.defineSymbol
+  nameWithType: BuildConfigBase.defineSymbol
+- uid: UNKO.Unity_Builder.BuildConfigBase.developmentBuild
+  name: developmentBuild
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_developmentBuild
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.developmentBuild
+  fullName: UNKO.Unity_Builder.BuildConfigBase.developmentBuild
+  nameWithType: BuildConfigBase.developmentBuild
 - uid: UNKO.Unity_Builder.BuildConfigBase.GetBuildPath
   name: GetBuildPath()
   href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetBuildPath
@@ -363,6 +222,58 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.BuildConfigBase.GetBuildPath
   nameWithType: BuildConfigBase.GetBuildPath
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames
+  name: GetBuildSceneNames()
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetBuildSceneNames
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames()
+  nameWithType: BuildConfigBase.GetBuildSceneNames()
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames*
+  name: GetBuildSceneNames
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetBuildSceneNames_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames
+  nameWithType: BuildConfigBase.GetBuildSceneNames
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol
+  name: GetDefineSymbol()
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetDefineSymbol
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol()
+  nameWithType: BuildConfigBase.GetDefineSymbol()
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol*
+  name: GetDefineSymbol
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetDefineSymbol_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol
+  nameWithType: BuildConfigBase.GetDefineSymbol
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes
+  name: GetEnabled_EditorScenes()
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetEnabled_EditorScenes
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes()
+  nameWithType: BuildConfigBase.GetEnabled_EditorScenes()
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes*
+  name: GetEnabled_EditorScenes
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetEnabled_EditorScenes_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes
+  nameWithType: BuildConfigBase.GetEnabled_EditorScenes
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetProductName
+  name: GetProductName()
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetProductName
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.GetProductName
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetProductName()
+  nameWithType: BuildConfigBase.GetProductName()
+- uid: UNKO.Unity_Builder.BuildConfigBase.GetProductName*
+  name: GetProductName
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetProductName_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.GetProductName
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigBase.GetProductName
+  nameWithType: BuildConfigBase.GetProductName
 - uid: UNKO.Unity_Builder.BuildConfigBase.OnPostBuild(IDictionary{System.String,System.String})
   name: OnPostBuild(IDictionary<String, String>)
   href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_IDictionary_System_String_System_String__
@@ -395,12 +306,24 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.BuildConfigBase.OnPreBuild
   nameWithType: BuildConfigBase.OnPreBuild
-- uid: UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  name: ResetSetting(BuildConfig)
-  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: BuildConfigBase.ResetSetting(BuildConfig)
+- uid: UNKO.Unity_Builder.BuildConfigBase.openBuildFolder
+  name: openBuildFolder
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_openBuildFolder
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.openBuildFolder
+  fullName: UNKO.Unity_Builder.BuildConfigBase.openBuildFolder
+  nameWithType: BuildConfigBase.openBuildFolder
+- uid: UNKO.Unity_Builder.BuildConfigBase.productName
+  name: productName
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_productName
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.productName
+  fullName: UNKO.Unity_Builder.BuildConfigBase.productName
+  nameWithType: BuildConfigBase.productName
+- uid: UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  name: ResetSetting(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: BuildConfigBase.ResetSetting(BuildConfigBase)
 - uid: UNKO.Unity_Builder.BuildConfigBase.ResetSetting*
   name: ResetSetting
   href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ResetSetting_
@@ -414,6 +337,83 @@ references:
   commentId: T:UNKO.Unity_Builder.BuildConfigGroup
   fullName: UNKO.Unity_Builder.BuildConfigGroup
   nameWithType: BuildConfigGroup
+- uid: UNKO.Unity_Builder.BuildConfigSO
+  name: BuildConfigSO
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html
+  commentId: T:UNKO.Unity_Builder.BuildConfigSO
+  fullName: UNKO.Unity_Builder.BuildConfigSO
+  nameWithType: BuildConfigSO
+- uid: UNKO.Unity_Builder.BuildConfigSO.buildTarget
+  name: buildTarget
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget
+  commentId: P:UNKO.Unity_Builder.BuildConfigSO.buildTarget
+  fullName: UNKO.Unity_Builder.BuildConfigSO.buildTarget
+  nameWithType: BuildConfigSO.buildTarget
+- uid: UNKO.Unity_Builder.BuildConfigSO.buildTarget*
+  name: buildTarget
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.buildTarget
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigSO.buildTarget
+  nameWithType: BuildConfigSO.buildTarget
+- uid: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
+  name: GetBuildPath()
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_GetBuildPath
+  commentId: M:UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
+  fullName: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath()
+  nameWithType: BuildConfigSO.GetBuildPath()
+- uid: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath*
+  name: GetBuildPath
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_GetBuildPath_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
+  nameWithType: BuildConfigSO.GetBuildPath
+- uid: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(IDictionary{System.String,System.String})
+  name: OnPostBuild(IDictionary<String, String>)
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPostBuild_IDictionary_System_String_System_String__
+  commentId: M:UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(IDictionary{System.String,System.String})
+  name.vb: OnPostBuild(IDictionary(Of String, String))
+  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(IDictionary<System.String, System.String>)
+  fullName.vb: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(IDictionary(Of System.String, System.String))
+  nameWithType: BuildConfigSO.OnPostBuild(IDictionary<String, String>)
+  nameWithType.vb: BuildConfigSO.OnPostBuild(IDictionary(Of String, String))
+- uid: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild*
+  name: OnPostBuild
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPostBuild_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.OnPostBuild
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild
+  nameWithType: BuildConfigSO.OnPostBuild
+- uid: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(IDictionary{System.String,System.String},BuildPlayerOptions@)
+  name: OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPreBuild_IDictionary_System_String_System_String__BuildPlayerOptions__
+  commentId: M:UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(IDictionary{System.String,System.String},BuildPlayerOptions@)
+  name.vb: OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
+  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(IDictionary<System.String, System.String>, ref BuildPlayerOptions)
+  fullName.vb: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(IDictionary(Of System.String, System.String), ByRef BuildPlayerOptions)
+  nameWithType: BuildConfigSO.OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
+  nameWithType.vb: BuildConfigSO.OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
+- uid: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild*
+  name: OnPreBuild
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPreBuild_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.OnPreBuild
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild
+  nameWithType: BuildConfigSO.OnPreBuild
+- uid: UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  name: ResetSetting(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: BuildConfigSO.ResetSetting(BuildConfigBase)
+- uid: UNKO.Unity_Builder.BuildConfigSO.ResetSetting*
+  name: ResetSetting
+  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_ResetSetting_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.ResetSetting
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigSO.ResetSetting
+  nameWithType: BuildConfigSO.ResetSetting
 - uid: UNKO.Unity_Builder.GlobalConst
   name: GlobalConst
   href: api/UNKO.Unity_Builder.GlobalConst.html
@@ -496,12 +496,12 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.IBuildConfig.OnPreBuild
   nameWithType: IBuildConfig.OnPreBuild
-- uid: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  name: ResetSetting(BuildConfig)
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: IBuildConfig.ResetSetting(BuildConfig)
+- uid: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  name: ResetSetting(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: IBuildConfig.ResetSetting(BuildConfigBase)
 - uid: UNKO.Unity_Builder.IBuildConfig.ResetSetting*
   name: ResetSetting
   href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_ResetSetting_
@@ -509,77 +509,6 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.IBuildConfig.ResetSetting
   nameWithType: IBuildConfig.ResetSetting
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup
-  name: PlayerSetting_Backup
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html
-  commentId: T:UNKO.Unity_Builder.PlayerSetting_Backup
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup
-  nameWithType: PlayerSetting_Backup
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.#ctor(BuildTargetGroup,System.String,System.String)
-  name: PlayerSetting_Backup(BuildTargetGroup, String, String)
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup__ctor_BuildTargetGroup_System_String_System_String_
-  commentId: M:UNKO.Unity_Builder.PlayerSetting_Backup.#ctor(BuildTargetGroup,System.String,System.String)
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.PlayerSetting_Backup(BuildTargetGroup, System.String, System.String)
-  nameWithType: PlayerSetting_Backup.PlayerSetting_Backup(BuildTargetGroup, String, String)
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.#ctor*
-  name: PlayerSetting_Backup
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup__ctor_
-  commentId: Overload:UNKO.Unity_Builder.PlayerSetting_Backup.#ctor
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.PlayerSetting_Backup
-  nameWithType: PlayerSetting_Backup.PlayerSetting_Backup
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup
-  name: buildTargetGroup
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_buildTargetGroup
-  commentId: P:UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup
-  nameWithType: PlayerSetting_Backup.buildTargetGroup
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup*
-  name: buildTargetGroup
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_buildTargetGroup_
-  commentId: Overload:UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.buildTargetGroup
-  nameWithType: PlayerSetting_Backup.buildTargetGroup
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol
-  name: defineSymbol
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_defineSymbol
-  commentId: P:UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol
-  nameWithType: PlayerSetting_Backup.defineSymbol
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol*
-  name: defineSymbol
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_defineSymbol_
-  commentId: Overload:UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.defineSymbol
-  nameWithType: PlayerSetting_Backup.defineSymbol
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.productName
-  name: productName
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_productName
-  commentId: P:UNKO.Unity_Builder.PlayerSetting_Backup.productName
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.productName
-  nameWithType: PlayerSetting_Backup.productName
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.productName*
-  name: productName
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_productName_
-  commentId: Overload:UNKO.Unity_Builder.PlayerSetting_Backup.productName
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.productName
-  nameWithType: PlayerSetting_Backup.productName
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.Restore
-  name: Restore()
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_Restore
-  commentId: M:UNKO.Unity_Builder.PlayerSetting_Backup.Restore
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.Restore()
-  nameWithType: PlayerSetting_Backup.Restore()
-- uid: UNKO.Unity_Builder.PlayerSetting_Backup.Restore*
-  name: Restore
-  href: api/UNKO.Unity_Builder.PlayerSetting_Backup.html#UNKO_Unity_Builder_PlayerSetting_Backup_Restore_
-  commentId: Overload:UNKO.Unity_Builder.PlayerSetting_Backup.Restore
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.PlayerSetting_Backup.Restore
-  nameWithType: PlayerSetting_Backup.Restore
 - uid: UNKO.Unity_Builder.UnityBuilder
   name: UnityBuilder
   href: api/UNKO.Unity_Builder.UnityBuilder.html
@@ -592,12 +521,12 @@ references:
   commentId: M:UNKO.Unity_Builder.UnityBuilder.Build
   fullName: UNKO.Unity_Builder.UnityBuilder.Build()
   nameWithType: UnityBuilder.Build()
-- uid: UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfig)
-  name: Build(BuildConfig)
-  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_Build_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: UnityBuilder.Build(BuildConfig)
+- uid: UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfigBase)
+  name: Build(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_Build_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.UnityBuilder.Build(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: UnityBuilder.Build(BuildConfigBase)
 - uid: UNKO.Unity_Builder.UnityBuilder.Build*
   name: Build
   href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_Build_
@@ -605,6 +534,77 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.UnityBuilder.Build
   nameWithType: UnityBuilder.Build
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup
+  name: UnityBuilder.PlayerSetting_Backup
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html
+  commentId: T:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup
+  nameWithType: UnityBuilder.PlayerSetting_Backup
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.#ctor(BuildTargetGroup,System.String,System.String)
+  name: PlayerSetting_Backup(BuildTargetGroup, String, String)
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup__ctor_BuildTargetGroup_System_String_System_String_
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.#ctor(BuildTargetGroup,System.String,System.String)
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.PlayerSetting_Backup(BuildTargetGroup, System.String, System.String)
+  nameWithType: UnityBuilder.PlayerSetting_Backup.PlayerSetting_Backup(BuildTargetGroup, String, String)
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.#ctor*
+  name: PlayerSetting_Backup
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup__ctor_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.#ctor
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.PlayerSetting_Backup
+  nameWithType: UnityBuilder.PlayerSetting_Backup.PlayerSetting_Backup
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+  name: BuildTargetGroup
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_BuildTargetGroup
+  commentId: P:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+  nameWithType: UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup*
+  name: BuildTargetGroup
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_BuildTargetGroup_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+  nameWithType: UnityBuilder.PlayerSetting_Backup.BuildTargetGroup
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol
+  name: DefineSymbol
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_DefineSymbol
+  commentId: P:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol
+  nameWithType: UnityBuilder.PlayerSetting_Backup.DefineSymbol
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol*
+  name: DefineSymbol
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_DefineSymbol_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.DefineSymbol
+  nameWithType: UnityBuilder.PlayerSetting_Backup.DefineSymbol
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName
+  name: ProductName
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_ProductName
+  commentId: P:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName
+  nameWithType: UnityBuilder.PlayerSetting_Backup.ProductName
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName*
+  name: ProductName
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_ProductName_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.ProductName
+  nameWithType: UnityBuilder.PlayerSetting_Backup.ProductName
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore
+  name: Restore()
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_Restore
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore()
+  nameWithType: UnityBuilder.PlayerSetting_Backup.Restore()
+- uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore*
+  name: Restore
+  href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html#UNKO_Unity_Builder_UnityBuilder_PlayerSetting_Backup_Restore_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.Restore
+  nameWithType: UnityBuilder.PlayerSetting_Backup.Restore
 - uid: UNKO.Unity_Builder.UnityBuilder.TryGetSO_FromCommandLine*
   name: TryGetSO_FromCommandLine
   href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_TryGetSO_FromCommandLine_
@@ -669,12 +669,12 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.WindowBuildConfig.OnPreBuild
   nameWithType: WindowBuildConfig.OnPreBuild
-- uid: UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  name: ResetSetting(BuildConfig)
-  href: api/UNKO.Unity_Builder.WindowBuildConfig.html#UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfig_
-  commentId: M:UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  fullName: UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfig)
-  nameWithType: WindowBuildConfig.ResetSetting(BuildConfig)
+- uid: UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  name: ResetSetting(BuildConfigBase)
+  href: api/UNKO.Unity_Builder.WindowBuildConfig.html#UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
+  commentId: M:UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  fullName: UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
+  nameWithType: WindowBuildConfig.ResetSetting(BuildConfigBase)
 - uid: UNKO.Unity_Builder.WindowBuildConfig.ResetSetting*
   name: ResetSetting
   href: api/UNKO.Unity_Builder.WindowBuildConfig.html#UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_
