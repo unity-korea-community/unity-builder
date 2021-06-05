@@ -29,6 +29,17 @@
   ],
   "build": {
     "globalMetadata": {
+      "_gitContribute": {
+        "repo": "https://github.com/unity-korea-community/unity-builder.git",
+        "branch": "master",
+        "apiSpecFolder": "Documentation/apiSpec"
+      },
+
+      "newFileRepository": {
+        "branch": "master"
+      },
+
+      "_gitUrlPattern": "github",
       "_appTitle": "Example Unity documentation",
       "_appFooter": "Example Unity documentation",
       "_enableSearch": true
