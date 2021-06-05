@@ -5,9 +5,6 @@ on:
     branches:
       - workspace
 
-env:
-  PROJECT_NAME: ${{ github.event.repository.name }}
-
 jobs:
   # Build the documentation
   build:
@@ -23,9 +20,7 @@ jobs:
 
       - name: Use README.md as index.md
         run: |
-          echo PROJECT_NAME: ${{ github.event.repository.name }}
-          ls -l
-          cp Packages/$PROJECT_NAME/README.md README.md
+          cp Packages/${{ github.event.repository.name }}/README.md README.md
           cp README.md Documentation/index.md
 
       - name: Build
