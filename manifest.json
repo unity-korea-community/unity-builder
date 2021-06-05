@@ -1,0 +1,269 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/unity-builder/unity-builder/Documentation",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Tests.BuildConfigTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tests.BuildConfigTests.html",
+          "hash": "+x7CAahRdrVwJBJ436z/FRN3VWcDuJccAW3mauKG1UE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tests.html",
+          "hash": "9v3/HtZhCJ5gJLJKTTchDsG0q0xPkcqct1lW87KB/Ps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.html",
+          "hash": "nvVYGlsC+CELF9rTLmSDnuCIQi7e65rnuQRjOeoTn90="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.html",
+          "hash": "5/0dqGckywRVq66+/C2awmbJ/o0Om8O1lgbKISzUw5E="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfig.html",
+          "hash": "6IY6p5DNgyDuiTAzbdnsSBdllbyFlGNj6GrVXqAD8Vc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.html",
+          "hash": "wDcd+lMgLFDMuOJKSd3vz7xHBDf9MoKHXmUYm8OfT3w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.html",
+          "hash": "iMznhg1miDF7DOJz1U4l9mCjVPNziPJk0FIrWGUfwoM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.GlobalConst.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.GlobalConst.html",
+          "hash": "aXTKp9YaurIHkgJ/XsbQ8SnDIxkP0f3Eykcgy67fglQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.IBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.IBuildConfig.html",
+          "hash": "nPMe1KMauSusIXV5cAYhtKCeKuT/7JFGqgA4sSp5UbY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.PlayerSetting_Backup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.PlayerSetting_Backup.html",
+          "hash": "WMlJ120LCeTLQkgKjM8HfwsI1IQdHy8x9xkQriC4UBE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.UnityBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.html",
+          "hash": "VqWx/X2TCLWgXaA2fDeKFvwzrWfL+EsmYESV4Q1ceP0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.html",
+          "hash": "5A26MIvYQRkBkmtP7dNwxUCAdtW3M6xUqg5OA9g/0WM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.html",
+          "hash": "bgRlTQyB0wEoygEWe4f72mjhXo9tUbpw7f4cUQabThU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.html",
+          "hash": "SPe1NAEflfON0ZlEK8d/yYs7YiZkHeRrHjfT3eOEcYk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "uHT/7MwEN8QEtANUPA4TPeI85G5XHEUXqO065esFhio="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "VrgnRzx1tQqM70TLTI0N81nncyRjd2uZPclwEZq19T4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "S1Xa3xWmixVM4q+n2bct0MjWaLRE9vAyWXkWtrVLkD0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because last build info is missing.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "NoAvailableBuildCache"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 14,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
