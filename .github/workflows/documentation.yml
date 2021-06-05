@@ -23,7 +23,8 @@ jobs:
 
       - name: Use README.md as index.md
         run: |
-          ls
+          echo PROJECT_NAME: $PROJECT_NAME
+          ls -l
           cp Packages/$PROJECT_NAME/README.md README.md
           cp README.md Documentation/index.md
 
