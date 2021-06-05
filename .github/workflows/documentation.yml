@@ -1,4 +1,4 @@
-﻿name: Example documentation
+﻿name: CI_Documentation
 
 on:
   push:
