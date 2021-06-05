@@ -6,10 +6,14 @@ using UnityEngine;
 
 namespace UNKO.Unity_Builder
 {
+    /// <summary>
+    /// Window 빌드 설정
+    /// </summary>
     [CreateAssetMenu(fileName = "WindowBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/WindowBuildConfig")]
     [StructLayout(LayoutKind.Auto)] // ignore codacy
-    public class WindowBuildConfig : BuildConfig
+    public class WindowBuildConfig : BuildConfigBase
     {
+        ///<inheritdoc cref="IBuildConfig.buildTarget"/>
         public override BuildTarget buildTarget => BuildTarget.StandaloneWindows64;
 
         /// <summary>
@@ -18,7 +22,8 @@ namespace UNKO.Unity_Builder
         [SerializeField]
         protected ScriptingImplementation scriptingBackEnd;
 
-        public override void ResetSetting(BuildConfig config)
+        ///<inheritdoc cref="IBuildConfig.ResetSetting"/>
+        public override void ResetSetting(BuildConfigBase config)
         {
             base.ResetSetting(config);
 
@@ -29,6 +34,7 @@ namespace UNKO.Unity_Builder
                      "\n_{scriptingBackEnd}");
         }
 
+        ///<inheritdoc cref="IBuildConfig.OnPreBuild"/>
         public override void OnPreBuild(IDictionary<string, string> commandLine, ref BuildPlayerOptions buildPlayerOptions)
         {
             base.OnPreBuild(commandLine, ref buildPlayerOptions);
@@ -36,6 +42,7 @@ namespace UNKO.Unity_Builder
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Standalone, scriptingBackEnd);
         }
 
+        ///<inheritdoc cref="IBuildConfig.GetBuildPath"/>
         public override string GetBuildPath()
         {
             return base.GetBuildPath()
@@ -44,11 +51,15 @@ namespace UNKO.Unity_Builder
         }
     }
 
+    /// <summary>
+    /// <see cref="WindowBuildConfig"/> 인스펙터
+    /// </summary>
     [CustomEditor(typeof(WindowBuildConfig))]
     public class WindowBuildConfig_Inspector : Editor
     {
         string _commandLine;
 
+        ///<inheritdoc cref="Editor.OnInspectorGUI"/>
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
