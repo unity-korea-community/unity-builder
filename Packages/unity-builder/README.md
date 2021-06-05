@@ -9,7 +9,6 @@
 
 [![CI_SONAR_CLOUD](https://github.com/unity-korea-community/unity-builder/actions/workflows/sonarcloud-analysis.yml/badge.svg?branch=workspace)](https://github.com/unity-korea-community/unity-builder/actions/workflows/sonarcloud-analysis.yml)
 [![CI_Documentation](https://github.com/unity-korea-community/unity-builder/actions/workflows/documentation.yml/badge.svg)](https://github.com/unity-korea-community/unity-builder/actions/workflows/documentation.yml)
-[![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/FKXA2yzR)
 
 ## 소개
 
