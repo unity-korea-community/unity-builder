@@ -1,10 +1,14 @@
 # Unity-Builder
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/unity-korea-community/unity-builder)
 [![CodeFactor](https://www.codefactor.io/repository/github/unity-korea-community/unity-builder/badge/master)](https://www.codefactor.io/repository/github/unity-korea-community/unity-builder/overview/master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/b660c22a8710466cb44271b33b8fc92d)](https://app.codacy.com/gh/unity-korea-community/unity-builder?utm_source=github.com&utm_medium=referral&utm_content=unity-korea-community/unity-builder&utm_campaign=Badge_Grade_Settings)
+[![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/FKXA2yzR)
+
+### CI Status
+
 [![CI_SONAR_CLOUD](https://github.com/unity-korea-community/unity-builder/actions/workflows/sonarcloud-analysis.yml/badge.svg?branch=workspace)](https://github.com/unity-korea-community/unity-builder/actions/workflows/sonarcloud-analysis.yml)
+[![CI_Documentation](https://github.com/unity-korea-community/unity-builder/actions/workflows/documentation.yml/badge.svg)](https://github.com/unity-korea-community/unity-builder/actions/workflows/documentation.yml)
 [![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/FKXA2yzR)
 
 ## 소개
