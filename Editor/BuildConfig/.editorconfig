@@ -1,0 +1,4 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+[*.cs]
+dotnet_diagnostic.IDE1006.severity = none

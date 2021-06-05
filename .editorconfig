@@ -1,0 +1,16 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = crlf
+charset = utf-8-bom
+trim_trailing_whitespace = false
+insert_final_newline = false
+
+[*.cs]
+dotnet_diagnostic.CS1591.severity = warning # 모든 public은 주석을 달게 합니다
+dotnet_diagnostic.IDE0090.severity = none # "'new' 식을 간단하게 줄일 수 있습니다, unity dotnet은 미지원
