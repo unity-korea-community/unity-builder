@@ -5,6 +5,9 @@ on:
     branches:
       - workspace
 
+env:
+  PROJECT_NAME: ${{ github.event.repository.name }}
+  
 jobs:
   # Build the documentation
   build:
@@ -19,7 +22,9 @@ jobs:
         run: choco install -y docfx
 
       - name: Use README.md as index.md
-        run: cp README.md Documentation/index.md
+        run: |
+            cp Packages/$PROJECT_NAME/README.md README.md \
+            cp README.md Documentation/index.md
 
       - name: Build
         run: docfx Documentation/docfx.json
