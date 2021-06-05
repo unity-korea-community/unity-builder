@@ -16,7 +16,9 @@ on:
   push:
     branches:
       - workspace
-
+    paths-ignore:
+      - 'Documentation/**'
+      - '*.md'
 env:
   # Require unity test
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}

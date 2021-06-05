@@ -23,6 +23,7 @@ jobs:
 
       - name: Use README.md as index.md
         run: |
+          ls
           cp Packages/$PROJECT_NAME/README.md README.md
           cp README.md Documentation/index.md
 
