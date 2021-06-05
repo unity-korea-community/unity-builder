@@ -83,39 +83,46 @@
   
   <h1 id="UNKO_Unity_Builder_BuildConfigBase" data-uid="UNKO.Unity_Builder.BuildConfigBase" class="text-break">Class BuildConfigBase
   </h1>
-  <div class="markdown level0 summary"><p>Unity Inspector에 등록하기 위해 ScriptableObject를 상속</p>
+  <div class="markdown level0 summary"><p>플랫폼 별 빌드 설정 부모 클래스 </p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><span class="xref">BuildConfigBase</span></div>
-      <div class="level2"><a class="xref" href="UNKO.Unity_Builder.BuildConfig.html">BuildConfig</a></div>
+    <div class="level1"><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html">BuildConfigSO</a></div>
+    <div class="level2"><span class="xref">BuildConfigBase</span></div>
+      <div class="level3"><a class="xref" href="UNKO.Unity_Builder.AndroidBuildConfig.html">AndroidBuildConfig</a></div>
+      <div class="level3"><a class="xref" href="UNKO.Unity_Builder.WindowBuildConfig.html">WindowBuildConfig</a></div>
   </div>
   <div classs="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="UNKO.Unity_Builder.IBuildConfig.html">IBuildConfig</a></div>
   </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget">BuildConfigSO.buildTarget</a>
+    </div>
+  </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="UNKO.Unity_Builder.html">UNKO.Unity_Builder</a></h6>
   <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
   <h5 id="UNKO_Unity_Builder_BuildConfigBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class BuildConfigBase : ScriptableObject, IBuildConfig</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class BuildConfigBase : BuildConfigSO, IBuildConfig</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="fields">Fields
   </h3>
   
   
-  <a id="UNKO_Unity_Builder_BuildConfigBase_buildTarget_" data-uid="UNKO.Unity_Builder.BuildConfigBase.buildTarget*"></a>
-  <h4 id="UNKO_Unity_Builder_BuildConfigBase_buildTarget" data-uid="UNKO.Unity_Builder.BuildConfigBase.buildTarget">buildTarget</h4>
-  <div class="markdown level1 summary"><p>실행될 빌드 타겟</p>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_applicationIdentifier" data-uid="UNKO.Unity_Builder.BuildConfigBase.applicationIdentifier">applicationIdentifier</h4>
+  <div class="markdown level1 summary"><p>예시) com.CompanyName.ProductName  </p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract BuildTarget buildTarget { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">protected string applicationIdentifier</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
     <thead>
       <tr>
@@ -125,7 +132,211 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">BuildTarget</span></td>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_autoRunPlayer" data-uid="UNKO.Unity_Builder.BuildConfigBase.autoRunPlayer">autoRunPlayer</h4>
+  <div class="markdown level1 summary"><p>buildsetting - autoRunPlayer 옵션
+TODO 아직 테스트가 제대로 안되있습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool autoRunPlayer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_buildPath" data-uid="UNKO.Unity_Builder.BuildConfigBase.buildPath">buildPath</h4>
+  <div class="markdown level1 summary"><p>출력할 빌드 경로, UnityProject/Assets/의 상대 경로입니다.
+NOTE IL2CPP의 경우 같은 장소에 빌드해놓으면 더 빠르다는 메뉴얼
+<a href="https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html">https://docs.unity3d.com/kr/2020.2/Manual/IL2CPP-OptimizingBuildTimes.html</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string buildPath</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_buildSceneNames" data-uid="UNKO.Unity_Builder.BuildConfigBase.buildSceneNames">buildSceneNames</h4>
+  <div class="markdown level1 summary"><p>빌드에 포함할 씬들, 확장자는 안쓰셔도 됩니다.
+<p>예시) [&quot;Assets/SomethingScene_1&quot;, &quot;Assets/SomethingScene_1&quot;]</p></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string[] buildSceneNames</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_bundleVersion" data-uid="UNKO.Unity_Builder.BuildConfigBase.bundleVersion">bundleVersion</h4>
+  <div class="markdown level1 summary"><p>번들 버젼을 얻습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string bundleVersion</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_defineSymbol" data-uid="UNKO.Unity_Builder.BuildConfigBase.defineSymbol">defineSymbol</h4>
+  <div class="markdown level1 summary"><p>script define symbol입니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string defineSymbol</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_developmentBuild" data-uid="UNKO.Unity_Builder.BuildConfigBase.developmentBuild">developmentBuild</h4>
+  <div class="markdown level1 summary"><p>buildsetting - developmentBuild 옵션</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool developmentBuild</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_openBuildFolder" data-uid="UNKO.Unity_Builder.BuildConfigBase.openBuildFolder">openBuildFolder</h4>
+  <div class="markdown level1 summary"><p>buildsetting - autoRunPlayer 옵션, 아직 테스트가 제대로 안되있습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool openBuildFolder</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.boolean">Boolean</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_productName" data-uid="UNKO.Unity_Builder.BuildConfigBase.productName">productName</h4>
+  <div class="markdown level1 summary"><p>설치한 디바이스에 표기될 이름</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected string productName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
         <td></td>
       </tr>
     </tbody>
@@ -134,13 +345,99 @@
   </h3>
   
   
-  <a id="UNKO_Unity_Builder_BuildConfigBase_GetBuildPath_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildPath*"></a>
-  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetBuildPath" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildPath">GetBuildPath()</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="UNKO_Unity_Builder_BuildConfigBase_AddBuildPath_" data-uid="UNKO.Unity_Builder.BuildConfigBase.AddBuildPath*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_AddBuildPath_System_String_" data-uid="UNKO.Unity_Builder.BuildConfigBase.AddBuildPath(System.String)">AddBuildPath(String)</h4>
+  <div class="markdown level1 summary"><p>빌드 경로에 라인을 추가합니다.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract string GetBuildPath()</code></pre>
+    <pre><code class="lang-csharp hljs">public void AddBuildPath(string addLine)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><span class="parametername">addLine</span></td>
+        <td><p>빌드 경로에 추가할 라인</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="UNKO_Unity_Builder_BuildConfigBase_GetBuildPath_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildPath*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetBuildPath" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildPath">GetBuildPath()</h4>
+  <div class="markdown level1 summary"><p>빌드 출력 경로를 얻고자 할 때</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string GetBuildPath()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>빌드 출력 경로</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_GetBuildPath">BuildConfigSO.GetBuildPath()</a></div>
+  
+  
+  <a id="UNKO_Unity_Builder_BuildConfigBase_GetBuildSceneNames_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetBuildSceneNames" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetBuildSceneNames">GetBuildSceneNames()</h4>
+  <div class="markdown level1 summary"><p>빌드에 포함할 씬 이름들을 얻습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] GetBuildSceneNames()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><p>buildSceneNames</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="UNKO_Unity_Builder_BuildConfigBase_GetDefineSymbol_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetDefineSymbol" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetDefineSymbol">GetDefineSymbol()</h4>
+  <div class="markdown level1 summary"><p>script define을 얻습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetDefineSymbol()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -159,13 +456,68 @@
   </table>
   
   
-  <a id="UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPostBuild*"></a>
-  <h4 id="UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_IDictionary_System_String_System_String__" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPostBuild(IDictionary{System.String,System.String})">OnPostBuild(IDictionary&lt;String, String&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="UNKO_Unity_Builder_BuildConfigBase_GetEnabled_EditorScenes_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetEnabled_EditorScenes" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetEnabled_EditorScenes">GetEnabled_EditorScenes()</h4>
+  <div class="markdown level1 summary"><p>현재 Editor BuildSetting에서 빌드에 포함되는 씬 중에 활성화된 씬을 얻습니다.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void OnPostBuild(IDictionary&lt;string, string&gt; commandLine)</code></pre>
+    <pre><code class="lang-csharp hljs">public static string[] GetEnabled_EditorScenes()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>[]</td>
+        <td><p>빌드에 포함되고 활성화 되있는 씬들</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="UNKO_Unity_Builder_BuildConfigBase_GetProductName_" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetProductName*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_GetProductName" data-uid="UNKO.Unity_Builder.BuildConfigBase.GetProductName">GetProductName()</h4>
+  <div class="markdown level1 summary"><p>productName를 얻습니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string GetProductName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
+        <td><p>productName</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPostBuild*"></a>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_IDictionary_System_String_System_String__" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPostBuild(IDictionary{System.String,System.String})">OnPostBuild(IDictionary&lt;String, String&gt;)</h4>
+  <div class="markdown level1 summary"><p>빌드를 한 뒤 이벤트 함수</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void OnPostBuild(IDictionary&lt;string, string&gt; commandLine)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -180,19 +532,23 @@
       <tr>
         <td><span class="xref">IDictionary</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">commandLine</span></td>
-        <td></td>
+        <td><p>빌드에 실행한 commandline</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPostBuild_IDictionary_System_String_System_String__">BuildConfigSO.OnPostBuild(IDictionary&lt;String, String&gt;)</a></div>
   
   
   <a id="UNKO_Unity_Builder_BuildConfigBase_OnPreBuild_" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPreBuild*"></a>
   <h4 id="UNKO_Unity_Builder_BuildConfigBase_OnPreBuild_IDictionary_System_String_System_String__BuildPlayerOptions__" data-uid="UNKO.Unity_Builder.BuildConfigBase.OnPreBuild(IDictionary{System.String,System.String},BuildPlayerOptions@)">OnPreBuild(IDictionary&lt;String, String&gt;, ref BuildPlayerOptions)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>빌드를 하기 전 이벤트 함수</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void OnPreBuild(IDictionary&lt;string, string&gt; commandLine, ref BuildPlayerOptions buildPlayerOptions)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void OnPreBuild(IDictionary&lt;string, string&gt; commandLine, ref BuildPlayerOptions buildPlayerOptions)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -207,24 +563,29 @@
       <tr>
         <td><span class="xref">IDictionary</span>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">commandLine</span></td>
-        <td></td>
+        <td><p>빌드에 실행한 commandline</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">BuildPlayerOptions</span></td>
         <td><span class="parametername">buildPlayerOptions</span></td>
-        <td></td>
+        <td><p>빌드에 사용한 option</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPreBuild_IDictionary_System_String_System_String__BuildPlayerOptions__">BuildConfigSO.OnPreBuild(IDictionary&lt;String, String&gt;, ref BuildPlayerOptions)</a></div>
   
   
   <a id="UNKO_Unity_Builder_BuildConfigBase_ResetSetting_" data-uid="UNKO.Unity_Builder.BuildConfigBase.ResetSetting*"></a>
-  <h4 id="UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfig_" data-uid="UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfig)">ResetSetting(BuildConfig)</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_" data-uid="UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)">ResetSetting(BuildConfigBase)</h4>
+  <div class="markdown level1 summary"><p>빌드 세팅을 리셋할 때</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void ResetSetting(BuildConfig config)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void ResetSetting(BuildConfigBase config)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -237,12 +598,15 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="UNKO.Unity_Builder.BuildConfig.html">BuildConfig</a></td>
+        <td><a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html">BuildConfigBase</a></td>
         <td><span class="parametername">config</span></td>
-        <td></td>
+        <td><p>리셋할 대상 config</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_">BuildConfigSO.ResetSetting(BuildConfigBase)</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="UNKO.Unity_Builder.IBuildConfig.html">IBuildConfig</a>

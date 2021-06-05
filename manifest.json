@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.html",
-          "hash": "nvVYGlsC+CELF9rTLmSDnuCIQi7e65rnuQRjOeoTn90="
+          "hash": "ikr2N5UVyF/rF8VtTq6+auHmLmIvi442Gype8hwODo0="
         }
       },
       "is_incremental": false,
@@ -54,19 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.html",
-          "hash": "5/0dqGckywRVq66+/C2awmbJ/o0Om8O1lgbKISzUw5E="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UNKO.Unity_Builder.BuildConfig.html",
-          "hash": "6IY6p5DNgyDuiTAzbdnsSBdllbyFlGNj6GrVXqAD8Vc="
+          "hash": "QGk20B3GRnGTvHMDLuGoIPtmnhZoM15+jLJN83xR6xg="
         }
       },
       "is_incremental": false,
@@ -78,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.html",
-          "hash": "wDcd+lMgLFDMuOJKSd3vz7xHBDf9MoKHXmUYm8OfT3w="
+          "hash": "bNTpM9HEkv9orh5T+D74oXPamvPw0w0mB28PoC2eWkM="
         }
       },
       "is_incremental": false,
@@ -90,7 +78,19 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.html",
-          "hash": "iMznhg1miDF7DOJz1U4l9mCjVPNziPJk0FIrWGUfwoM="
+          "hash": "3jt9Gtz4KeSkmdC5omDHWLW33jKNyILQLUaQLyEZbX8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.html",
+          "hash": "Cd23zHAMzlUeb7/zbkv208130i6nKkqaLYf8mVV8M1A="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.IBuildConfig.html",
-          "hash": "nPMe1KMauSusIXV5cAYhtKCeKuT/7JFGqgA4sSp5UbY="
+          "hash": "9Sa78oSRqNNNPPIBj7mylP62PEkS6N/OaG63u14ld6A="
         }
       },
       "is_incremental": false,
@@ -122,11 +122,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/UNKO.Unity_Builder.PlayerSetting_Backup.yml",
+      "source_relative_path": "api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.yml",
       "output": {
         ".html": {
-          "relative_path": "api/UNKO.Unity_Builder.PlayerSetting_Backup.html",
-          "hash": "WMlJ120LCeTLQkgKjM8HfwsI1IQdHy8x9xkQriC4UBE="
+          "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html",
+          "hash": "R1DgcUhzMqWlq7MVY6l5fdvy2Hyw9qoWytOpH3psZ7E="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.html",
-          "hash": "VqWx/X2TCLWgXaA2fDeKFvwzrWfL+EsmYESV4Q1ceP0="
+          "hash": "s7mcfpUlBsJhdAbIuahEDb67x25f2J5cAf31hSdcntw="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.html",
-          "hash": "5A26MIvYQRkBkmtP7dNwxUCAdtW3M6xUqg5OA9g/0WM="
+          "hash": "+CQuvbCRPbaotI5nPBbTVeA/uYEE+UQGfvCoaG+XTZA="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.html",
-          "hash": "bgRlTQyB0wEoygEWe4f72mjhXo9tUbpw7f4cUQabThU="
+          "hash": "Trrsg/xnPthutwRrTS/thkY2nUWFgzLHgmIuawSZFDg="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.html",
-          "hash": "SPe1NAEflfON0ZlEK8d/yYs7YiZkHeRrHjfT3eOEcYk="
+          "hash": "whPFwiRBkBw3/XOXSm80Y8JW9ZuMME/d/Fn3jwmUeLE="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "uHT/7MwEN8QEtANUPA4TPeI85G5XHEUXqO065esFhio="
+          "hash": "K+qiOClSCV0BXFDkUv41hJo8Lzjyzgr9y87vCItarms="
         }
       },
       "is_incremental": false,
