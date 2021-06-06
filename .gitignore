@@ -1,6 +1,5 @@
 ﻿Library
 Temp
-*.csproj
 *.sln
 ProjectSettings
 UserSettings
