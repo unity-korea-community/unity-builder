@@ -20,8 +20,7 @@ jobs:
 
       - name: Use README.md as index.md
         run: |
-          cp Packages/${{ github.event.repository.name }}/README.md README.md
-          cp README.md Documentation/index.md
+          cp Packages/${{ github.event.repository.name }}/README.md Documentation/index.md
 
       - name: Build
         run: docfx Documentation/docfx.json
