@@ -13,6 +13,186 @@
       "is_incremental": false
     },
     {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Tests.BuildConfigTests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tests.BuildConfigTests.html",
+          "hash": "oWh9dLPh3k4lWZS94yqmMkxEhp5FlL/SxZ6bZlTi7So="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Tests.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Tests.html",
+          "hash": "9v3/HtZhCJ5gJLJKTTchDsG0q0xPkcqct1lW87KB/Ps="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.html",
+          "hash": "aOHj8y+lcfcwyxh96HFu3MI6Ks7xvswSUI4eeX1wPr0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.html",
+          "hash": "cGi1aN094ft10JcAMXLjHw/kxrlmPB64zI8hCwYXrf8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.html",
+          "hash": "jkbA25AyEP/D/UVXIo2DTfPRpzY609q6tc9XjYJTb24="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.html",
+          "hash": "AOSENo76cziAIMmu9laS4x69mIH6GcMWFMiAZJTpDCc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.html",
+          "hash": "9Llkr5T/TBcNf7wr108ycLzFOOi7sUFEtbI9Dua90+k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.GlobalConst.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.GlobalConst.html",
+          "hash": "9xOYLJVVeMlZLIT/QiB+iHCjFwSt6wTA4NkkG4/YxAk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.IBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.IBuildConfig.html",
+          "hash": "RyBWCZROZabh170i61GYq+DI3o16ZMg67sgYnyi/zLs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html",
+          "hash": "GOqZGTyLE7KAa8CBAfFdqb613c0722t2d2PChtiYtsI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.UnityBuilder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.html",
+          "hash": "kRbgaqYeC9kzYiiN84rfqmEJp2U3Qu8SMPUtib387VQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.html",
+          "hash": "lw8NzOKEHeCgXveBjDx/87yIjBTII2s/Aby8Hr3YkEE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.html",
+          "hash": "sBZyHD163ChqyOY+NznwrKvIRhOjKWNjIcFI5EaHD3g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.html",
+          "hash": "whPFwiRBkBw3/XOXSm80Y8JW9ZuMME/d/Fn3jwmUeLE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "K+qiOClSCV0BXFDkUv41hJo8Lzjyzgr9y87vCItarms="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
       "log_codes": [
         "InvalidFileLink"
       ],
@@ -33,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "toc.html",
-          "hash": "Da6sDFOFElUBSgwBa/CYR8tjbQ5Gqr1SgXTuF91C/0E="
+          "hash": "S1Xa3xWmixVM4q+n2bct0MjWaLRE9vAyWXkWtrVLkD0="
         }
       },
       "is_incremental": false,
@@ -55,6 +235,12 @@
           "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 1,
+          "skipped_file_count": 0
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 14,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
