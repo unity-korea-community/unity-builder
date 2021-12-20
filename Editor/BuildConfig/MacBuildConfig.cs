@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEngine;
@@ -10,12 +9,12 @@ namespace UNKO.Unity_Builder
     /// <summary>
     /// Window 빌드 설정
     /// </summary>
-    [CreateAssetMenu(fileName = "WindowBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/WindowBuildConfig")]
+    [CreateAssetMenu(fileName = "MacBuildConfig", menuName = GlobalConst.CreateAssetMenu_Prefix + "/MacBuildConfig")]
     [StructLayout(LayoutKind.Auto)] // ignore codacy
-    public class WindowBuildConfig : BuildConfigBase
+    public class MacBuildConfig : BuildConfigBase
     {
         ///<inheritdoc cref="IBuildConfig.buildTarget"/>
-        public override BuildTarget buildTarget => BuildTarget.StandaloneWindows64;
+        public override BuildTarget buildTarget => BuildTarget.StandaloneOSX;
 
         /// <summary>
         /// CPP 빌드를 할지 체크, CPP빌드는 오래 걸리므로 Test빌드가 아닌 Alpha 빌드부터 하는걸 권장
@@ -40,15 +39,6 @@ namespace UNKO.Unity_Builder
         {
             base.OnPreBuild(commandLine, ref buildPlayerOptions);
 
-            string buildPath = GetBuildPath();
-            DirectoryInfo directoryInfo = new DirectoryInfo(buildPath);
-            DirectoryInfo parentDirectory = directoryInfo.Parent;
-            Debug.Log($"build directory({parentDirectory.FullName}) is exist:{parentDirectory.Exists}");
-            if (parentDirectory.Exists)
-            {
-                parentDirectory.Delete();
-            }
-
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Standalone, scriptingBackEnd);
         }
 
@@ -56,16 +46,16 @@ namespace UNKO.Unity_Builder
         public override string GetBuildPath()
         {
             return base.GetBuildPath()
-                .Replace("{scriptingBackEnd}", scriptingBackEnd.ToString())
-                + ".exe";
+                .Replace("{scriptingBackEnd}", scriptingBackEnd.ToString());
+            // + ".exe";
         }
     }
 
     /// <summary>
-    /// <see cref="WindowBuildConfig"/> 인스펙터
+    /// <see cref="MacBuildConfig"/> 인스펙터
     /// </summary>
-    [CustomEditor(typeof(WindowBuildConfig))]
-    public class WindowBuildConfig_Inspector : Editor
+    [CustomEditor(typeof(MacBuildConfig))]
+    public class MacBuildConfig_Inspector : Editor
     {
         string _commandLine;
 

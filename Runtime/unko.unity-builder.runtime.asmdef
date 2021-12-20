@@ -1,12 +1,8 @@
 {
-    "name": "unko.unity-builder.editor",
+    "name": "unko.unity-builder.runtime",
     "rootNamespace": "",
-    "references": [
-        "GUID:b2c2b71d5f490394681029d40c03205f"
-    ],
-    "includePlatforms": [
-        "Editor"
-    ],
+    "references": [],
+    "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
