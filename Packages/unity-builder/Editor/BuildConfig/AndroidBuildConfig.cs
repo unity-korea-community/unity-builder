@@ -34,6 +34,7 @@ namespace UNKO.Unity_Builder
         /// <para>예를들어 UnityProject/Asset 폴더 밑에 example.keystore가 있으면 "/example.keystore" 입니다.</para>
         /// </summary>
         [SerializeField]
+        [Tooltip("Keystore 파일의 경로입니다. `파일경로/파일명.keystore` 까지 쓰셔야 합니다.")]
         protected string keystorePath;
 
         /// <summary>
@@ -53,6 +54,12 @@ namespace UNKO.Unity_Builder
         /// </summary>
         [SerializeField]
         protected int bundleVersionCode;
+
+        /// <summary>
+        /// 안드로이드 앱번들(.aab)로 빌드할 지, false면 apk로 빌드
+        /// </summary>
+        [SerializeField]
+        protected bool aabBuild;
 
         ///<inheritdoc cref="IBuildConfig.ResetSetting"/>
         public override void ResetSetting(BuildConfigBase config)
@@ -75,25 +82,33 @@ namespace UNKO.Unity_Builder
             PlayerSettings.Android.keyaliasName = keyaliasName;
             PlayerSettings.Android.keyaliasPass = keyaliasPassword;
 
-            PlayerSettings.Android.keystoreName = Application.dataPath + keystorePath;
+            PlayerSettings.Android.keystoreName = keystorePath;
             PlayerSettings.Android.keystorePass = keystorePassword;
             PlayerSettings.Android.bundleVersionCode = bundleVersionCode;
+
+            EditorUserBuildSettings.buildAppBundle = aabBuild;
 
             PlayerSettings.SetScriptingBackend(BuildTargetGroup.Android, scriptingBackEnd);
 
             Debug.LogFormat($"OnPreBuild [Android]\n" +
-                            $"PackageName : {PlayerSettings.applicationIdentifier}\n" +
-                            $"keyaliasName : {PlayerSettings.Android.keyaliasName}, keyaliasPass : {PlayerSettings.Android.keyaliasPass}\n" +
-                            $"keystoreName : {PlayerSettings.Android.keystoreName}, keystorePass : {PlayerSettings.Android.keystorePass}\n");
+                            $"PackageName:{PlayerSettings.applicationIdentifier}\n" +
+                            $"keyaliasName:{PlayerSettings.Android.keyaliasName}, keyaliasPass:{PlayerSettings.Android.keyaliasPass}\n" +
+                            $"keystoreName:{PlayerSettings.Android.keystoreName}, keystorePass:{PlayerSettings.Android.keystorePass}\n" +
+                            $"aabBuild:{aabBuild}");
         }
 
         ///<inheritdoc cref="IBuildConfig.GetBuildPath"/>
         public override string GetBuildPath()
         {
-            return base.GetBuildPath()
+            string extensionName = EditorUserBuildSettings.buildAppBundle ? ".aab" : ".apk";
+            return base.GetBuildPath() + extensionName;
+        }
+
+        public override string ReplaceStrings(string replaceTarget)
+        {
+            return base.ReplaceStrings(replaceTarget)
                 .Replace("{scriptingBackEnd}", scriptingBackEnd.ToString())
-                .Replace("{bundleVersionCode}", bundleVersionCode.ToString())
-                + ".apk";
+                .Replace("{bundleVersionCode}", bundleVersionCode.ToString());
         }
     }
 
@@ -117,6 +132,9 @@ namespace UNKO.Unity_Builder
             if (GUILayout.Button("Reset to Current EditorSetting"))
             {
                 config.ResetSetting(config);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+                EditorUtility.SetDirty(config);
             }
 
             if (GUILayout.Button("Build!"))
@@ -124,27 +142,12 @@ namespace UNKO.Unity_Builder
                 UnityBuilder.Build(config);
             }
 
-            _commandLine = EditorGUILayout.TextField("commandLine", _commandLine);
+            EditorGUILayout.Space();
+            EditorGUILayout.LabelField("or with command line");
+            _commandLine = EditorGUILayout.TextArea(_commandLine);
             if (GUILayout.Button($"Build with \'{_commandLine}\'"))
             {
-                string[] commands = _commandLine.Split(' ');
-                for (int i = 0; i < commands.Length; i++)
-                {
-                    string command = commands[i];
-                    bool hasNextCommand = i + 1 < commands.Length;
-                    if (command.StartsWith("-"))
-                    {
-                        if (hasNextCommand)
-                        {
-                            Environment.SetEnvironmentVariable(command, commands[i + 1]);
-                        }
-                        else
-                        {
-                            Environment.SetEnvironmentVariable(command, "");
-                        }
-                    }
-                }
-
+                UnityBuilder.AddCommandLine(_commandLine);
                 UnityBuilder.Build();
             }
         }

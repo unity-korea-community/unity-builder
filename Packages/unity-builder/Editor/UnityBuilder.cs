@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEditor.Build.Reporting;
 using UnityEngine;
@@ -56,11 +57,71 @@ namespace UNKO.Unity_Builder
             }
         }
 
+
+        static string _commandLine = string.Empty;
+
+        public static void AddCommandLine(string commandLine)
+        {
+            _commandLine = string.Empty;
+            _commandLine += commandLine;
+        }
+
+        public static string GetCommandLine()
+        {
+            return Environment.CommandLine + _commandLine;
+        }
+
+        public static string[] GetCommandLineArgs()
+        {
+            List<string> commandargs = new List<string>(Environment.GetCommandLineArgs());
+
+            if (string.IsNullOrEmpty(_commandLine) == false)
+            {
+                commandargs.AddRange(_commandLine.Replace("\r\n", "\n").Split(' ', '\n'));
+            }
+
+            return commandargs.ToArray();
+        }
+
+        private static string GetCommandLineValue(string commandLineArg)
+        {
+            string value = Environment.GetEnvironmentVariable(commandLineArg);
+            if (string.IsNullOrEmpty(value) == false)
+            {
+                return value;
+            }
+
+            if (commandLineArg.StartsWith("-") == false)
+            {
+                commandLineArg = $"-{commandLineArg}";
+            }
+
+            string[] commandLines = GetCommandLineArgs();
+            for (int i = 0; i < commandLines.Length; i++)
+            {
+                string command = commandLines[i];
+                if (command.Equals(commandLineArg))
+                {
+                    value = commandLines[i + 1];
+                    break;
+                }
+            }
+
+            if (string.IsNullOrEmpty(value))
+            {
+                Debug.Log($"environment variable {commandLineArg} is null or empty");
+            }
+
+            return value;
+        }
+
         /// <summary>
         /// 커맨드라인의 configpath에서 <see cref="BuildConfigBase"/>를 얻은 뒤 해당 config로 빌드합니다.
         /// </summary>
         public static void Build()
         {
+            Debug.Log($"Build with commandLine: {GetCommandLine()}");
+
             if (TryGetSO_FromCommandLine("configpath", out BuildConfigBase config))
             {
                 Build(config);
@@ -77,36 +138,43 @@ namespace UNKO.Unity_Builder
         /// <param name="buildConfig">빌드에 사용할 config</param>
         public static void Build(BuildConfigBase buildConfig)
         {
+            string overwriteConfigJson = GetCommandLineValue("overwrite");
+            if (string.IsNullOrEmpty(overwriteConfigJson) == false)
+            {
+                Debug.Log($"overwrite config: {overwriteConfigJson}");
+                JsonUtility.FromJsonOverwrite(overwriteConfigJson, buildConfig);
+            }
+            else
+            {
+                Debug.Log($"not overwrite config");
+            }
+
+            if (buildConfig.overrideEditorSettingBundleVersion)
+            {
+                buildConfig.bundleVersion = PlayerSettings.bundleVersion;
+            }
+
             BuildTargetGroup buildTargetGroup = BuildPipeline.GetBuildTargetGroup(buildConfig.buildTarget);
             BuildPlayerOptions buildPlayerOptions = Generate_BuildPlayerOption(buildConfig);
             PlayerSetting_Backup editorSetting_Backup = SettingBuildConfig_To_EditorSetting(buildConfig, buildTargetGroup);
-
-            string overwriteConfigJson = Environment.GetEnvironmentVariable("overwrite");
-            if (string.IsNullOrEmpty(overwriteConfigJson) == false)
-            {
-                Debug.Log($"overwrite config : {overwriteConfigJson}");
-                JsonUtility.FromJsonOverwrite(overwriteConfigJson, buildConfig);
-            }
+            Debug.Log($"OnPreBuild DefineSymbol {PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup)}");
 
             Dictionary<string, string> commandLine = new Dictionary<string, string>();
             try
             {
                 buildConfig.OnPreBuild(commandLine, ref buildPlayerOptions);
-                BuildReport report = UnityEditor.BuildPipeline.BuildPlayer(buildPlayerOptions);
+                BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
                 buildConfig.OnPostBuild(commandLine);
 
-                PrintBuildResult(buildConfig.GetBuildPath(), report);
-            }
-            catch (Exception e)
-            {
-                Debug.Log("Error - " + e);
-                throw;
+                string path = buildConfig.GetBuildPath();
+                path = path.Replace(".", "_");
+                PrintBuildResult(path, report);
             }
             finally
             {
                 editorSetting_Backup.Restore();
             }
-            Debug.Log($"After Build DefineSymbol Current {PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup)}");
+            Debug.Log($"OnAfterBuild DefineSymbol {PlayerSettings.GetScriptingDefineSymbolsForGroup(buildTargetGroup)}");
 
             // 2018.4 에서 프로젝트 전체 리임포팅 하는 이슈 대응
             // https://issuetracker.unity3d.com/issues/osx-batchmode-build-hangs-at-refresh-detecting-if-any-assets-need-to-be-imported-or-removed
@@ -116,23 +184,18 @@ namespace UNKO.Unity_Builder
         }
 
         /// <summary>
-        /// EnvironmentVariable에서 <see cref="ScriptableObject"/>를 얻습니다.
+        /// CommandLine에서 <see cref="ScriptableObject"/>를 얻습니다.
         /// </summary>
-        /// <param name="commandLine">찾을 값</param>
+        /// <param name="commandLineArg">찾을 값</param>
         /// <param name="outFile">성공시 얻는 so</param>
         /// <typeparam name="T">scriptable object type</typeparam>
         /// <returns>성공 유무</returns>
-        public static bool TryGetSO_FromCommandLine<T>(string commandLine, out T outFile)
+        public static bool TryGetSO_FromCommandLine<T>(string commandLineArg, out T outFile)
             where T : ScriptableObject
         {
             outFile = null;
-            string path = Environment.GetEnvironmentVariable(commandLine);
-            if (string.IsNullOrEmpty(path))
-            {
-                Debug.LogError($"environment variable {commandLine} is null or empty");
-                return false;
-            }
 
+            string path = GetCommandLineValue(commandLineArg);
             outFile = AssetDatabase.LoadAssetAtPath<T>(path);
             return outFile != null;
         }
@@ -143,20 +206,46 @@ namespace UNKO.Unity_Builder
 
         private static BuildPlayerOptions Generate_BuildPlayerOption(BuildConfigBase config)
         {
-            List<string> sceneNames = new List<string>(config.GetBuildSceneNames());
-            for (int i = 0; i < sceneNames.Count; i++)
+            const string sceneExtension = ".unity";
+            string dataPath = $"{Application.dataPath}/";
+            string[] buildSettingScenes;
+            if (config.useScenesInEditorSetting)
             {
-                const string sceneExtension = ".unity";
-                string sceneName = sceneNames[i];
-                if (sceneName.EndsWith(sceneExtension))
+                buildSettingScenes = EditorBuildSettings.scenes
+                    .Where(scene => scene.enabled)
+                    .Select(scene => scene.path)
+                    .ToArray();
+            }
+            else
+            {
+                List<string> sceneNames = new List<string>(config.GetBuildSceneNames());
+                for (int i = 0; i < sceneNames.Count; i++)
                 {
-                    sceneNames[i] = sceneName + sceneExtension;
+                    string sceneName = sceneNames[i];
+                    if (sceneName.StartsWith("Assets/"))
+                    {
+                        sceneName = sceneName.Replace("Assets/", "");
+                    }
+
+                    if (sceneName.StartsWith(dataPath) == false)
+                    {
+                        sceneName = dataPath + sceneName;
+                    }
+
+                    if (sceneName.EndsWith(sceneExtension) == false)
+                    {
+                        sceneName += sceneExtension;
+                    }
+
+                    sceneNames[i] = sceneName;
                 }
+
+                buildSettingScenes = sceneNames.ToArray();
             }
 
             BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
             {
-                scenes = sceneNames.ToArray(),
+                scenes = buildSettingScenes,
                 locationPathName = config.GetBuildPath(),
                 target = config.buildTarget,
                 options = BuildOptions.None
@@ -181,7 +270,7 @@ namespace UNKO.Unity_Builder
             BuildSummary summary = report.summary;
             Debug.Log($"Build Result:{summary.result}, Path:{path}");
 
-            if (summary.result == BuildResult.Failed)
+            if (summary.result == BuildResult.Failed || summary.result == BuildResult.Unknown)
             {
                 int errorIndex = 1;
                 foreach (var step in report.steps)
@@ -190,13 +279,16 @@ namespace UNKO.Unity_Builder
                     {
                         if (msg.type == LogType.Error || msg.type == LogType.Exception)
                         {
-                            Debug.LogFormat("Build Fail Log[{0}] : type : {1}\n" +
+                            Debug.LogErrorFormat("Build Fail Log[{0}] : type : {1}\n" +
                                             "content : {2}", ++errorIndex, msg.type, msg.content);
                         }
                     }
                 }
+
+                throw new System.Exception();
             }
         }
+
 
         #endregion private
     }
