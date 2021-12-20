@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class WindowBuildConfig
    | Example Unity documentation ">
-    <meta name="generator" content="docfx 2.57.2.0">
+    <meta name="generator" content="docfx 2.58.9.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -89,13 +89,8 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.object">Object</a></div>
-    <div class="level1"><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html">BuildConfigSO</a></div>
-    <div class="level2"><a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html">BuildConfigBase</a></div>
-    <div class="level3"><span class="xref">WindowBuildConfig</span></div>
-  </div>
-  <div classs="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="UNKO.Unity_Builder.IBuildConfig.html">IBuildConfig</a></div>
+    <div class="level1"><a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html">BuildConfigBase</a></div>
+    <div class="level2"><span class="xref">WindowBuildConfig</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -115,10 +110,16 @@
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetDefineSymbol">BuildConfigBase.GetDefineSymbol()</a>
     </div>
     <div>
+      <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_useScenesInEditorSetting">BuildConfigBase.useScenesInEditorSetting</a>
+    </div>
+    <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_buildSceneNames">BuildConfigBase.buildSceneNames</a>
     </div>
     <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetBuildSceneNames">BuildConfigBase.GetBuildSceneNames()</a>
+    </div>
+    <div>
+      <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_overrideEditorSettingBundleVersion">BuildConfigBase.overrideEditorSettingBundleVersion</a>
     </div>
     <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_bundleVersion">BuildConfigBase.bundleVersion</a>
@@ -136,10 +137,16 @@
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_openBuildFolder">BuildConfigBase.openBuildFolder</a>
     </div>
     <div>
+      <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_versionString">BuildConfigBase.versionString</a>
+    </div>
+    <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_AddBuildPath_System_String_">BuildConfigBase.AddBuildPath(String)</a>
     </div>
     <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_OnPostBuild_System_Collections_Generic_IDictionary_System_String_System_String__">BuildConfigBase.OnPostBuild(IDictionary&lt;String, String&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ReplaceStrings_System_String_">BuildConfigBase.ReplaceStrings(String)</a>
     </div>
     <div>
       <a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_GetEnabled_EditorScenes">BuildConfigBase.GetEnabled_EditorScenes()</a>
@@ -149,7 +156,7 @@
   <h6><strong>Assembly</strong>: unko.unity-builder.editor.dll</h6>
   <h5 id="UNKO_Unity_Builder_WindowBuildConfig_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class WindowBuildConfig : BuildConfigBase, IBuildConfig</code></pre>
+    <pre><code class="lang-csharp hljs">public class WindowBuildConfig : BuildConfigBase</code></pre>
   </div>
   <h3 id="fields">Fields
   </h3>
@@ -158,7 +165,7 @@
     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig_scriptingBackEnd.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig.scriptingBackEnd%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L23">View Source</a>
+    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L24">View Source</a>
   </span>
   <h4 id="UNKO_Unity_Builder_WindowBuildConfig_scriptingBackEnd" data-uid="UNKO.Unity_Builder.WindowBuildConfig.scriptingBackEnd">scriptingBackEnd</h4>
   <div class="markdown level1 summary"><p>CPP 빌드를 할지 체크, CPP빌드는 오래 걸리므로 Test빌드가 아닌 Alpha 빌드부터 하는걸 권장</p>
@@ -190,12 +197,11 @@
     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig_buildTarget.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig.buildTarget%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L17">View Source</a>
+    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L18">View Source</a>
   </span>
   <a id="UNKO_Unity_Builder_WindowBuildConfig_buildTarget_" data-uid="UNKO.Unity_Builder.WindowBuildConfig.buildTarget*"></a>
   <h4 id="UNKO_Unity_Builder_WindowBuildConfig_buildTarget" data-uid="UNKO.Unity_Builder.WindowBuildConfig.buildTarget">buildTarget</h4>
-  <div class="markdown level1 summary"><p>실행될 빌드 타겟</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -216,8 +222,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget">BuildConfigSO.buildTarget</a></div>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -225,12 +229,11 @@
     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig_GetBuildPath.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig.GetBuildPath%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L46">View Source</a>
+    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L56">View Source</a>
   </span>
   <a id="UNKO_Unity_Builder_WindowBuildConfig_GetBuildPath_" data-uid="UNKO.Unity_Builder.WindowBuildConfig.GetBuildPath*"></a>
   <h4 id="UNKO_Unity_Builder_WindowBuildConfig_GetBuildPath" data-uid="UNKO.Unity_Builder.WindowBuildConfig.GetBuildPath">GetBuildPath()</h4>
-  <div class="markdown level1 summary"><p>빌드 출력 경로를 얻고자 할 때</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -247,8 +250,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a></td>
-        <td><p>빌드 출력 경로</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -259,12 +261,11 @@
     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig_OnPreBuild_System_Collections_Generic_IDictionary_System_String_System_String__BuildPlayerOptions__.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary%7BSystem.String%2CSystem.String%7D%2CBuildPlayerOptions%40)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L38">View Source</a>
+    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L39">View Source</a>
   </span>
   <a id="UNKO_Unity_Builder_WindowBuildConfig_OnPreBuild_" data-uid="UNKO.Unity_Builder.WindowBuildConfig.OnPreBuild*"></a>
   <h4 id="UNKO_Unity_Builder_WindowBuildConfig_OnPreBuild_System_Collections_Generic_IDictionary_System_String_System_String__BuildPlayerOptions__" data-uid="UNKO.Unity_Builder.WindowBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)">OnPreBuild(IDictionary&lt;String, String&gt;, ref BuildPlayerOptions)</h4>
-  <div class="markdown level1 summary"><p>빌드를 하기 전 이벤트 함수</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -283,14 +284,12 @@
       <tr>
         <td><a class="xref" href="https://docs.microsoft.com/dotnet/api/system.collections.generic.idictionary-2">IDictionary</a>&lt;<a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>, <a class="xref" href="https://docs.microsoft.com/dotnet/api/system.string">String</a>&gt;</td>
         <td><span class="parametername">commandLine</span></td>
-        <td><p>빌드에 실행한 commandline</p>
-</td>
+        <td></td>
       </tr>
       <tr>
         <td><span class="xref">BuildPlayerOptions</span></td>
         <td><span class="parametername">buildPlayerOptions</span></td>
-        <td><p>빌드에 사용한 option</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -301,12 +300,11 @@
     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L26">View Source</a>
+    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L27">View Source</a>
   </span>
   <a id="UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_" data-uid="UNKO.Unity_Builder.WindowBuildConfig.ResetSetting*"></a>
   <h4 id="UNKO_Unity_Builder_WindowBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_" data-uid="UNKO.Unity_Builder.WindowBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)">ResetSetting(BuildConfigBase)</h4>
-  <div class="markdown level1 summary"><p>빌드 세팅을 리셋할 때</p>
-</div>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -325,17 +323,12 @@
       <tr>
         <td><a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html">BuildConfigBase</a></td>
         <td><span class="parametername">config</span></td>
-        <td><p>리셋할 대상 config</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_">BuildConfigBase.ResetSetting(BuildConfigBase)</a></div>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="UNKO.Unity_Builder.IBuildConfig.html">IBuildConfig</a>
-  </div>
 <div id="disqus_thread"></div>
                 <script>
                 (function() { // DON'T EDIT BELOW THIS LINE
@@ -357,7 +350,7 @@
                     <a href="https://github.com/unity-korea-community/unity-builder/new/workspace/Documentation/apiSpec/new?filename=UNKO_Unity_Builder_WindowBuildConfig.md&amp;value=---%0Auid%3A%20UNKO.Unity_Builder.WindowBuildConfig%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L12" class="contribution-link">View Source</a>
+                    <a href="https://github.com/unity-korea-community/unity-builder/blob/workspace/Packages/unity-builder/Editor/BuildConfig/WindowBuildConfig.cs/#L13" class="contribution-link">View Source</a>
                   </li>
                   <li>
                     <a href="#disqus_thread" class="contribution-link">0 Comments</a>

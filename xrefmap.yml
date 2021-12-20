@@ -38,6 +38,12 @@ references:
   commentId: T:UNKO.Unity_Builder.AndroidBuildConfig
   fullName: UNKO.Unity_Builder.AndroidBuildConfig
   nameWithType: AndroidBuildConfig
+- uid: UNKO.Unity_Builder.AndroidBuildConfig.aabBuild
+  name: aabBuild
+  href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_aabBuild
+  commentId: F:UNKO.Unity_Builder.AndroidBuildConfig.aabBuild
+  fullName: UNKO.Unity_Builder.AndroidBuildConfig.aabBuild
+  nameWithType: AndroidBuildConfig.aabBuild
 - uid: UNKO.Unity_Builder.AndroidBuildConfig.buildTarget
   name: buildTarget
   href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_buildTarget
@@ -110,6 +116,19 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.AndroidBuildConfig.OnPreBuild
   nameWithType: AndroidBuildConfig.OnPreBuild
+- uid: UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings(System.String)
+  name: ReplaceStrings(String)
+  href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ReplaceStrings_System_String_
+  commentId: M:UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings(System.String)
+  fullName: UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings(System.String)
+  nameWithType: AndroidBuildConfig.ReplaceStrings(String)
+- uid: UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings*
+  name: ReplaceStrings
+  href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ReplaceStrings_
+  commentId: Overload:UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.AndroidBuildConfig.ReplaceStrings
+  nameWithType: AndroidBuildConfig.ReplaceStrings
 - uid: UNKO.Unity_Builder.AndroidBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
   name: ResetSetting(BuildConfigBase)
   href: api/UNKO.Unity_Builder.AndroidBuildConfig.html#UNKO_Unity_Builder_AndroidBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
@@ -312,12 +331,31 @@ references:
   commentId: F:UNKO.Unity_Builder.BuildConfigBase.openBuildFolder
   fullName: UNKO.Unity_Builder.BuildConfigBase.openBuildFolder
   nameWithType: BuildConfigBase.openBuildFolder
+- uid: UNKO.Unity_Builder.BuildConfigBase.overrideEditorSettingBundleVersion
+  name: overrideEditorSettingBundleVersion
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_overrideEditorSettingBundleVersion
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.overrideEditorSettingBundleVersion
+  fullName: UNKO.Unity_Builder.BuildConfigBase.overrideEditorSettingBundleVersion
+  nameWithType: BuildConfigBase.overrideEditorSettingBundleVersion
 - uid: UNKO.Unity_Builder.BuildConfigBase.productName
   name: productName
   href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_productName
   commentId: F:UNKO.Unity_Builder.BuildConfigBase.productName
   fullName: UNKO.Unity_Builder.BuildConfigBase.productName
   nameWithType: BuildConfigBase.productName
+- uid: UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings(System.String)
+  name: ReplaceStrings(String)
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ReplaceStrings_System_String_
+  commentId: M:UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings(System.String)
+  fullName: UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings(System.String)
+  nameWithType: BuildConfigBase.ReplaceStrings(String)
+- uid: UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings*
+  name: ReplaceStrings
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ReplaceStrings_
+  commentId: Overload:UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.BuildConfigBase.ReplaceStrings
+  nameWithType: BuildConfigBase.ReplaceStrings
 - uid: UNKO.Unity_Builder.BuildConfigBase.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
   name: ResetSetting(BuildConfigBase)
   href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
@@ -331,89 +369,24 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.BuildConfigBase.ResetSetting
   nameWithType: BuildConfigBase.ResetSetting
+- uid: UNKO.Unity_Builder.BuildConfigBase.useScenesInEditorSetting
+  name: useScenesInEditorSetting
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_useScenesInEditorSetting
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.useScenesInEditorSetting
+  fullName: UNKO.Unity_Builder.BuildConfigBase.useScenesInEditorSetting
+  nameWithType: BuildConfigBase.useScenesInEditorSetting
+- uid: UNKO.Unity_Builder.BuildConfigBase.versionString
+  name: versionString
+  href: api/UNKO.Unity_Builder.BuildConfigBase.html#UNKO_Unity_Builder_BuildConfigBase_versionString
+  commentId: F:UNKO.Unity_Builder.BuildConfigBase.versionString
+  fullName: UNKO.Unity_Builder.BuildConfigBase.versionString
+  nameWithType: BuildConfigBase.versionString
 - uid: UNKO.Unity_Builder.BuildConfigGroup
   name: BuildConfigGroup
   href: api/UNKO.Unity_Builder.BuildConfigGroup.html
   commentId: T:UNKO.Unity_Builder.BuildConfigGroup
   fullName: UNKO.Unity_Builder.BuildConfigGroup
   nameWithType: BuildConfigGroup
-- uid: UNKO.Unity_Builder.BuildConfigSO
-  name: BuildConfigSO
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html
-  commentId: T:UNKO.Unity_Builder.BuildConfigSO
-  fullName: UNKO.Unity_Builder.BuildConfigSO
-  nameWithType: BuildConfigSO
-- uid: UNKO.Unity_Builder.BuildConfigSO.buildTarget
-  name: buildTarget
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget
-  commentId: P:UNKO.Unity_Builder.BuildConfigSO.buildTarget
-  fullName: UNKO.Unity_Builder.BuildConfigSO.buildTarget
-  nameWithType: BuildConfigSO.buildTarget
-- uid: UNKO.Unity_Builder.BuildConfigSO.buildTarget*
-  name: buildTarget
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_buildTarget_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.buildTarget
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigSO.buildTarget
-  nameWithType: BuildConfigSO.buildTarget
-- uid: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
-  name: GetBuildPath()
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_GetBuildPath
-  commentId: M:UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
-  fullName: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath()
-  nameWithType: BuildConfigSO.GetBuildPath()
-- uid: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath*
-  name: GetBuildPath
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_GetBuildPath_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigSO.GetBuildPath
-  nameWithType: BuildConfigSO.GetBuildPath
-- uid: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(System.Collections.Generic.IDictionary{System.String,System.String})
-  name: OnPostBuild(IDictionary<String, String>)
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPostBuild_System_Collections_Generic_IDictionary_System_String_System_String__
-  commentId: M:UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(System.Collections.Generic.IDictionary{System.String,System.String})
-  name.vb: OnPostBuild(IDictionary(Of String, String))
-  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(System.Collections.Generic.IDictionary<System.String, System.String>)
-  fullName.vb: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild(System.Collections.Generic.IDictionary(Of System.String, System.String))
-  nameWithType: BuildConfigSO.OnPostBuild(IDictionary<String, String>)
-  nameWithType.vb: BuildConfigSO.OnPostBuild(IDictionary(Of String, String))
-- uid: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild*
-  name: OnPostBuild
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPostBuild_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.OnPostBuild
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPostBuild
-  nameWithType: BuildConfigSO.OnPostBuild
-- uid: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
-  name: OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPreBuild_System_Collections_Generic_IDictionary_System_String_System_String__BuildPlayerOptions__
-  commentId: M:UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
-  name.vb: OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(System.Collections.Generic.IDictionary<System.String, System.String>, ref BuildPlayerOptions)
-  fullName.vb: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild(System.Collections.Generic.IDictionary(Of System.String, System.String), ByRef BuildPlayerOptions)
-  nameWithType: BuildConfigSO.OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  nameWithType.vb: BuildConfigSO.OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-- uid: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild*
-  name: OnPreBuild
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_OnPreBuild_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.OnPreBuild
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigSO.OnPreBuild
-  nameWithType: BuildConfigSO.OnPreBuild
-- uid: UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  name: ResetSetting(BuildConfigBase)
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
-  commentId: M:UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  fullName: UNKO.Unity_Builder.BuildConfigSO.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  nameWithType: BuildConfigSO.ResetSetting(BuildConfigBase)
-- uid: UNKO.Unity_Builder.BuildConfigSO.ResetSetting*
-  name: ResetSetting
-  href: api/UNKO.Unity_Builder.BuildConfigSO.html#UNKO_Unity_Builder_BuildConfigSO_ResetSetting_
-  commentId: Overload:UNKO.Unity_Builder.BuildConfigSO.ResetSetting
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.BuildConfigSO.ResetSetting
-  nameWithType: BuildConfigSO.ResetSetting
 - uid: UNKO.Unity_Builder.GlobalConst
   name: GlobalConst
   href: api/UNKO.Unity_Builder.GlobalConst.html
@@ -432,89 +405,201 @@ references:
   commentId: F:UNKO.Unity_Builder.GlobalConst.EditorContextMenu_Prefix
   fullName: UNKO.Unity_Builder.GlobalConst.EditorContextMenu_Prefix
   nameWithType: GlobalConst.EditorContextMenu_Prefix
-- uid: UNKO.Unity_Builder.IBuildConfig
-  name: IBuildConfig
-  href: api/UNKO.Unity_Builder.IBuildConfig.html
-  commentId: T:UNKO.Unity_Builder.IBuildConfig
-  fullName: UNKO.Unity_Builder.IBuildConfig
-  nameWithType: IBuildConfig
-- uid: UNKO.Unity_Builder.IBuildConfig.buildTarget
+- uid: UNKO.Unity_Builder.iOSBuildConfig
+  name: iOSBuildConfig
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html
+  commentId: T:UNKO.Unity_Builder.iOSBuildConfig
+  fullName: UNKO.Unity_Builder.iOSBuildConfig
+  nameWithType: iOSBuildConfig
+- uid: UNKO.Unity_Builder.iOSBuildConfig.addPlist
+  name: addPlist
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_addPlist
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.addPlist
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.addPlist
+  nameWithType: iOSBuildConfig.addPlist
+- uid: UNKO.Unity_Builder.iOSBuildConfig.appleTeamID
+  name: appleTeamID
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_appleTeamID
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.appleTeamID
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.appleTeamID
+  nameWithType: iOSBuildConfig.appleTeamID
+- uid: UNKO.Unity_Builder.iOSBuildConfig.buildNumber
+  name: buildNumber
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_buildNumber
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.buildNumber
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.buildNumber
+  nameWithType: iOSBuildConfig.buildNumber
+- uid: UNKO.Unity_Builder.iOSBuildConfig.buildTarget
   name: buildTarget
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_buildTarget
-  commentId: P:UNKO.Unity_Builder.IBuildConfig.buildTarget
-  fullName: UNKO.Unity_Builder.IBuildConfig.buildTarget
-  nameWithType: IBuildConfig.buildTarget
-- uid: UNKO.Unity_Builder.IBuildConfig.buildTarget*
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_buildTarget
+  commentId: P:UNKO.Unity_Builder.iOSBuildConfig.buildTarget
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.buildTarget
+  nameWithType: iOSBuildConfig.buildTarget
+- uid: UNKO.Unity_Builder.iOSBuildConfig.buildTarget*
   name: buildTarget
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_buildTarget_
-  commentId: Overload:UNKO.Unity_Builder.IBuildConfig.buildTarget
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_buildTarget_
+  commentId: Overload:UNKO.Unity_Builder.iOSBuildConfig.buildTarget
   isSpec: "True"
-  fullName: UNKO.Unity_Builder.IBuildConfig.buildTarget
-  nameWithType: IBuildConfig.buildTarget
-- uid: UNKO.Unity_Builder.IBuildConfig.GetBuildPath
-  name: GetBuildPath()
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_GetBuildPath
-  commentId: M:UNKO.Unity_Builder.IBuildConfig.GetBuildPath
-  fullName: UNKO.Unity_Builder.IBuildConfig.GetBuildPath()
-  nameWithType: IBuildConfig.GetBuildPath()
-- uid: UNKO.Unity_Builder.IBuildConfig.GetBuildPath*
-  name: GetBuildPath
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_GetBuildPath_
-  commentId: Overload:UNKO.Unity_Builder.IBuildConfig.GetBuildPath
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.buildTarget
+  nameWithType: iOSBuildConfig.buildTarget
+- uid: UNKO.Unity_Builder.iOSBuildConfig.bundle_Identifier
+  name: bundle_Identifier
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_bundle_Identifier
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.bundle_Identifier
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.bundle_Identifier
+  nameWithType: iOSBuildConfig.bundle_Identifier
+- uid: UNKO.Unity_Builder.iOSBuildConfig.copy_AssetFilePath_To_XCodeProjectPath
+  name: copy_AssetFilePath_To_XCodeProjectPath
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_copy_AssetFilePath_To_XCodeProjectPath
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.copy_AssetFilePath_To_XCodeProjectPath
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.copy_AssetFilePath_To_XCodeProjectPath
+  nameWithType: iOSBuildConfig.copy_AssetFilePath_To_XCodeProjectPath
+- uid: UNKO.Unity_Builder.iOSBuildConfig.entitlementsFileName_Without_ExtensionName
+  name: entitlementsFileName_Without_ExtensionName
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_entitlementsFileName_Without_ExtensionName
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.entitlementsFileName_Without_ExtensionName
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.entitlementsFileName_Without_ExtensionName
+  nameWithType: iOSBuildConfig.entitlementsFileName_Without_ExtensionName
+- uid: UNKO.Unity_Builder.iOSBuildConfig.HTTPAddress
+  name: HTTPAddress
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_HTTPAddress
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.HTTPAddress
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.HTTPAddress
+  nameWithType: iOSBuildConfig.HTTPAddress
+- uid: UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild(BuildTarget,System.String)
+  name: OnPostProcessBuild(BuildTarget, String)
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_OnPostProcessBuild_BuildTarget_System_String_
+  commentId: M:UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild(BuildTarget,System.String)
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild(BuildTarget, System.String)
+  nameWithType: iOSBuildConfig.OnPostProcessBuild(BuildTarget, String)
+- uid: UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild*
+  name: OnPostProcessBuild
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_OnPostProcessBuild_
+  commentId: Overload:UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild
   isSpec: "True"
-  fullName: UNKO.Unity_Builder.IBuildConfig.GetBuildPath
-  nameWithType: IBuildConfig.GetBuildPath
-- uid: UNKO.Unity_Builder.IBuildConfig.OnPostBuild(System.Collections.Generic.IDictionary{System.String,System.String})
-  name: OnPostBuild(IDictionary<String, String>)
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_OnPostBuild_System_Collections_Generic_IDictionary_System_String_System_String__
-  commentId: M:UNKO.Unity_Builder.IBuildConfig.OnPostBuild(System.Collections.Generic.IDictionary{System.String,System.String})
-  name.vb: OnPostBuild(IDictionary(Of String, String))
-  fullName: UNKO.Unity_Builder.IBuildConfig.OnPostBuild(System.Collections.Generic.IDictionary<System.String, System.String>)
-  fullName.vb: UNKO.Unity_Builder.IBuildConfig.OnPostBuild(System.Collections.Generic.IDictionary(Of System.String, System.String))
-  nameWithType: IBuildConfig.OnPostBuild(IDictionary<String, String>)
-  nameWithType.vb: IBuildConfig.OnPostBuild(IDictionary(Of String, String))
-- uid: UNKO.Unity_Builder.IBuildConfig.OnPostBuild*
-  name: OnPostBuild
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_OnPostBuild_
-  commentId: Overload:UNKO.Unity_Builder.IBuildConfig.OnPostBuild
-  isSpec: "True"
-  fullName: UNKO.Unity_Builder.IBuildConfig.OnPostBuild
-  nameWithType: IBuildConfig.OnPostBuild
-- uid: UNKO.Unity_Builder.IBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.OnPostProcessBuild
+  nameWithType: iOSBuildConfig.OnPostProcessBuild
+- uid: UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
   name: OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_OnPreBuild_System_Collections_Generic_IDictionary_System_String_System_String__BuildPlayerOptions__
-  commentId: M:UNKO.Unity_Builder.IBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_OnPreBuild_System_Collections_Generic_IDictionary_System_String_System_String__BuildPlayerOptions__
+  commentId: M:UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary{System.String,System.String},BuildPlayerOptions@)
   name.vb: OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-  fullName: UNKO.Unity_Builder.IBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary<System.String, System.String>, ref BuildPlayerOptions)
-  fullName.vb: UNKO.Unity_Builder.IBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary(Of System.String, System.String), ByRef BuildPlayerOptions)
-  nameWithType: IBuildConfig.OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
-  nameWithType.vb: IBuildConfig.OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
-- uid: UNKO.Unity_Builder.IBuildConfig.OnPreBuild*
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary<System.String, System.String>, ref BuildPlayerOptions)
+  fullName.vb: UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild(System.Collections.Generic.IDictionary(Of System.String, System.String), ByRef BuildPlayerOptions)
+  nameWithType: iOSBuildConfig.OnPreBuild(IDictionary<String, String>, ref BuildPlayerOptions)
+  nameWithType.vb: iOSBuildConfig.OnPreBuild(IDictionary(Of String, String), ByRef BuildPlayerOptions)
+- uid: UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild*
   name: OnPreBuild
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_OnPreBuild_
-  commentId: Overload:UNKO.Unity_Builder.IBuildConfig.OnPreBuild
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_OnPreBuild_
+  commentId: Overload:UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild
   isSpec: "True"
-  fullName: UNKO.Unity_Builder.IBuildConfig.OnPreBuild
-  nameWithType: IBuildConfig.OnPreBuild
-- uid: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  name: ResetSetting(BuildConfigBase)
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_ResetSetting_UNKO_Unity_Builder_BuildConfigBase_
-  commentId: M:UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  fullName: UNKO.Unity_Builder.IBuildConfig.ResetSetting(UNKO.Unity_Builder.BuildConfigBase)
-  nameWithType: IBuildConfig.ResetSetting(BuildConfigBase)
-- uid: UNKO.Unity_Builder.IBuildConfig.ResetSetting*
-  name: ResetSetting
-  href: api/UNKO.Unity_Builder.IBuildConfig.html#UNKO_Unity_Builder_IBuildConfig_ResetSetting_
-  commentId: Overload:UNKO.Unity_Builder.IBuildConfig.ResetSetting
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.OnPreBuild
+  nameWithType: iOSBuildConfig.OnPreBuild
+- uid: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD
+  name: iOSBuildConfig.PLIST_ADD
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html
+  commentId: T:UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD
+  nameWithType: iOSBuildConfig.PLIST_ADD
+- uid: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.#ctor(System.String,System.String)
+  name: PLIST_ADD(String, String)
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html#UNKO_Unity_Builder_iOSBuildConfig_PLIST_ADD__ctor_System_String_System_String_
+  commentId: M:UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.#ctor(System.String,System.String)
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.PLIST_ADD(System.String, System.String)
+  nameWithType: iOSBuildConfig.PLIST_ADD.PLIST_ADD(String, String)
+- uid: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.#ctor*
+  name: PLIST_ADD
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html#UNKO_Unity_Builder_iOSBuildConfig_PLIST_ADD__ctor_
+  commentId: Overload:UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.#ctor
   isSpec: "True"
-  fullName: UNKO.Unity_Builder.IBuildConfig.ResetSetting
-  nameWithType: IBuildConfig.ResetSetting
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.PLIST_ADD
+  nameWithType: iOSBuildConfig.PLIST_ADD.PLIST_ADD
+- uid: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strKey
+  name: strKey
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html#UNKO_Unity_Builder_iOSBuildConfig_PLIST_ADD_strKey
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strKey
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strKey
+  nameWithType: iOSBuildConfig.PLIST_ADD.strKey
+- uid: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strValue
+  name: strValue
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html#UNKO_Unity_Builder_iOSBuildConfig_PLIST_ADD_strValue
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strValue
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.strValue
+  nameWithType: iOSBuildConfig.PLIST_ADD.strValue
+- uid: UNKO.Unity_Builder.iOSBuildConfig.removePlistKey
+  name: removePlistKey
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_removePlistKey
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.removePlistKey
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.removePlistKey
+  nameWithType: iOSBuildConfig.removePlistKey
+- uid: UNKO.Unity_Builder.iOSBuildConfig.sdkVersion
+  name: sdkVersion
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_sdkVersion
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.sdkVersion
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.sdkVersion
+  nameWithType: iOSBuildConfig.sdkVersion
+- uid: UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Add
+  name: xcode_Framework_Add
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_xcode_Framework_Add
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Add
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Add
+  nameWithType: iOSBuildConfig.xcode_Framework_Add
+- uid: UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Remove
+  name: xcode_Framework_Remove
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_xcode_Framework_Remove
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Remove
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.xcode_Framework_Remove
+  nameWithType: iOSBuildConfig.xcode_Framework_Remove
+- uid: UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Add
+  name: xcode_OTHER_LDFLAGS_Add
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_xcode_OTHER_LDFLAGS_Add
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Add
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Add
+  nameWithType: iOSBuildConfig.xcode_OTHER_LDFLAGS_Add
+- uid: UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Remove
+  name: xcode_OTHER_LDFLAGS_Remove
+  href: api/UNKO.Unity_Builder.iOSBuildConfig.html#UNKO_Unity_Builder_iOSBuildConfig_xcode_OTHER_LDFLAGS_Remove
+  commentId: F:UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Remove
+  fullName: UNKO.Unity_Builder.iOSBuildConfig.xcode_OTHER_LDFLAGS_Remove
+  nameWithType: iOSBuildConfig.xcode_OTHER_LDFLAGS_Remove
+- uid: UNKO.Unity_Builder.iOSBuildConfig_Inspector
+  name: iOSBuildConfig_Inspector
+  href: api/UNKO.Unity_Builder.iOSBuildConfig_Inspector.html
+  commentId: T:UNKO.Unity_Builder.iOSBuildConfig_Inspector
+  fullName: UNKO.Unity_Builder.iOSBuildConfig_Inspector
+  nameWithType: iOSBuildConfig_Inspector
+- uid: UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI
+  name: OnInspectorGUI()
+  href: api/UNKO.Unity_Builder.iOSBuildConfig_Inspector.html#UNKO_Unity_Builder_iOSBuildConfig_Inspector_OnInspectorGUI
+  commentId: M:UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI
+  fullName: UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI()
+  nameWithType: iOSBuildConfig_Inspector.OnInspectorGUI()
+- uid: UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI*
+  name: OnInspectorGUI
+  href: api/UNKO.Unity_Builder.iOSBuildConfig_Inspector.html#UNKO_Unity_Builder_iOSBuildConfig_Inspector_OnInspectorGUI_
+  commentId: Overload:UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.iOSBuildConfig_Inspector.OnInspectorGUI
+  nameWithType: iOSBuildConfig_Inspector.OnInspectorGUI
 - uid: UNKO.Unity_Builder.UnityBuilder
   name: UnityBuilder
   href: api/UNKO.Unity_Builder.UnityBuilder.html
   commentId: T:UNKO.Unity_Builder.UnityBuilder
   fullName: UNKO.Unity_Builder.UnityBuilder
   nameWithType: UnityBuilder
+- uid: UNKO.Unity_Builder.UnityBuilder.AddCommandLine(System.String)
+  name: AddCommandLine(String)
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_AddCommandLine_System_String_
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.AddCommandLine(System.String)
+  fullName: UNKO.Unity_Builder.UnityBuilder.AddCommandLine(System.String)
+  nameWithType: UnityBuilder.AddCommandLine(String)
+- uid: UNKO.Unity_Builder.UnityBuilder.AddCommandLine*
+  name: AddCommandLine
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_AddCommandLine_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.AddCommandLine
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.AddCommandLine
+  nameWithType: UnityBuilder.AddCommandLine
 - uid: UNKO.Unity_Builder.UnityBuilder.Build
   name: Build()
   href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_Build
@@ -534,6 +619,32 @@ references:
   isSpec: "True"
   fullName: UNKO.Unity_Builder.UnityBuilder.Build
   nameWithType: UnityBuilder.Build
+- uid: UNKO.Unity_Builder.UnityBuilder.GetCommandLine
+  name: GetCommandLine()
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_GetCommandLine
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.GetCommandLine
+  fullName: UNKO.Unity_Builder.UnityBuilder.GetCommandLine()
+  nameWithType: UnityBuilder.GetCommandLine()
+- uid: UNKO.Unity_Builder.UnityBuilder.GetCommandLine*
+  name: GetCommandLine
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_GetCommandLine_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.GetCommandLine
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.GetCommandLine
+  nameWithType: UnityBuilder.GetCommandLine
+- uid: UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs
+  name: GetCommandLineArgs()
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_GetCommandLineArgs
+  commentId: M:UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs
+  fullName: UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs()
+  nameWithType: UnityBuilder.GetCommandLineArgs()
+- uid: UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs*
+  name: GetCommandLineArgs
+  href: api/UNKO.Unity_Builder.UnityBuilder.html#UNKO_Unity_Builder_UnityBuilder_GetCommandLineArgs_
+  commentId: Overload:UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs
+  isSpec: "True"
+  fullName: UNKO.Unity_Builder.UnityBuilder.GetCommandLineArgs
+  nameWithType: UnityBuilder.GetCommandLineArgs
 - uid: UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup
   name: UnityBuilder.PlayerSetting_Backup
   href: api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html

@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tests.BuildConfigTests.html",
-          "hash": "oWh9dLPh3k4lWZS94yqmMkxEhp5FlL/SxZ6bZlTi7So="
+          "hash": "pSY04JKOsOP2fujQEa2o4JBRc9h3gw+EssKuXOyjDvQ="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Tests.html",
-          "hash": "9v3/HtZhCJ5gJLJKTTchDsG0q0xPkcqct1lW87KB/Ps="
+          "hash": "gk3LMEgveHY8uvkSJPgpPIbIoXlHsZ8CTF6uMZX5Kh8="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig.html",
-          "hash": "aOHj8y+lcfcwyxh96HFu3MI6Ks7xvswSUI4eeX1wPr0="
+          "hash": "wTi7+PihjOakMAk0r9FxckX8gp+a4Ml4C2/jzexturg="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.AndroidBuildConfig_Inspector.html",
-          "hash": "cGi1aN094ft10JcAMXLjHw/kxrlmPB64zI8hCwYXrf8="
+          "hash": "0VCKm9qiklQ2TYpzYjmtGEgGpgqVvv7/iPxl/7Znv5o="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.BuildConfigBase.html",
-          "hash": "jkbA25AyEP/D/UVXIo2DTfPRpzY609q6tc9XjYJTb24="
+          "hash": "Dch1DpHYP9KJ4Ri3ujkh5y0FQF3FBMeN0QbMxMIfsQg="
         }
       },
       "is_incremental": false,
@@ -78,19 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.BuildConfigGroup.html",
-          "hash": "AOSENo76cziAIMmu9laS4x69mIH6GcMWFMiAZJTpDCc="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UNKO.Unity_Builder.BuildConfigSO.html",
-          "hash": "9Llkr5T/TBcNf7wr108ycLzFOOi7sUFEtbI9Dua90+k="
+          "hash": "r52ROm0np1OMF5CGjzGbeDsgWggXRF1/uHbueRezdsU="
         }
       },
       "is_incremental": false,
@@ -102,19 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.GlobalConst.html",
-          "hash": "9xOYLJVVeMlZLIT/QiB+iHCjFwSt6wTA4NkkG4/YxAk="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/UNKO.Unity_Builder.IBuildConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/UNKO.Unity_Builder.IBuildConfig.html",
-          "hash": "RyBWCZROZabh170i61GYq+DI3o16ZMg67sgYnyi/zLs="
+          "hash": "PE/frwMNaZ5KolcKNFaCdL9TcgxufFKZnWJLsMjQ9aM="
         }
       },
       "is_incremental": false,
@@ -126,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.PlayerSetting_Backup.html",
-          "hash": "GOqZGTyLE7KAa8CBAfFdqb613c0722t2d2PChtiYtsI="
+          "hash": "RLKkXTegdUoOqzz/QAbMHu7UpZHhl0zX9qFBmF2iMZs="
         }
       },
       "is_incremental": false,
@@ -138,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.UnityBuilder.html",
-          "hash": "kRbgaqYeC9kzYiiN84rfqmEJp2U3Qu8SMPUtib387VQ="
+          "hash": "Jn7h7CynV1AkYeJknEJBetZ6tlkG1Tq1UmjGaYdzguA="
         }
       },
       "is_incremental": false,
@@ -150,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig.html",
-          "hash": "lw8NzOKEHeCgXveBjDx/87yIjBTII2s/Aby8Hr3YkEE="
+          "hash": "AU4OwpP6GQB1CKk6iN7BTikGnVRN9swe4ZiVvU1S4j0="
         }
       },
       "is_incremental": false,
@@ -162,7 +138,43 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.WindowBuildConfig_Inspector.html",
-          "hash": "sBZyHD163ChqyOY+NznwrKvIRhOjKWNjIcFI5EaHD3g="
+          "hash": "bIMAbXWWYVq2v2eZzKOBUMWlsixjo6nB0QHh+Xiu1mY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig.PLIST_ADD.html",
+          "hash": "wcPG5LyJbSmplwJTUXPkpvhO0XuzCX8MAixtQR6hYac="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig.html",
+          "hash": "ABZQWj5jDmKmxSdLNXVZij/5UTe7H+aayIUj6cSr0n4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig_Inspector.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UNKO.Unity_Builder.iOSBuildConfig_Inspector.html",
+          "hash": "2ZOdpKIkP70/1AIiQOAbawyCvvqbswwlsVq3htYAFdY="
         }
       },
       "is_incremental": false,
@@ -174,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UNKO.Unity_Builder.html",
-          "hash": "whPFwiRBkBw3/XOXSm80Y8JW9ZuMME/d/Fn3jwmUeLE="
+          "hash": "ZNpH2HFthAgSe7ZG45sIEotbtLpyw7MTlaB7kGgzsMs="
         }
       },
       "is_incremental": false,
@@ -186,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "K+qiOClSCV0BXFDkUv41hJo8Lzjyzgr9y87vCItarms="
+          "hash": "++EO80FWHHQAl67znZt2ovWgYWMA6Zfxkv6qSewrZVw="
         }
       },
       "is_incremental": false,
@@ -201,7 +213,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "96bTKnD3yroZS8y3DF3gBpOrpnozh1/fjAlOtxhr8/U="
+          "hash": "l3hfUQmn7h6+2PGKcCclzxQooSdfKWSJINBel81ZyVo="
         }
       },
       "is_incremental": false,
@@ -240,7 +252,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 14,
+          "total_file_count": 15,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {
