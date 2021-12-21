@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Runtime.InteropServices;
 using UnityEditor;
 using UnityEditor.Callbacks;
@@ -18,6 +19,18 @@ namespace UNKO.Unity_Builder
     [StructLayout(LayoutKind.Auto)] // ignore codacy
     public class iOSBuildConfig : BuildConfigBase
     {
+        private const string entitlements = @"
+         <?xml version=""1.0"" encoding=""UTF-8\""?>
+         <!DOCTYPE plist PUBLIC ""-//Apple//DTD PLIST 1.0//EN"" ""http://www.apple.com/DTDs/PropertyList-1.0.dtd"">
+         <plist version=""1.0"">
+             <dict>
+                 <key>aps-environment</key>
+                 <string>production</string>
+             </dict>
+         </plist>";
+
+        const string UNITY_IPHONE = "Unity-iPhone";
+
         [PostProcessBuild(999)]
         public static void OnPostProcessBuild(BuildTarget buildTarget, string path)
         {
@@ -25,7 +38,7 @@ namespace UNKO.Unity_Builder
             if (platformIsiOS)
             {
 #if UNITY_IOS
-                string projectPath = path + "/Unity-iPhone.xcodeproj/project.pbxproj";
+                string projectPath = path + $"/{UNITY_IPHONE}.xcodeproj/project.pbxproj";
 
                 PBXProject pbxProject = new PBXProject();
                 pbxProject.ReadFromFile(projectPath);
@@ -51,18 +64,24 @@ namespace UNKO.Unity_Builder
                     Debug.LogError($"plist Can't open, path:{infoPlistPath}");
                 }
 
+                // https://lhamed.github.io/66th-post-copy-2/
+                var fileName = "unity.entitlements"; // 이거없으면 푸시 안됩니다 
+                var targetGUID = pbxProject.TargetGuidByName(UNITY_IPHONE);
+                var entitlementsFilePath = $"{path}/{UNITY_IPHONE}/{fileName}";
+                try
+                {
+                    File.WriteAllText(entitlementsFilePath, entitlements);
+                    pbxProject.AddFile($"{UNITY_IPHONE}/{fileName}", fileName);
+                    pbxProject.AddBuildProperty(targetGUID, "CODE_SIGN_ENTITLEMENTS", UNITY_IPHONE + "/" + fileName);
+                    pbxProject.WriteToFile(projectPath);
+                }
+                catch (IOException e)
+                {
+                    Debug.Log("Could not copy entitlements. Probably already exists. " + e);
+                }
 
-                // 출처:https://forum.unity.com/threads/how-do-i-enable-remote-push-notification-capability-using-unity-cloud-build.457812/
-                // get entitlements path
-                string[] idArray = Application.identifier.Split('.');
-                var entitlementsPath = $"Unity-iPhone/{idArray[idArray.Length - 1]}.entitlements";
-
-                var capManager = new ProjectCapabilityManager(projectPath, entitlementsPath, "Unity-iPhone");
-
-                // ITMS-90078: Missing Push Notification Entitlement
-                capManager.AddBackgroundModes(BackgroundModesOptions.BackgroundFetch);
-                capManager.AddBackgroundModes(BackgroundModesOptions.RemoteNotifications);
-                capManager.WriteToFile();
+                ProjectCapabilityManager pcm = new ProjectCapabilityManager(projectPath, entitlementsFilePath, UNITY_IPHONE);
+                pcm.AddPushNotifications(false);
 #endif
             }
 
